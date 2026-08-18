@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>科学小课堂</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="back-link">‹ 返回列表</a>
+  <h1 id="lesson-title" class="page-title"></h1>
+  <div id="lesson-subject" class="page-subtitle"></div>
+
+  <div class="intro" id="intro"></div>
+  <div id="steps"></div>
+
+  <div class="footer-note">看完记得告诉家人：哪一步你觉得最难懂？</div>
+</div>
+
+<script src="content.js"></script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get('id');
+  const lesson = lessons.find(l => l.id === id) || lessons[0];
+
+  document.getElementById('lesson-title').textContent = lesson.title;
+  document.getElementById('lesson-subject').textContent = lesson.subject;
+
+  const introEl = document.getElementById('intro');
+  lesson.intro.forEach(text => {
+    const p = document.createElement('p');
+    p.textContent = text;
+    introEl.appendChild(p);
+  });
+
+  const colors = ['#7f77dd', '#1d9e75', '#d85a30', '#d4537e', '#7f77dd', '#1d9e75', '#d85a30', '#d4537e'];
+  const container = document.getElementById('steps');
+
+  lesson.steps.forEach((s, i) => {
+    const card = document.createElement('div');
+    card.className = 'card';
+
+    const header = document.createElement('button');
+    header.className = 'card-header';
+    header.innerHTML = `
+      <span class="badge" style="background:${colors[i % colors.length]}">${i + 1}</span>
+      <span class="card-title-wrap">
+        <span class="card-title">${s.title}</span>
+        <span class="card-sub">${s.sub}</span>
+      </span>
+      <span class="chevron">▾</span>
+    `;
+
+    const body = document.createElement('div');
+    body.className = 'card-body';
+    const inner = document.createElement('div');
+    inner.className = 'card-body-inner';
+    inner.innerHTML = s.body;
+    body.appendChild(inner);
+
+    let open = false;
+    header.addEventListener('click', () => {
+      open = !open;
+      const icon = header.querySelector('.chevron');
+      if (open) {
+        body.style.maxHeight = body.scrollHeight + 20 + 'px';
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        body.style.maxHeight = '0';
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+
+    card.appendChild(header);
+    card.appendChild(body);
+    container.appendChild(card);
+  });
+</script>
+</body>
+</html>
