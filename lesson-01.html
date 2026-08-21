@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 1: Introduction to Scientific Investigation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .section { background:#fff; border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+  .section h2 { font-size:16px; font-weight:600; margin:0 0 4px; }
+  .section .eng { font-size:12px; color:#9a998f; margin-bottom:12px; }
+  .weight-tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:6px; background:#f0efe9; color:#8a8983; margin-left:6px; }
+  table.unit-tbl { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:8px; }
+  table.unit-tbl th, table.unit-tbl td { text-align:left; padding:6px 4px; border-bottom:1px solid #eeece5; }
+  table.unit-tbl th { color:#8a8983; font-weight:500; }
+  .prefix-line { font-family: "SF Mono", monospace; font-size:13px; background:#f5f4f0; padding:8px 10px; border-radius:8px; }
+  .img-row { display:flex; gap:8px; margin:12px 0; }
+  .img-cell { flex:1; text-align:center; }
+  .img-caption { font-size:11px; color:#8a8983; margin-top:4px; line-height:1.4; }
+  .hazard-row { display:flex; gap:16px; justify-content:center; margin:14px 0; }
+  .hazard-cell { text-align:center; width:90px; }
+  .thief-intro { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-bottom:12px; font-size:14px; line-height:1.7; }
+  .step-card { border:0.5px solid #e5e3da; border-radius:12px; margin-bottom:8px; overflow:hidden; }
+  .step-header { width:100%; display:flex; align-items:center; gap:10px; padding:12px 14px; background:#faf9f6; border:none; cursor:pointer; text-align:left; font-family:inherit; }
+  .step-badge { width:26px; height:26px; min-width:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600; color:#fff; }
+  .step-title-wrap { flex:1; }
+  .step-title { display:block; font-size:14px; font-weight:600; }
+  .step-sub { display:block; font-size:11px; color:#9a998f; margin-top:1px; }
+  .step-chevron { font-size:16px; color:#b5b3aa; transition:transform 0.2s; }
+  .step-body { max-height:0; overflow:hidden; transition:max-height 0.25s ease; background:#fff; }
+  .step-body-inner { padding:12px 14px; font-size:13px; line-height:1.7; color:#4a4943; }
+  .attitude-grid { display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
+  .attitude-item { background:#faf9f6; border-radius:8px; padding:8px 10px; font-size:13px; }
+  .attitude-item .en { color:#9a998f; font-size:11px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="back-link">‹ 返回列表</a>
+  <h1 class="page-title">Chapter 1: Introduction to Scientific Investigation</h1>
+  <div class="page-subtitle">考前5分钟抓重点版 · 单元1-2出题较多，其余偶尔考换算</div>
+
+  <div class="section">
+    <h2>1. Physical Quantities & Units <span class="weight-tag">常考换算</span></h2>
+    <div class="eng">物理量与单位</div>
+    <table class="unit-tbl">
+      <tr><th>Quantity</th><th>Unit</th><th>Symbol</th></tr>
+      <tr><td>Length</td><td>metre</td><td>m</td></tr>
+      <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
+      <tr><td>Time</td><td>second</td><td>s</td></tr>
+      <tr><td>Temperature</td><td>Kelvin</td><td>K</td></tr>
+      <tr><td>Current</td><td>Ampere</td><td>A</td></tr>
+    </table>
+    <div class="prefix-line">kilo (×1000) &gt; base unit &gt; centi (÷100) &gt; milli (÷1000)</div>
+  </div>
+
+  <div class="section">
+    <h2>2. Accuracy, Consistency, Sensitivity</h2>
+    <div class="eng">准确度、一致性、灵敏度</div>
+    <div class="img-row">
+      <div class="img-cell">
+        <svg width="100%" viewBox="0 0 110 110" role="img"><title>Accuracy</title>
+          <circle cx="55" cy="55" r="48" fill="#fff" stroke="#1a1a18" stroke-width="1.5"/>
+          <circle cx="55" cy="55" r="36" fill="#1a1a18"/>
+          <circle cx="55" cy="55" r="24" fill="#fff" stroke="#1a1a18" stroke-width="1.5"/>
+          <circle cx="55" cy="55" r="12" fill="#d43b2e"/>
+          <circle cx="53" cy="54" r="3" fill="#2a5fd4"/>
+          <circle cx="57" cy="56" r="3" fill="#2a5fd4"/>
+          <circle cx="55" cy="53" r="3" fill="#2a5fd4"/>
+        </svg>
+        <div class="img-caption">Accuracy 准确度<br>close to the true value<br>结果接近真实答案</div>
+      </div>
+      <div class="img-cell">
+        <svg width="100%" viewBox="0 0 110 110" role="img"><title>Consistency</title>
+          <circle cx="55" cy="55" r="48" fill="#fff" stroke="#1a1a18" stroke-width="1.5"/>
+          <circle cx="55" cy="55" r="36" fill="#1a1a18"/>
+          <circle cx="55" cy="55" r="24" fill="#fff" stroke="#1a1a18" stroke-width="1.5"/>
+          <circle cx="55" cy="55" r="12" fill="#d43b2e"/>
+          <circle cx="80" cy="30" r="3" fill="#2a5fd4"/>
+          <circle cx="84" cy="34" r="3" fill="#2a5fd4"/>
+          <circle cx="82" cy="28" r="3" fill="#2a5fd4"/>
+        </svg>
+        <div class="img-caption">Consistency 一致性<br>close to each other<br>结果彼此接近，不一定准</div>
+      </div>
+      <div class="img-cell">
+        <svg width="100%" viewBox="0 0 110 130" role="img"><title>Sensitivity</title>
+          <rect x="14" y="15" width="20" height="90" fill="#fff" stroke="#1a1a18" stroke-width="1"/>
+          <line x1="14" y1="30" x2="24" y2="30" stroke="#1a1a18" stroke-width="1"/>
+          <line x1="14" y1="60" x2="24" y2="60" stroke="#1a1a18" stroke-width="1"/>
+          <line x1="14" y1="90" x2="24" y2="90" stroke="#1a1a18" stroke-width="1"/>
+          <rect x="60" y="15" width="20" height="90" fill="#fff" stroke="#1a1a18" stroke-width="1"/>
+          <line x1="60" y1="22" x2="70" y2="22" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="30" x2="70" y2="30" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="38" x2="70" y2="38" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="46" x2="70" y2="46" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="54" x2="70" y2="54" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="62" x2="70" y2="62" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="70" x2="70" y2="70" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="78" x2="70" y2="78" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="86" x2="70" y2="86" stroke="#1a1a18" stroke-width="0.7"/>
+          <line x1="60" y1="94" x2="70" y2="94" stroke="#1a1a18" stroke-width="0.7"/>
+          <path d="M38 55 L56 55" stroke="#d85a30" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d85a30"/></marker></defs>
+        </svg>
+        <div class="img-caption">Sensitivity 灵敏度<br>finer scale = more sensitive<br>刻度越密，能测出的差异越小</div>
+      </div>
+    </div>
+    <div style="font-size:13px; line-height:1.7; color:#4a4943;">
+      <strong>Zero error 零误差</strong>：仪器一开始没归零，磅秤还没站上去指针已经歪了<br>
+      <strong>Parallax error 视差</strong>：眼睛没跟刻度打平视线，看时间时指针明明在12却看歪了
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Density <span class="weight-tag">公式题</span></h2>
+    <div class="eng">密度</div>
+    <div style="font-size:14px; margin-bottom:10px;">Density = Mass ÷ Volume　（ρ = m/V）　unit: kg/m³ or g/cm³</div>
+    <svg width="100%" viewBox="0 0 380 190" role="img"><title>Floating and sinking</title>
+      <rect x="20" y="30" width="150" height="130" rx="6" fill="none" stroke="#c7c5ba" stroke-width="1"/>
+      <rect x="21" y="60" width="148" height="99" fill="#cfe4f5"/>
+      <rect x="35" y="50" width="45" height="18" rx="3" fill="#b8875a"/>
+      <circle cx="130" cy="140" r="14" fill="#6b6a63"/>
+      <line x1="80" y1="59" x2="80" y2="30" stroke="#8a8983" stroke-width="0.7" stroke-dasharray="2,2"/>
+      <text x="82" y="26" font-size="11" fill="#6b6a63">wood block 木块</text>
+      <line x1="130" y1="126" x2="130" y2="105" stroke="#8a8983" stroke-width="0.7" stroke-dasharray="2,2"/>
+      <text x="20" y="100" font-size="11" fill="#6b6a63">metal ball 铁球</text>
+      <text x="95" y="180" font-size="11" text-anchor="middle" fill="#8a8983">density &lt; water → float 密度比水小会浮</text>
+
+      <rect x="220" y="30" width="150" height="130" rx="6" fill="none" stroke="#c7c5ba" stroke-width="1"/>
+      <rect x="221" y="60" width="148" height="99" fill="#cfe4f5"/>
+      <path d="M 240 62 L 350 62 L 340 78 L 250 78 Z" fill="#6b6a63"/>
+      <text x="295" y="180" font-size="11" text-anchor="middle" fill="#8a8983">same metal, boat shape → float</text>
+      <text x="295" y="55" font-size="11" text-anchor="middle" fill="#6b6a63">metal boat 铁船</text>
+    </svg>
+    <div style="font-size:13px; color:#4a4943; margin-top:6px;">同样是铁，形状改变了体积（不是密度）→ 船能浮</div>
+  </div>
+
+  <div class="section">
+    <h2>4. Scientific Investigation Steps <span class="weight-tag">排序题常考</span></h2>
+    <div class="eng">科学探究六步骤</div>
+    <div class="thief-intro">班上的零食钱不见了，全班都是嫌疑人。点开下面每一步，看看要怎么找出谁看起来最像小偷。</div>
+    <div id="steps"></div>
+  </div>
+
+  <div class="section">
+    <h2>5. Lab Safety <span class="weight-tag">送分题</span></h2>
+    <div class="eng">实验室生存指南</div>
+    <div class="hazard-row">
+      <div class="hazard-cell">
+        <svg width="48" height="48" viewBox="0 0 48 48"><title>Flammable</title>
+          <polygon points="24,4 44,40 4,40" fill="#f5c4b3" stroke="#993c1d" stroke-width="1"/>
+          <path d="M24 16 C20 24 28 24 24 32 C30 30 32 20 24 16 Z" fill="#fff"/>
+        </svg>
+        <div class="img-caption">Flammable 易燃</div>
+      </div>
+      <div class="hazard-cell">
+        <svg width="48" height="48" viewBox="0 0 48 48"><title>Toxic</title>
+          <polygon points="24,4 44,40 4,40" fill="#f7c1c1" stroke="#791f1f" stroke-width="1"/>
+          <circle cx="24" cy="24" r="8" fill="#fff"/>
+          <circle cx="20" cy="22" r="1.5" fill="#791f1f"/>
+          <circle cx="28" cy="22" r="1.5" fill="#791f1f"/>
+          <line x1="18" y1="30" x2="30" y2="30" stroke="#791f1f" stroke-width="1.5"/>
+        </svg>
+        <div class="img-caption">Toxic 有毒</div>
+      </div>
+      <div class="hazard-cell">
+        <svg width="48" height="48" viewBox="0 0 48 48"><title>Corrosive</title>
+          <polygon points="24,4 44,40 4,40" fill="#fac775" stroke="#854f0b" stroke-width="1"/>
+          <rect x="18" y="14" width="8" height="12" rx="1" fill="#fff"/>
+          <path d="M22 26 L20 34" stroke="#fff" stroke-width="2"/>
+          <path d="M20 34 Q17 36 18 39" fill="none" stroke="#fff" stroke-width="1.5"/>
+        </svg>
+        <div class="img-caption">Corrosive 腐蚀性</div>
+      </div>
+    </div>
+    <div style="font-size:13px; color:#4a4943; line-height:1.7;">常见仪器对上用途：量筒量体积、天平量质量、秒表计时。规则：不能吃东西、长发要绑、化学品先看标签。</div>
+  </div>
+
+  <div class="section">
+    <h2>6. Scientific Attitudes <span class="weight-tag">不太考</span></h2>
+    <div class="eng">科学态度</div>
+    <div class="attitude-grid">
+      <div class="attitude-item">好奇心 <span class="en">curious</span></div>
+      <div class="attitude-item">诚实 <span class="en">honest</span></div>
+      <div class="attitude-item">细心 <span class="en">meticulous</span></div>
+      <div class="attitude-item">愿意合作 <span class="en">cooperative</span></div>
+      <div class="attitude-item">失败了愿意重做 <span class="en">persistent</span></div>
+    </div>
+  </div>
+
+  <div class="footer-note">看完记得告诉家人：哪一part最难懂？</div>
+</div>
+
+<script>
+const steps = [
+  { n:1, color:'#7f77dd', title:'Identify problem 识别问题', sub:'把案件讲清楚', body:'不是「谁看起来最像贼」，而是「钱是什么时候不见的、谁有机会拿」——问出一个能查的问题。' },
+  { n:2, color:'#1d9e75', title:'Form hypothesis 提出假设', sub:'锁定有根据的疑犯', body:'假设：小偷是下课时间最后留在教室的人。这个可以查证，不是乱猜「感觉他看起来最像贼」。' },
+  { n:3, color:'#d85a30', title:'Control variables 控制变量', sub:'一次只审一个疑犯', body:'如果同时怀疑好几个人，又混进「谁欠钱」「谁上次也丢过东西」这些无关线索，案件会查不清。只锁定「当时在场」这一个条件。' },
+  { n:4, color:'#d4537e', title:'Design experiment 设计实验', sub:'安排公平的测试', body:'例如查监控、或安排某人不知情的情况下观察反应——设计一个能真正验证假设的方法。' },
+  { n:5, color:'#7f77dd', title:'Collect data 收集数据', sub:'找证据，不是找感觉', body:'记录下监控时间、在场人员名单——用事实说话，不是「我觉得是他」。' },
+  { n:6, color:'#1d9e75', title:'Conclusion 下结论', sub:'证据够了才能定罪', body:'如果证据支持假设，才能说是他。如果证据不够，就要放人重新调查——这才是公平，不是随便冤枉人。' }
+];
+const container = document.getElementById('steps');
+steps.forEach((s) => {
+  const card = document.createElement('div');
+  card.className = 'step-card';
+  const header = document.createElement('button');
+  header.className = 'step-header';
+  header.innerHTML = `
+    <span class="step-badge" style="background:${s.color}">${s.n}</span>
+    <span class="step-title-wrap">
+      <span class="step-title">${s.title}</span>
+      <span class="step-sub">${s.sub}</span>
+    </span>
+    <span class="step-chevron">▾</span>
+  `;
+  const body = document.createElement('div');
+  body.className = 'step-body';
+  const inner = document.createElement('div');
+  inner.className = 'step-body-inner';
+  inner.innerHTML = s.body;
+  body.appendChild(inner);
+  let open = false;
+  header.addEventListener('click', () => {
+    open = !open;
+    const icon = header.querySelector('.step-chevron');
+    if (open) { body.style.maxHeight = body.scrollHeight + 20 + 'px'; icon.style.transform = 'rotate(180deg)'; }
+    else { body.style.maxHeight = '0'; icon.style.transform = 'rotate(0deg)'; }
+  });
+  card.appendChild(header); card.appendChild(body); container.appendChild(card);
+});
+</script>
+</body>
+</html>
