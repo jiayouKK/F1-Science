@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chapter 2: Cell as the Basic Unit of Life</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .section { background:#fff; border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
+  .section h2 { font-size:16px; font-weight:600; margin:0 0 4px; }
+  .section .eng { font-size:12px; color:#9a998f; margin-bottom:12px; }
+  .weight-tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:6px; background:#f0efe9; color:#8a8983; margin-left:6px; }
+  .warn-note { font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px; }
+  .compare-wrap { display:flex; gap:10px; }
+  .compare-col { flex:1; background:#faf9f6; border-radius:10px; padding:10px; }
+  .compare-col h3 { font-size:13px; margin:0 0 8px; text-align:center; }
+  .step-card { border:0.5px solid #e5e3da; border-radius:12px; margin-bottom:8px; overflow:hidden; }
+  .step-header { width:100%; display:flex; align-items:center; gap:10px; padding:10px 12px; background:#faf9f6; border:none; cursor:pointer; text-align:left; font-family:inherit; }
+  .step-badge { width:24px; height:24px; min-width:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; color:#fff; }
+  .step-title-wrap { flex:1; }
+  .step-title { display:block; font-size:13px; font-weight:600; }
+  .step-chevron { font-size:15px; color:#b5b3aa; transition:transform 0.2s; }
+  .step-body { max-height:0; overflow:hidden; transition:max-height 0.25s ease; background:#fff; }
+  .step-body-inner { padding:10px 12px; font-size:12px; line-height:1.65; color:#4a4943; }
+  .spec-grid { display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
+  .spec-item { background:#faf9f6; border-radius:8px; padding:8px 10px; }
+  .spec-item .name { font-size:12px; font-weight:600; }
+  .spec-item .fn { font-size:11px; color:#8a8983; margin-top:2px; }
+  .org-flow { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:4px; }
+  .org-node { background:#faf9f6; border-radius:8px; padding:8px 10px; font-size:11px; text-align:center; flex:1; min-width:60px; }
+  .org-arrow { color:#b5b3aa; font-size:14px; }
+  .quiz-box { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-top:14px; }
+  .quiz-box .qtitle { font-size:13px; font-weight:600; margin-bottom:8px; }
+  .qopt { padding:10px; text-align:left; border:0.5px solid #d9d7cd; border-radius:8px; background:#fff; cursor:pointer; font-size:13px; display:block; width:100%; margin-bottom:6px; }
+  .qfb { font-size:13px; margin-top:8px; display:none; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a href="index.html" class="back-link">‹ 返回列表</a>
+  <h1 class="page-title">Chapter 2: Cell as the Basic Unit of Life</h1>
+  <div class="page-subtitle">考前速读版</div>
+
+  <div class="section">
+    <h2>1. Unicellular vs Multicellular</h2>
+    <div class="compare-wrap">
+      <div class="compare-col">
+        <h3>Unicellular</h3>
+        <p style="font-size:12px; color:#4a4943; margin:0;">Made of <strong>only 1 cell</strong>. That one cell does everything — feeding, moving, reproducing.<br><br>e.g. Amoeba, Paramecium, yeast</p>
+      </div>
+      <div class="compare-col">
+        <h3>Multicellular</h3>
+        <p style="font-size:12px; color:#4a4943; margin:0;">Made of <strong>many cells</strong>. Different cells specialise in different jobs.<br><br>e.g. Human, cat, hibiscus</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>2. Animal Cell vs Plant Cell — Structure</h2>
+    <p class="warn-note">⚠ 图片仅供参考，考试作画请以课本为准</p>
+    <div class="compare-wrap">
+      <div class="compare-col">
+        <h3>Animal Cell</h3>
+        <svg width="100%" viewBox="0 0 160 160" role="img"><title>Animal cell diagram</title>
+          <ellipse cx="80" cy="80" rx="70" ry="60" fill="#fdf3e3" stroke="#3d3d3a" stroke-width="1.3"/>
+          <circle cx="70" cy="75" r="20" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1"/>
+          <circle cx="70" cy="75" r="6" fill="#a67cb5"/>
+          <ellipse cx="110" cy="60" rx="8" ry="5" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.8"/>
+          <ellipse cx="105" cy="100" rx="8" ry="5" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.8"/>
+          <circle cx="45" cy="110" r="6" fill="#a7d3e0" stroke="#3d3d3a" stroke-width="0.8"/>
+        </svg>
+        <div style="font-size:10px; color:#8a8983; text-align:center; margin-top:4px;">No cell wall · irregular shape</div>
+      </div>
+      <div class="compare-col">
+        <h3>Plant Cell</h3>
+        <svg width="100%" viewBox="0 0 160 160" role="img"><title>Plant cell diagram</title>
+          <rect x="12" y="12" width="136" height="136" rx="6" fill="#e9f5e3" stroke="#3d3d3a" stroke-width="1.5"/>
+          <rect x="20" y="20" width="120" height="120" rx="4" fill="none" stroke="#3d3d3a" stroke-width="0.8"/>
+          <circle cx="60" cy="70" r="16" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1"/>
+          <circle cx="60" cy="70" r="5" fill="#a67cb5"/>
+          <ellipse cx="100" cy="55" rx="7" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.8"/>
+          <ellipse cx="105" cy="90" rx="7" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.8"/>
+          <ellipse cx="70" cy="105" rx="7" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.8"/>
+          <rect x="35" y="95" width="35" height="30" rx="4" fill="#cfe4f0" stroke="#3d3d3a" stroke-width="0.8"/>
+        </svg>
+        <div style="font-size:10px; color:#8a8983; text-align:center; margin-top:4px;">Has cell wall · fixed shape</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;" id="organelle-steps"></div>
+  </div>
+
+  <div class="section">
+    <h2>3. Animal Cell vs Plant Cell — Comparison</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:12px;">
+      <tr style="color:#8a8983;"><th style="text-align:left; padding:4px;"></th><th style="text-align:center; padding:4px;">Animal</th><th style="text-align:center; padding:4px;">Plant</th></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Cell wall</td><td style="text-align:center;">✗</td><td style="text-align:center;">✓</td></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Chloroplast</td><td style="text-align:center;">✗</td><td style="text-align:center;">✓</td></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Large vacuole</td><td style="text-align:center;">✗</td><td style="text-align:center;">✓</td></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Shape</td><td style="text-align:center;">not fixed</td><td style="text-align:center;">fixed</td></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Nucleus, cytoplasm, cell membrane</td><td style="text-align:center;" colspan="2">✓ both have</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>4. Specialised Cells 特化细胞</h2>
+    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">Different cells → different shapes → different jobs.</p>
+    <div style="font-size:12px; font-weight:600; margin-bottom:6px;">Animal cells</div>
+    <div class="spec-grid" style="margin-bottom:14px;">
+      <div class="spec-item"><div class="name">Nerve cell</div><div class="fn">Carries impulses around the body</div></div>
+      <div class="spec-item"><div class="name">Red blood cell</div><div class="fn">No nucleus; carries oxygen</div></div>
+      <div class="spec-item"><div class="name">White blood cell</div><div class="fn">Changes shape to destroy germs</div></div>
+      <div class="spec-item"><div class="name">Muscle cell</div><div class="fn">Contracts & relaxes for movement</div></div>
+      <div class="spec-item"><div class="name">Epithelium cell</div><div class="fn">Protects organs, secretes mucus</div></div>
+      <div class="spec-item"><div class="name">Sperm / Ovum</div><div class="fn">Carry genetic material for reproduction</div></div>
+    </div>
+    <div style="font-size:12px; font-weight:600; margin-bottom:6px;">Plant cells</div>
+    <div class="spec-grid">
+      <div class="spec-item"><div class="name">Guard cell</div><div class="fn">Controls opening/closing of stoma</div></div>
+      <div class="spec-item"><div class="name">Palisade cell</div><div class="fn">Full of chloroplasts for photosynthesis</div></div>
+      <div class="spec-item"><div class="name">Epidermis cell</div><div class="fn">Reduces water loss, absorbs water</div></div>
+      <div class="spec-item"><div class="name">Root hair cell</div><div class="fn">Absorbs water & minerals</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>5. Cell Organisation</h2>
+    <div class="org-flow">
+      <div class="org-node">Cell</div><span class="org-arrow">→</span>
+      <div class="org-node">Tissue</div><span class="org-arrow">→</span>
+      <div class="org-node">Organ</div><span class="org-arrow">→</span>
+      <div class="org-node">System</div><span class="org-arrow">→</span>
+      <div class="org-node">Organism</div>
+    </div>
+    <p style="font-size:11px; color:#8a8983; margin-top:8px;">Cells also divide to form new cells and replace damaged ones — that's why cuts heal.</p>
+
+    <div style="font-size:12px; font-weight:600; margin:14px 0 6px;">Human systems 人体系统</div>
+    <div class="spec-grid">
+      <div class="spec-item"><div class="name">Digestive system</div><div class="fn">Breaks down food</div></div>
+      <div class="spec-item"><div class="name">Respiratory system</div><div class="fn">Gas exchange (O₂/CO₂)</div></div>
+      <div class="spec-item"><div class="name">Circulatory system</div><div class="fn">Transports blood</div></div>
+      <div class="spec-item"><div class="name">Nervous system</div><div class="fn">Controls & coordinates body</div></div>
+      <div class="spec-item"><div class="name">Excretory system</div><div class="fn">Removes waste</div></div>
+      <div class="spec-item"><div class="name">Skeletal system</div><div class="fn">Supports & protects body</div></div>
+    </div>
+
+    <div class="quiz-box">
+      <div class="qtitle">🎯 Quiz: Which comes right after "Tissue" in cell organisation?</div>
+      <div id="q-org"></div>
+      <p id="fb-org" class="qfb"></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>6. Cellular Respiration vs Photosynthesis</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:12px;">
+      <tr style="color:#8a8983;"><th style="text-align:left; padding:4px;"></th><th style="text-align:center; padding:4px;">Respiration</th><th style="text-align:center; padding:4px;">Photosynthesis</th></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Happens in</td><td style="text-align:center;">Mitochondria</td><td style="text-align:center;">Chloroplast</td></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Uses</td><td style="text-align:center;">Glucose + O₂</td><td style="text-align:center;">CO₂ + water + light</td></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Produces</td><td style="text-align:center;">CO₂ + water + energy</td><td style="text-align:center;">Glucose + O₂</td></tr>
+      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">When</td><td style="text-align:center;">All the time</td><td style="text-align:center;">Only with light</td></tr>
+    </table>
+    <p style="font-size:11px; color:#8a8983; margin-top:8px;">They complement each other: photosynthesis makes glucose + O₂, respiration uses glucose + O₂.</p>
+
+    <div style="font-size:12px; font-weight:600; margin:14px 0 6px;">Process 流程</div>
+    <div class="org-flow">
+      <div class="org-node">Glucose + O₂</div><span class="org-arrow">→</span>
+      <div class="org-node" style="background:#e9f5e3;">Respiration</div><span class="org-arrow">→</span>
+      <div class="org-node">CO₂ + H₂O + Energy</div>
+    </div>
+    <div class="org-flow" style="margin-top:8px;">
+      <div class="org-node">CO₂ + H₂O + Light</div><span class="org-arrow">→</span>
+      <div class="org-node" style="background:#e9f5e3;">Photosynthesis</div><span class="org-arrow">→</span>
+      <div class="org-node">Glucose + O₂</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>7. Test for Starch</h2>
+    <p style="font-size:12px; color:#4a4943; line-height:1.7;">Drop <strong>iodine solution</strong> on the leaf.<br>Blue-black colour = starch present (photosynthesis happened)<br>Stays orange-brown = no starch</p>
+  </div>
+
+  <div class="section">
+    <h2>8. Photosynthesis Experiments</h2>
+    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">4 classic experiments — each removes ONE factor to test if it's necessary.</p>
+    <div id="photo-exp"></div>
+  </div>
+
+</div>
+
+<script>
+// Organelle click-to-reveal
+const organelles = [
+  { name: 'Cell membrane', fn: 'Controls substances entering/leaving the cell' },
+  { name: 'Nucleus', fn: 'Controls cell activities; contains genetic material' },
+  { name: 'Cytoplasm', fn: 'Site of chemical reactions' },
+  { name: 'Mitochondria', fn: 'Releases energy (cellular respiration)' },
+  { name: 'Cell wall (plant only)', fn: 'Supports & maintains fixed shape' },
+  { name: 'Chloroplast (plant only)', fn: 'Site of photosynthesis' },
+  { name: 'Vacuole (large in plant)', fn: 'Stores water, cell sap' }
+];
+const orgContainer = document.getElementById('organelle-steps');
+organelles.forEach((o, i) => {
+  const card = document.createElement('div');
+  card.className = 'step-card';
+  const colors = ['#7f77dd','#1d9e75','#d85a30','#d4537e','#7f77dd','#1d9e75','#d85a30'];
+  const header = document.createElement('button');
+  header.className = 'step-header';
+  header.innerHTML = `<span class="step-badge" style="background:${colors[i]}">${i+1}</span><span class="step-title-wrap"><span class="step-title">${o.name}</span></span><span class="step-chevron">▾</span>`;
+  const body = document.createElement('div');
+  body.className = 'step-body';
+  const inner = document.createElement('div');
+  inner.className = 'step-body-inner';
+  inner.textContent = o.fn;
+  body.appendChild(inner);
+  let open = false;
+  header.addEventListener('click', () => {
+    open = !open;
+    const icon = header.querySelector('.step-chevron');
+    if (open) { body.style.maxHeight = body.scrollHeight + 10 + 'px'; icon.style.transform = 'rotate(180deg)'; }
+    else { body.style.maxHeight = '0'; icon.style.transform = 'rotate(0deg)'; }
+  });
+  card.appendChild(header); card.appendChild(body); orgContainer.appendChild(card);
+});
+
+// Photosynthesis experiments
+const exps = [
+  { q: 'Is light needed?', setup: 'One leaf covered with foil (no light), one leaf exposed to light. Both destarched first.', result: 'Covered leaf: no starch. Exposed leaf: starch present.', conclusion: 'Light is needed for photosynthesis.' },
+  { q: 'Is chlorophyll needed?', setup: 'Use a variegated leaf (green + white patches).', result: 'Only the green parts turn blue-black with iodine.', conclusion: 'Chlorophyll is needed for photosynthesis.' },
+  { q: 'Is CO₂ needed?', setup: 'One plant in a jar with soda lime (absorbs CO₂), one plant in normal air.', result: 'Plant without CO₂: no starch. Plant with normal air: starch present.', conclusion: 'CO₂ is needed for photosynthesis.' },
+  { q: 'Is water needed?', setup: 'One plant well-watered, one plant deprived of water for several days.', result: 'Watered plant: starch present. Unwatered plant: little/no starch.', conclusion: 'Water is needed for photosynthesis.' }
+];
+const expContainer = document.getElementById('photo-exp');
+exps.forEach((e, i) => {
+  const card = document.createElement('div');
+  card.className = 'step-card';
+  const colors = ['#7f77dd','#1d9e75','#d85a30','#d4537e'];
+  const header = document.createElement('button');
+  header.className = 'step-header';
+  header.innerHTML = `<span class="step-badge" style="background:${colors[i]}">${i+1}</span><span class="step-title-wrap"><span class="step-title">${e.q}</span></span><span class="step-chevron">▾</span>`;
+  const body = document.createElement('div');
+  body.className = 'step-body';
+  const inner = document.createElement('div');
+  inner.className = 'step-body-inner';
+  inner.innerHTML = `<strong>Setup:</strong> ${e.setup}<br><strong>Result:</strong> ${e.result}<br><strong>Conclusion:</strong> ${e.conclusion}`;
+  body.appendChild(inner);
+  let open = false;
+  header.addEventListener('click', () => {
+    open = !open;
+    const icon = header.querySelector('.step-chevron');
+    if (open) { body.style.maxHeight = body.scrollHeight + 10 + 'px'; icon.style.transform = 'rotate(180deg)'; }
+    else { body.style.maxHeight = '0'; icon.style.transform = 'rotate(0deg)'; }
+  });
+  card.appendChild(header); card.appendChild(body); expContainer.appendChild(card);
+});
+
+function buildQuiz(containerId, feedbackId, options, correctIndex, correctMsg, wrongMsg) {
+  const container = document.getElementById(containerId);
+  options.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'qopt';
+    btn.textContent = opt;
+    btn.addEventListener('click', () => {
+      const fb = document.getElementById(feedbackId);
+      fb.style.display = 'block';
+      container.querySelectorAll('.qopt').forEach(b => { b.style.opacity = '0.5'; b.style.borderColor = '#d9d7cd'; });
+      if (i === correctIndex) {
+        btn.style.opacity = '1'; btn.style.borderColor = '#1d9e75';
+        fb.style.color = '#0f6e56'; fb.innerHTML = '✓ ' + correctMsg;
+      } else {
+        btn.style.opacity = '1'; btn.style.borderColor = '#d85a30';
+        fb.style.color = '#993c1d'; fb.innerHTML = '✗ ' + wrongMsg;
+      }
+    });
+    container.appendChild(btn);
+  });
+}
+buildQuiz('q-org', 'fb-org', ['Cell', 'Organ', 'System'], 1, 'Correct! Cell → Tissue → Organ → System → Organism', 'Order is: Cell → Tissue → Organ → System → Organism');
+</script>
+</body>
+</html>

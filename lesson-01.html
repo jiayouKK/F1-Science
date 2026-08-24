@@ -18,7 +18,7 @@
   .img-cell { flex:1; min-width:90px; text-align:center; }
   .img-caption { font-size:11px; color:#8a8983; margin-top:4px; line-height:1.4; }
   .hazard-row { display:flex; gap:10px; justify-content:center; margin:14px 0; flex-wrap:wrap; }
-  .hazard-cell { text-align:center; width:60px; }
+  .hazard-cell { text-align:center; width:64px; }
   .thief-intro { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-bottom:12px; font-size:14px; line-height:1.7; }
   .step-card { border:0.5px solid #e5e3da; border-radius:12px; margin-bottom:8px; overflow:hidden; }
   .step-header { width:100%; display:flex; align-items:center; gap:10px; padding:12px 14px; background:#faf9f6; border:none; cursor:pointer; text-align:left; font-family:inherit; }
@@ -35,8 +35,8 @@
   .app-tbl { width:100%; border-collapse:collapse; font-size:12px; }
   .app-tbl td { padding:8px 4px; border-bottom:1px solid #eeece5; vertical-align:middle; }
   .app-tbl .icon-cell { width:56px; text-align:center; }
-  .app-tbl .name-cell { width:78px; font-weight:600; color:#3d3d3a; }
-  .app-tbl .fn-cell { color:#6b6a63; }
+  .app-tbl .name-cell { width:82px; font-weight:600; color:#3d3d3a; }
+  .app-tbl .fn-cell { color:#6b6a63; font-size:11px; line-height:1.5; }
   .quiz-box { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-top:14px; }
   .quiz-box .qtitle { font-size:13px; font-weight:600; margin-bottom:8px; }
   .qopt { padding:10px; text-align:left; border:0.5px solid #d9d7cd; border-radius:8px; background:#fff; cursor:pointer; font-size:13px; display:block; width:100%; margin-bottom:6px; }
@@ -47,10 +47,10 @@
 <div class="wrap">
   <a href="index.html" class="back-link">‹ 返回列表</a>
   <h1 class="page-title">Chapter 1: Introduction to Scientific Investigation</h1>
-  <div class="page-subtitle">考前5分钟抓重点版 · 前面1-3较常见，其余没时间就带过</div>
+  <div class="page-subtitle">考前速读版</div>
 
   <div class="section">
-    <h2>1. Physical Quantities & Units <span class="weight-tag">常考换算</span></h2>
+    <h2>1. Physical Quantities & Units</h2>
     <div class="eng">物理量与单位</div>
     <table class="unit-tbl">
       <tr><th>Quantity</th><th>Unit</th><th>Symbol</th></tr>
@@ -61,95 +61,96 @@
       <tr><td>Current</td><td>Ampere</td><td>A</td></tr>
     </table>
 
-    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Length 长度换算</div>
+    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Length 长度</div>
     <div class="prefix-line">1 km = 1000 m　|　1 m = 100 cm　|　1 cm = 10 mm</div>
 
-    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Mass 质量换算</div>
+    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Mass 质量</div>
     <div class="prefix-line">1 kg = 1000 g　|　1 g = 1000 mg</div>
 
-    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Time 时间换算</div>
+    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Time 时间</div>
     <div class="prefix-line">1 day = 24 h　|　1 h = 60 min　|　1 min = 60 s</div>
 
     <div class="quiz-box">
-      <div class="qtitle">🎯 练习：250 cm 等于多少 m？</div>
+      <div class="qtitle">🎯 Quiz: 250 cm = ____ m?</div>
       <div id="q-unit"></div>
       <p id="fb-unit" class="qfb"></p>
     </div>
   </div>
 
   <div class="section">
-    <h2>2. Apparatus & Function <span class="weight-tag">配对题常考</span></h2>
+    <h2>2. Apparatus & Function</h2>
     <div class="eng">实验室仪器与用途</div>
+    <p style="font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px;">⚠ 图片仅供参考，考试如果需要画apparatus，请以课本为准</p>
     <table class="app-tbl">
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="14" y1="4" x2="14" y2="32" stroke="#3d3d3a" stroke-width="1.2" fill="none"/><line x1="26" y1="4" x2="26" y2="32" stroke="#3d3d3a" stroke-width="1.2" fill="none"/><path d="M14 32 Q14 38 20 38 Q26 38 26 32" fill="none" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M15 4 L15 30 Q15 36 20 36 Q25 36 25 30 L25 4" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="13" y1="4" x2="27" y2="4" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
         <td class="name-cell">Test tube<br>试管</td>
-        <td class="fn-cell">盛装少量化学品</td>
+        <td class="fn-cell">To hold small amount of chemicals<br>盛装少量化学品</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="12" y1="4" x2="12" y2="30" stroke="#3d3d3a" stroke-width="1.2" fill="none"/><line x1="28" y1="4" x2="28" y2="30" stroke="#3d3d3a" stroke-width="1.2" fill="none"/><path d="M12 30 Q12 38 20 38 Q28 38 28 30" fill="none" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M13 4 L13 28 Q13 36 20 36 Q27 36 27 28 L27 4" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="11" y1="4" x2="29" y2="4" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
         <td class="name-cell">Boiling tube<br>沸腾管</td>
-        <td class="fn-cell">加热少量化学品</td>
+        <td class="fn-cell">To heat small amount of chemicals<br>加热少量化学品</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M12 6 L12 20 L6 34 L34 34 L28 20 L28 6" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="10" y1="6" x2="30" y2="6" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M11 8 L11 32 L29 32 L29 8" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="9" y1="8" x2="31" y2="8" stroke="#3d3d3a" stroke-width="1.3"/><path d="M29 8 L33 6" stroke="#3d3d3a" stroke-width="1.3" fill="none"/></svg></td>
         <td class="name-cell">Beaker<br>烧杯</td>
-        <td class="fn-cell">盛装较大量化学品</td>
+        <td class="fn-cell">To hold larger amount of chemicals<br>盛装较大量化学品</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M16 6 L16 16 L6 34 L34 34 L24 16 L24 6" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="14" y1="6" x2="26" y2="6" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M17 6 L17 15 L7 32 L33 32 L23 15 L23 6" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="15" y1="6" x2="25" y2="6" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
         <td class="name-cell">Conical flask<br>锥形瓶</td>
-        <td class="fn-cell">盛装较大量化学品</td>
+        <td class="fn-cell">To hold larger amount of chemicals<br>盛装较大量化学品</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M17 6 L17 16 Q10 22 10 28 A10 8 0 0 0 30 28 Q30 22 23 16 L23 6" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="15" y1="6" x2="25" y2="6" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="18" y1="4" x2="18" y2="14" stroke="#3d3d3a" stroke-width="1.3"/><line x1="22" y1="4" x2="22" y2="14" stroke="#3d3d3a" stroke-width="1.3"/><circle cx="20" cy="24" r="11" fill="none" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
         <td class="name-cell">Flat-bottom flask<br>平底烧瓶</td>
-        <td class="fn-cell">盛装较大量化学品</td>
+        <td class="fn-cell">To hold larger amount of chemicals<br>盛装较大量化学品</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="14" y="4" width="12" height="32" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="14" y1="12" x2="18" y2="12" stroke="#3d3d3a" stroke-width="1"/><line x1="14" y1="18" x2="18" y2="18" stroke="#3d3d3a" stroke-width="1"/><line x1="14" y1="24" x2="18" y2="24" stroke="#3d3d3a" stroke-width="1"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="15" y="4" width="10" height="30" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><path d="M13 34 L13 37 L27 37 L27 34" stroke="#3d3d3a" stroke-width="1.3" fill="none"/><line x1="15" y1="12" x2="19" y2="12" stroke="#3d3d3a" stroke-width="0.9"/><line x1="15" y1="20" x2="19" y2="20" stroke="#3d3d3a" stroke-width="0.9"/><line x1="15" y1="28" x2="19" y2="28" stroke="#3d3d3a" stroke-width="0.9"/></svg></td>
         <td class="name-cell">Measuring cylinder<br>量筒</td>
-        <td class="fn-cell">量取液体体积</td>
+        <td class="fn-cell">To measure volume of liquid<br>量取液体体积</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="16" y="2" width="8" height="30" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><path d="M16 32 L14 38 L26 38 L24 32" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="16" y1="10" x2="20" y2="10" stroke="#3d3d3a" stroke-width="1"/><line x1="16" y1="18" x2="20" y2="18" stroke="#3d3d3a" stroke-width="1"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="20" y1="2" x2="20" y2="24" stroke="#3d3d3a" stroke-width="1.3"/><rect x="14" y="24" width="12" height="5" fill="none" stroke="#3d3d3a" stroke-width="1.1"/><path d="M20 29 L20 36 L16 40 M20 36 L24 40" stroke="#3d3d3a" stroke-width="1.1" fill="none"/><line x1="14" y1="8" x2="18" y2="8" stroke="#3d3d3a" stroke-width="0.8"/><line x1="14" y1="14" x2="18" y2="14" stroke="#3d3d3a" stroke-width="0.8"/></svg></td>
         <td class="name-cell">Burette<br>滴定管</td>
-        <td class="fn-cell">精准量取液体体积</td>
+        <td class="fn-cell">To measure volume of liquid accurately<br>精准量取液体体积</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><ellipse cx="20" cy="12" rx="6" ry="8" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="20" y1="20" x2="20" y2="34" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="20" y1="2" x2="20" y2="12" stroke="#3d3d3a" stroke-width="1.3"/><ellipse cx="20" cy="18" rx="6" ry="7" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="20" y1="25" x2="20" y2="38" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
         <td class="name-cell">Pipette<br>移液管</td>
-        <td class="fn-cell">量取固定体积液体</td>
+        <td class="fn-cell">To measure a fixed volume of liquid<br>量取固定体积液体</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="20" y1="6" x2="10" y2="30" stroke="#3d3d3a" stroke-width="1.2"/><line x1="20" y1="6" x2="30" y2="30" stroke="#3d3d3a" stroke-width="1.2"/><line x1="20" y1="6" x2="20" y2="30" stroke="#3d3d3a" stroke-width="1.2"/><line x1="8" y1="32" x2="32" y2="32" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="20" y1="4" x2="9" y2="32" stroke="#3d3d3a" stroke-width="1.3"/><line x1="20" y1="4" x2="31" y2="32" stroke="#3d3d3a" stroke-width="1.3"/><line x1="6" y1="32" x2="34" y2="32" stroke="#3d3d3a" stroke-width="1.3"/><circle cx="20" cy="20" r="9" fill="none" stroke="#3d3d3a" stroke-width="1"/></svg></td>
         <td class="name-cell">Tripod stand<br>三脚架</td>
-        <td class="fn-cell">加热时支撑器材</td>
+        <td class="fn-cell">To support apparatus during heating<br>加热时支撑器材</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="8" y="16" width="24" height="10" fill="none" stroke="#3d3d3a" stroke-width="1"/><line x1="11" y1="16" x2="11" y2="26" stroke="#3d3d3a" stroke-width="0.6"/><line x1="14" y1="16" x2="14" y2="26" stroke="#3d3d3a" stroke-width="0.6"/><line x1="17" y1="16" x2="17" y2="26" stroke="#3d3d3a" stroke-width="0.6"/><line x1="20" y1="16" x2="20" y2="26" stroke="#3d3d3a" stroke-width="0.6"/><line x1="23" y1="16" x2="23" y2="26" stroke="#3d3d3a" stroke-width="0.6"/><line x1="26" y1="16" x2="26" y2="26" stroke="#3d3d3a" stroke-width="0.6"/><line x1="29" y1="16" x2="29" y2="26" stroke="#3d3d3a" stroke-width="0.6"/><line x1="8" y1="19" x2="32" y2="19" stroke="#3d3d3a" stroke-width="0.6"/><line x1="8" y1="22" x2="32" y2="22" stroke="#3d3d3a" stroke-width="0.6"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="6" y="16" width="28" height="10" fill="none" stroke="#3d3d3a" stroke-width="1"/><line x1="10" y1="16" x2="10" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="14" y1="16" x2="14" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="18" y1="16" x2="18" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="22" y1="16" x2="22" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="26" y1="16" x2="26" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="30" y1="16" x2="30" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="6" y1="19" x2="34" y2="19" stroke="#3d3d3a" stroke-width="0.5"/><line x1="6" y1="23" x2="34" y2="23" stroke="#3d3d3a" stroke-width="0.5"/><ellipse cx="20" cy="21" rx="8" ry="4" fill="#fff" stroke="#3d3d3a" stroke-width="1"/></svg></td>
         <td class="name-cell">Wire gauze<br>石棉网</td>
-        <td class="fn-cell">加热时平均分散热量</td>
+        <td class="fn-cell">To spread heat evenly during heating<br>加热时平均分散热量</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M8 8 L32 8 L22 26 L22 34 L18 34 L18 26 Z" fill="none" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M8 6 L32 6 L21 22 L21 34 L19 34 L19 22 Z" fill="none" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
         <td class="name-cell">Filter funnel<br>漏斗</td>
-        <td class="fn-cell">过滤不溶物</td>
+        <td class="fn-cell">To filter insoluble solids from mixtures<br>过滤不溶物</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="12" y="8" width="16" height="26" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><rect x="10" y="4" width="20" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="11" y="6" width="18" height="30" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><rect x="13" y="4" width="14" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.1"/></svg></td>
         <td class="name-cell">Gas jar<br>集气瓶</td>
-        <td class="fn-cell">收集气体</td>
+        <td class="fn-cell">To contain gas<br>收集气体</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="12" y1="4" x2="12" y2="36" stroke="#3d3d3a" stroke-width="1.2"/><rect x="6" y="34" width="14" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><rect x="12" y="14" width="10" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="24" y1="16" x2="24" y2="20" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
-        <td class="name-cell">Retort stand<br>铁架台</td>
-        <td class="fn-cell">固定或支撑器材</td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="6" y="34" width="16" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="12" y1="4" x2="12" y2="34" stroke="#3d3d3a" stroke-width="1.2"/><rect x="12" y="14" width="12" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.1"/><line x1="24" y1="16" x2="24" y2="24" stroke="#3d3d3a" stroke-width="1.1"/></svg></td>
+        <td class="name-cell">Retort stand with clamp<br>铁架台</td>
+        <td class="fn-cell">To hold or support apparatus<br>固定或支撑器材</td>
       </tr>
       <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M6 18 Q20 30 34 18 L34 22 Q20 34 6 22 Z" fill="none" stroke="#3d3d3a" stroke-width="1.2"/></svg></td>
+        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M8 18 Q20 30 32 18 L32 21 Q20 32 8 21 Z" fill="none" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
         <td class="name-cell">Evaporating dish<br>蒸发皿</td>
-        <td class="fn-cell">蒸发多余溶剂</td>
+        <td class="fn-cell">To evaporate excess solvent<br>蒸发多余溶剂</td>
       </tr>
     </table>
   </div>
@@ -168,7 +169,7 @@
           <circle cx="57" cy="56" r="3" fill="#2a5fd4"/>
           <circle cx="55" cy="53" r="3" fill="#2a5fd4"/>
         </svg>
-        <div class="img-caption">Accuracy 准确度<br>close to true value<br>结果接近真实答案</div>
+        <div class="img-caption">Accuracy 准确度<br>close to true value</div>
       </div>
       <div class="img-cell">
         <svg width="100%" viewBox="0 0 110 110" role="img"><title>Consistency</title>
@@ -180,7 +181,7 @@
           <circle cx="84" cy="34" r="3" fill="#2a5fd4"/>
           <circle cx="82" cy="28" r="3" fill="#2a5fd4"/>
         </svg>
-        <div class="img-caption">Consistency 一致性<br>close to each other<br>结果彼此接近，不一定准</div>
+        <div class="img-caption">Consistency 一致性<br>close to each other</div>
       </div>
       <div class="img-cell">
         <svg width="100%" viewBox="0 0 110 130" role="img"><title>Sensitivity</title>
@@ -202,31 +203,31 @@
           <path d="M38 55 L56 55" stroke="#d85a30" stroke-width="1.5" marker-end="url(#arr2)"/>
           <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d85a30"/></marker></defs>
         </svg>
-        <div class="img-caption">Sensitivity 灵敏度<br>finer scale = more sensitive<br>刻度越密，测出的差异越小</div>
+        <div class="img-caption">Sensitivity 灵敏度<br>finer scale = more sensitive</div>
       </div>
     </div>
 
     <div style="font-size:13px; font-weight:600; margin-top:14px;">Parallax error 视差</div>
-    <svg width="100%" viewBox="0 0 300 170" role="img" style="margin-top:8px;"><title>Parallax error</title>
-      <path d="M110 40 L110 130 L190 130 L190 40" fill="none" stroke="#c7c5ba" stroke-width="1"/>
-      <line x1="110" y1="70" x2="190" y2="70" stroke="#d43b2e" stroke-width="1.2"/>
-      <text x="150" y="66" font-size="10" text-anchor="middle" fill="#d43b2e">liquid level</text>
+    <svg width="100%" viewBox="0 0 320 160" role="img" style="margin-top:8px;"><title>Parallax error</title>
+      <path d="M140 30 L140 130 L200 130 L200 30" fill="#eef4fa" stroke="#c7c5ba" stroke-width="1"/>
+      <line x1="140" y1="70" x2="200" y2="70" stroke="#d43b2e" stroke-width="1.5"/>
+      <text x="170" y="24" font-size="10" text-anchor="middle" fill="#d43b2e">scale reading</text>
 
-      <path d="M75 55 Q80 58 78 63" fill="none" stroke="#1a1a18" stroke-width="1.2"/>
-      <path d="M108 70 L80 58" stroke="#d43b2e" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="68" y="50" font-size="16">✗</text>
+      <text x="245" y="42" font-size="18">👁</text>
+      <text x="270" y="42" font-size="16" fill="#d43b2e">✗</text>
+      <path d="M200 70 L245 42" stroke="#8a8983" stroke-width="0.8" stroke-dasharray="3,2"/>
 
-      <path d="M75 65 Q80 68 78 73" fill="none" stroke="#1a1a18" stroke-width="1.2"/>
-      <path d="M108 70 L80 68" stroke="#2a5fd4" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="68" y="88" font-size="16">✓</text>
+      <text x="245" y="82" font-size="18">👁</text>
+      <text x="270" y="82" font-size="16" fill="#2a5fd4">✓</text>
+      <path d="M200 70 L245 78" stroke="#2a5fd4" stroke-width="0.8" stroke-dasharray="3,2"/>
 
-      <path d="M75 80 Q80 83 78 88" fill="none" stroke="#1a1a18" stroke-width="1.2"/>
-      <path d="M108 70 L80 83" stroke="#d43b2e" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="68" y="105" font-size="16">✗</text>
+      <text x="245" y="122" font-size="18">👁</text>
+      <text x="270" y="122" font-size="16" fill="#d43b2e">✗</text>
+      <path d="M200 70 L245 118" stroke="#8a8983" stroke-width="0.8" stroke-dasharray="3,2"/>
     </svg>
-    <div style="font-size:12px; color:#6b6a63; text-align:center; margin-top:4px;">眼睛要跟刻度线打平视线（perpendicular），从上或从下看都会有视差</div>
+    <div style="font-size:12px; color:#6b6a63; text-align:center; margin-top:4px;">Eyes must be perpendicular (level) to the reading — 眼睛要跟刻度打平视线</div>
 
-    <div style="font-size:13px; color:#4a4943; line-height:1.7; margin-top:14px;"><strong>Zero error 零误差</strong>（巴刹电子秤还没放东西已经显示数字，就是这个）：</div>
+    <div style="font-size:13px; color:#4a4943; line-height:1.7; margin-top:14px;"><strong>Zero error 零误差</strong>（巴刹电子秤还没放东西已经显示数字，就是这个意思）：</div>
     <div class="img-row" style="margin-top:8px;">
       <div class="img-cell">
         <svg width="100%" viewBox="0 0 100 70" role="img"><title>No zero error</title>
@@ -235,7 +236,7 @@
           <line x1="30" y1="40" x2="30" y2="55" stroke="#2a5fd4" stroke-width="1.5"/>
           <text x="30" y="65" font-size="9" text-anchor="middle" fill="#2a5fd4">0对齐</text>
         </svg>
-        <div class="img-caption">No zero error<br>没有零误差</div>
+        <div class="img-caption">No zero error</div>
       </div>
       <div class="img-cell">
         <svg width="100%" viewBox="0 0 100 70" role="img"><title>Positive zero error</title>
@@ -260,54 +261,156 @@
   </div>
 
   <div class="section">
-    <h2>4. Vernier Caliper & Screw Gauge <span class="weight-tag">读数题必考</span></h2>
+    <h2>4. Vernier Caliper & Screw Gauge <span class="weight-tag">喜欢考</span></h2>
     <div class="eng">游标卡尺与千分尺</div>
+    <p style="font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px;">⚠ 图片仅供参考，考试如果需要画仪器，请以课本为准</p>
     <p style="font-size:13px; color:#4a4943; line-height:1.7; margin:0 0 10px;">Vernier caliper 精确度 0.01 cm；Screw gauge 精确度 0.01 mm，测更小的物体更准确。</p>
 
-    <div style="font-size:13px; font-weight:600; margin-bottom:6px;">Vernier caliper 游标卡尺</div>
-    <svg width="100%" viewBox="0 0 380 150" role="img"><title>Vernier caliper</title>
-      <rect x="20" y="60" width="330" height="14" fill="none" stroke="#3d3d3a" stroke-width="1"/>
-      <path d="M35 60 L35 30 L45 30 L45 60" fill="none" stroke="#3d3d3a" stroke-width="1.2"/>
-      <path d="M200 74 L200 104 L190 104 L190 74" fill="none" stroke="#3d3d3a" stroke-width="1.2"/>
-      <circle cx="118" cy="67" r="22" fill="none" stroke="#c7c5ba" stroke-width="1.2"/>
-      <line x1="60" y1="60" x2="60" y2="66" stroke="#6b6a63" stroke-width="0.8"/>
-      <line x1="80" y1="60" x2="80" y2="66" stroke="#6b6a63" stroke-width="0.8"/>
-      <line x1="100" y1="60" x2="100" y2="66" stroke="#6b6a63" stroke-width="0.8"/>
-      <text x="60" y="55" font-size="9" text-anchor="middle" fill="#6b6a63">2</text>
-      <text x="80" y="55" font-size="9" text-anchor="middle" fill="#6b6a63">3</text>
-      <text x="100" y="55" font-size="9" text-anchor="middle" fill="#6b6a63">4</text>
-      <text x="140" y="55" font-size="10" text-anchor="middle" fill="#d43b2e">main scale</text>
-      <line x1="175" y1="74" x2="175" y2="80" stroke="#6b6a63" stroke-width="0.6"/>
-      <text x="175" y="95" font-size="9" text-anchor="middle" fill="#6b6a63">0</text>
-      <line x1="200" y1="74" x2="200" y2="80" stroke="#2a5fd4" stroke-width="1"/>
-      <text x="200" y="95" font-size="9" text-anchor="middle" fill="#2a5fd4">5</text>
-      <text x="230" y="95" font-size="10" text-anchor="middle" fill="#2a5fd4">vernier scale</text>
-    </svg>
-    <div class="prefix-line" style="margin-top:8px;">Reading = Main scale + (对齐格数 × 0.01)<br>= 3.40 + 0.05 = 3.45 cm</div>
+    <div style="font-size:13px; font-weight:600; margin-bottom:6px;">Vernier caliper 游标卡尺 — 整体外观</div>
+    <svg width="100%" viewBox="0 0 380 190" role="img"><title>Vernier caliper overview with zoomed reading window</title>
+      <!-- main body -->
+      <rect x="20" y="60" width="180" height="14" rx="2" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
+      <!-- fixed jaw (upper, left, taller) -->
+      <path d="M35 60 L35 25 Q35 20 40 20 L46 20 Q51 20 51 25 L51 60" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
+      <!-- sliding block -->
+      <rect x="95" y="60" width="30" height="26" fill="#d3cfc2" stroke="#3d3d3a" stroke-width="1.2"/>
+      <!-- sliding jaw (upper) -->
+      <path d="M100 60 L100 25 Q100 20 105 20 L111 20 Q116 20 116 25 L116 60" fill="#d3cfc2" stroke="#3d3d3a" stroke-width="1.2"/>
+      <!-- object gripped between jaws -->
+      <circle cx="75" cy="38" r="16" fill="#f0dcc0" stroke="#c7c5ba" stroke-width="1"/>
+      <!-- main scale ticks on body -->
+      <g stroke="#3d3d3a" stroke-width="0.6">
+        <line x1="130" y1="60" x2="130" y2="65"/><line x1="150" y1="60" x2="150" y2="65"/>
+        <line x1="170" y1="60" x2="170" y2="65"/>
+      </g>
+      <text x="130" y="57" font-size="8" text-anchor="middle" fill="#6b6a63">4</text>
+      <text x="150" y="57" font-size="8" text-anchor="middle" fill="#6b6a63">5</text>
+      <text x="170" y="57" font-size="8" text-anchor="middle" fill="#6b6a63">6</text>
+      <text x="60" y="12" font-size="9" text-anchor="middle" fill="#6b6a63">Fixed jaw</text>
+      <text x="108" y="12" font-size="9" text-anchor="middle" fill="#6b6a63">Sliding jaw</text>
 
-    <div style="font-size:13px; font-weight:600; margin:16px 0 6px;">Screw gauge 千分尺</div>
-    <svg width="100%" viewBox="0 0 380 130" role="img"><title>Screw gauge</title>
-      <path d="M20 60 L20 90 L110 90 L110 100 L130 100 L130 50 L110 50 L110 60 Z" fill="none" stroke="#3d3d3a" stroke-width="1.2"/>
-      <line x1="130" y1="55" x2="200" y2="55" stroke="#6b6a63" stroke-width="1"/>
-      <line x1="130" y1="85" x2="200" y2="85" stroke="#6b6a63" stroke-width="1"/>
-      <rect x="200" y="45" width="40" height="50" fill="none" stroke="#3d3d3a" stroke-width="1.2"/>
-      <line x1="150" y1="55" x2="150" y2="60" stroke="#6b6a63" stroke-width="0.7"/>
-      <line x1="150" y1="85" x2="150" y2="80" stroke="#6b6a63" stroke-width="0.7"/>
-      <text x="150" y="45" font-size="9" text-anchor="middle" fill="#6b6a63">sleeve scale 5.5mm</text>
-      <line x1="220" y1="45" x2="220" y2="95" stroke="#2a5fd4" stroke-width="1"/>
-      <text x="220" y="108" font-size="9" text-anchor="middle" fill="#2a5fd4">thimble scale 28</text>
+      <!-- dashed callout lines to zoom box -->
+      <line x1="125" y1="62" x2="230" y2="95" stroke="#8a8983" stroke-width="0.6" stroke-dasharray="2,2"/>
+      <line x1="125" y1="86" x2="230" y2="170" stroke="#8a8983" stroke-width="0.6" stroke-dasharray="2,2"/>
+
+      <!-- zoom box -->
+      <rect x="230" y="95" width="130" height="75" fill="#fff" stroke="#3d3d3a" stroke-width="1.2"/>
+      <text x="295" y="110" font-size="9" text-anchor="middle" fill="#3d3d3a" font-weight="600">zoomed reading window</text>
+
+      <line x1="245" y1="130" x2="345" y2="130" stroke="#1a1a18" stroke-width="1"/>
+      <line x1="245" y1="123" x2="245" y2="130" stroke="#1a1a18" stroke-width="0.7"/>
+      <line x1="295" y1="120" x2="295" y2="130" stroke="#d43b2e" stroke-width="1"/>
+      <line x1="345" y1="123" x2="345" y2="130" stroke="#1a1a18" stroke-width="0.7"/>
+      <text x="245" y="118" font-size="8" text-anchor="middle" fill="#6b6a63">4</text>
+      <text x="295" y="116" font-size="8" text-anchor="middle" fill="#d43b2e">5</text>
+      <text x="345" y="118" font-size="8" text-anchor="middle" fill="#6b6a63">6</text>
+
+      <line x1="245" y1="142" x2="345" y2="142" stroke="#2a5fd4" stroke-width="1"/>
+      <line x1="245" y1="142" x2="245" y2="148" stroke="#2a5fd4" stroke-width="0.6"/>
+      <line x1="280" y1="142" x2="280" y2="153" stroke="#d43b2e" stroke-width="1"/>
+      <line x1="345" y1="142" x2="345" y2="148" stroke="#2a5fd4" stroke-width="0.6"/>
+      <text x="245" y="160" font-size="8" text-anchor="middle" fill="#2a5fd4">0</text>
+      <text x="280" y="163" font-size="8" text-anchor="middle" fill="#d43b2e">6</text>
+      <text x="345" y="160" font-size="8" text-anchor="middle" fill="#2a5fd4">10</text>
     </svg>
-    <div class="prefix-line" style="margin-top:8px;">Reading = Sleeve scale + (Thimble scale × 0.01)<br>= 5.5 + 0.28 = 5.78 mm</div>
+    <p style="font-size:11px; color:#8a8983; text-align:center; margin-top:2px;">考题通常只会放大显示读数窗口那一块（如下面Step 1和Step 2的做法）</p>
+
+    <div style="font-size:13px; font-weight:600; margin:16px 0 6px;">Vernier caliper 游标卡尺 — 怎么读数</div>
+    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">游标卡尺有两排刻度：上面是Main scale（固定），下面是Vernier scale（会滑动）。读数分两步：</p>
+
+    <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
+      <div style="font-size:12px; font-weight:600; color:#3d3d3a; margin-bottom:6px;">Step 1 — 看Main scale，游标尺的"0"停在哪两个数字之间</div>
+      <svg width="100%" viewBox="0 0 340 50" role="img"><title>Main scale reading example</title>
+        <line x1="10" y1="30" x2="330" y2="30" stroke="#1a1a18" stroke-width="1.2"/>
+        <g stroke="#1a1a18" stroke-width="1">
+          <line x1="10" y1="20" x2="10" y2="30"/><line x1="90" y1="20" x2="90" y2="30"/>
+          <line x1="170" y1="20" x2="170" y2="30"/><line x1="250" y1="20" x2="250" y2="30"/>
+          <line x1="330" y1="20" x2="330" y2="30"/>
+        </g>
+        <text x="10" y="15" font-size="11" text-anchor="middle">0</text>
+        <text x="90" y="15" font-size="11" text-anchor="middle">1</text>
+        <text x="170" y="15" font-size="11" text-anchor="middle" fill="#d43b2e">2</text>
+        <text x="250" y="15" font-size="11" text-anchor="middle">3</text>
+        <text x="330" y="15" font-size="11" text-anchor="middle">4</text>
+        <line x1="196" y1="30" x2="196" y2="42" stroke="#2a5fd4" stroke-width="1.5"/>
+        <polygon points="196,42 191,48 201,48" fill="#2a5fd4"/>
+      </svg>
+      <p style="font-size:12px; color:#4a4943; margin:6px 0 0; text-align:center;">游标尺的"0"（蓝色箭头）停在 <strong>2 和 3 之间</strong> → Main scale reading = <strong>2 cm 多一点</strong>（精确的部分交给Step 2）</p>
+    </div>
+
+    <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
+      <div style="font-size:12px; font-weight:600; color:#3d3d3a; margin-bottom:6px;">Step 2 — 看Vernier scale，哪一格跟Main scale「对得最齐」</div>
+      <svg width="100%" viewBox="0 0 340 50" role="img"><title>Vernier scale reading example</title>
+        <line x1="10" y1="20" x2="330" y2="20" stroke="#2a5fd4" stroke-width="1.2"/>
+        <g stroke="#2a5fd4" stroke-width="0.8">
+          <line x1="10" y1="20" x2="10" y2="28"/><line x1="42" y1="20" x2="42" y2="28"/>
+          <line x1="74" y1="20" x2="74" y2="28"/><line x1="106" y1="20" x2="106" y2="28"/>
+          <line x1="138" y1="20" x2="138" y2="28"/><line x1="170" y1="20" x2="170" y2="34"/>
+          <line x1="202" y1="20" x2="202" y2="28"/><line x1="234" y1="20" x2="234" y2="28"/>
+          <line x1="266" y1="20" x2="266" y2="28"/><line x1="298" y1="20" x2="298" y2="28"/>
+          <line x1="330" y1="20" x2="330" y2="28"/>
+        </g>
+        <text x="10" y="42" font-size="10" text-anchor="middle" fill="#2a5fd4">0</text>
+        <text x="170" y="42" font-size="10" text-anchor="middle" fill="#d43b2e">5</text>
+        <text x="330" y="42" font-size="10" text-anchor="middle" fill="#2a5fd4">10</text>
+        <line x1="170" y1="8" x2="170" y2="18" stroke="#d43b2e" stroke-width="1.5"/>
+        <polygon points="170,8 165,2 175,2" fill="#d43b2e"/>
+      </svg>
+      <p style="font-size:12px; color:#4a4943; margin:6px 0 0; text-align:center;">第 <strong>5</strong> 格（红色箭头）跟Main scale对得最齐 → Vernier reading = 5 × 0.01 = <strong>0.05 cm</strong></p>
+    </div>
+
+    <div class="prefix-line">Total reading = Main scale + Vernier scale<br>= 2.20 + 0.05 = <strong>2.25 cm</strong></div>
 
     <div class="quiz-box">
-      <div class="qtitle">🎯 练习：读出上面这个游标卡尺的读数</div>
+      <div class="qtitle">🎯 Quiz: Main scale's "0" is between 3 and 4. Vernier's "7" lines up. What is the reading?</div>
       <div id="q-vernier"></div>
       <p id="fb-vernier" class="qfb"></p>
     </div>
+
+    <div style="font-size:13px; font-weight:600; margin:20px 0 6px;">Screw gauge (Micrometer) 千分尺 — 怎么读数</div>
+    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">同样分两步：先看Sleeve（主尺，横的），再看Thimble（旋转刻度筒）对齐在哪一格。</p>
+
+    <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
+      <div style="font-size:12px; font-weight:600; color:#3d3d3a; margin-bottom:6px;">Step 1 — Sleeve主尺露出到哪一条线（每格0.5mm）</div>
+      <svg width="100%" viewBox="0 0 340 50" role="img"><title>Sleeve scale reading example</title>
+        <line x1="10" y1="30" x2="330" y2="30" stroke="#1a1a18" stroke-width="1.2"/>
+        <g stroke="#1a1a18" stroke-width="1">
+          <line x1="10" y1="22" x2="10" y2="30"/><line x1="90" y1="22" x2="90" y2="30"/>
+          <line x1="170" y1="22" x2="170" y2="30"/><line x1="250" y1="15" x2="250" y2="30"/>
+          <line x1="330" y1="22" x2="330" y2="30"/>
+        </g>
+        <text x="10" y="18" font-size="11" text-anchor="middle">2</text>
+        <text x="90" y="18" font-size="11" text-anchor="middle">3</text>
+        <text x="170" y="18" font-size="11" text-anchor="middle">3.5</text>
+        <text x="250" y="12" font-size="11" text-anchor="middle" fill="#d43b2e">4</text>
+      </svg>
+      <p style="font-size:12px; color:#4a4943; margin:6px 0 0; text-align:center;">刻度露出到 <strong>3.5 mm</strong> 那条线 → Sleeve reading = <strong>3.50 mm</strong></p>
+    </div>
+
+    <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
+      <div style="font-size:12px; font-weight:600; color:#3d3d3a; margin-bottom:6px;">Step 2 — Thimble刻度筒，哪一格跟中线对齐（每格0.01mm）</div>
+      <svg width="100%" viewBox="0 0 340 60" role="img"><title>Thimble scale reading example</title>
+        <line x1="170" y1="5" x2="170" y2="55" stroke="#d43b2e" stroke-width="1" stroke-dasharray="3,2"/>
+        <text x="170" y="60" font-size="9" text-anchor="middle" fill="#d43b2e">reference line</text>
+        <line x1="10" y1="30" x2="330" y2="30" stroke="#2a5fd4" stroke-width="1.2"/>
+        <g stroke="#2a5fd4" stroke-width="0.8">
+          <line x1="10" y1="22" x2="10" y2="30"/><line x1="90" y1="22" x2="90" y2="30"/>
+          <line x1="170" y1="15" x2="170" y2="30"/><line x1="250" y1="22" x2="250" y2="30"/>
+          <line x1="330" y1="22" x2="330" y2="30"/>
+        </g>
+        <text x="10" y="18" font-size="10" text-anchor="middle" fill="#2a5fd4">30</text>
+        <text x="90" y="18" font-size="10" text-anchor="middle" fill="#2a5fd4">35</text>
+        <text x="170" y="12" font-size="10" text-anchor="middle" fill="#d43b2e">38</text>
+        <text x="250" y="18" font-size="10" text-anchor="middle" fill="#2a5fd4">40</text>
+      </svg>
+      <p style="font-size:12px; color:#4a4943; margin:6px 0 0; text-align:center;"><strong>38</strong> 这格跟中线对齐 → Thimble reading = 38 × 0.01 = <strong>0.38 mm</strong></p>
+    </div>
+
+    <div class="prefix-line">Total reading = Sleeve + Thimble<br>= 3.50 + 0.38 = <strong>3.88 mm</strong></div>
   </div>
 
   <div class="section">
-    <h2>5. Density <span class="weight-tag">公式题</span></h2>
+    <h2>5. Density</h2>
     <div class="eng">密度</div>
     <div style="font-size:14px; margin-bottom:10px;">Density = Mass ÷ Volume　（ρ = m/V）　unit: kg/m³ or g/cm³</div>
     <svg width="100%" viewBox="0 0 380 190" role="img"><title>Floating and sinking</title>
@@ -315,90 +418,100 @@
       <rect x="21" y="60" width="148" height="99" fill="#cfe4f5"/>
       <rect x="35" y="50" width="45" height="18" rx="3" fill="#b8875a"/>
       <circle cx="130" cy="140" r="14" fill="#6b6a63"/>
-      <text x="82" y="26" font-size="11" fill="#6b6a63">wood block 木块</text>
-      <text x="20" y="100" font-size="11" fill="#6b6a63">metal ball 铁球</text>
+      <text x="82" y="26" font-size="11" fill="#6b6a63">wood block</text>
+      <text x="20" y="100" font-size="11" fill="#6b6a63">metal ball</text>
       <text x="95" y="180" font-size="11" text-anchor="middle" fill="#8a8983">density &lt; water → float</text>
 
       <rect x="220" y="30" width="150" height="130" rx="6" fill="none" stroke="#c7c5ba" stroke-width="1"/>
       <rect x="221" y="60" width="148" height="99" fill="#cfe4f5"/>
       <path d="M 240 62 L 350 62 L 340 78 L 250 78 Z" fill="#6b6a63"/>
       <text x="295" y="180" font-size="11" text-anchor="middle" fill="#8a8983">same metal, boat shape → float</text>
-      <text x="295" y="55" font-size="11" text-anchor="middle" fill="#6b6a63">metal boat 铁船</text>
+      <text x="295" y="55" font-size="11" text-anchor="middle" fill="#6b6a63">metal boat</text>
     </svg>
     <div style="font-size:13px; color:#4a4943; margin-top:6px;">同样是铁，形状改变了体积（不是密度）→ 船能浮</div>
 
     <div class="quiz-box">
-      <div class="qtitle">🎯 练习：一块石头质量50g，体积20cm³，密度是多少？</div>
+      <div class="qtitle">🎯 Quiz: A stone has mass 50g and volume 20cm³. What is its density?</div>
       <div id="q-density"></div>
       <p id="fb-density" class="qfb"></p>
     </div>
   </div>
 
   <div class="section">
-    <h2>6. Scientific Investigation Steps <span class="weight-tag">排序题常考</span></h2>
+    <h2>6. Scientific Investigation Steps</h2>
     <div class="eng">科学探究六步骤</div>
     <div class="thief-intro">班上的零食钱不见了，全班都是嫌疑人。点开下面每一步，看看要怎么找出谁看起来最像贼。</div>
     <div id="steps"></div>
   </div>
 
   <div class="section">
-    <h2>7. Hazard Symbols <span class="weight-tag">不太考</span></h2>
+    <h2>7. Hazard Symbols</h2>
     <div class="eng">安全标志</div>
+    <p style="font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px;">⚠ 图片仅供参考，考试如果需要画标志，请以课本为准</p>
     <div class="hazard-row">
       <div class="hazard-cell">
-        <svg width="40" height="40" viewBox="0 0 48 48"><title>Flammable</title>
-          <rect x="6" y="6" width="36" height="36" fill="#f5891f" transform="rotate(45 24 24)"/>
-          <path d="M24 16 C20 24 28 24 24 32 C30 30 32 20 24 16 Z" fill="#1a1a18"/>
+        <svg width="44" height="44" viewBox="0 0 48 48"><title>Flammable</title>
+          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
+          <path d="M24 12 C18 22 29 23 24 34 C32 30 33 18 24 12 Z" fill="#1a1a18"/>
         </svg>
         <div class="img-caption">Flammable<br>易燃</div>
       </div>
       <div class="hazard-cell">
-        <svg width="40" height="40" viewBox="0 0 48 48"><title>Toxic</title>
-          <rect x="6" y="6" width="36" height="36" fill="#f5891f" transform="rotate(45 24 24)"/>
-          <circle cx="24" cy="22" r="7" fill="none" stroke="#1a1a18" stroke-width="2"/>
-          <circle cx="21" cy="20" r="1.3" fill="#1a1a18"/>
-          <circle cx="27" cy="20" r="1.3" fill="#1a1a18"/>
-          <line x1="19" y1="27" x2="29" y2="27" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="18" y1="32" x2="30" y2="32" stroke="#1a1a18" stroke-width="1.5"/>
+        <svg width="44" height="44" viewBox="0 0 48 48"><title>Toxic</title>
+          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
+          <ellipse cx="24" cy="19" rx="8" ry="9" fill="#1a1a18"/>
+          <ellipse cx="21" cy="17" rx="2.2" ry="2.8" fill="#fff"/>
+          <ellipse cx="27" cy="17" rx="2.2" ry="2.8" fill="#fff"/>
+          <path d="M22.5 22 L21.5 25 L24 24 L26.5 25 L25.5 22 Z" fill="#fff"/>
+          <path d="M13 33 L20 27 L20 30 L28 30 L28 27 L35 33 L28 30 L28 33 L20 33 L20 30 Z" fill="#1a1a18"/>
         </svg>
-        <div class="img-caption">Poison/toxic<br>有毒</div>
+        <div class="img-caption">Poison/Toxic<br>有毒</div>
       </div>
       <div class="hazard-cell">
-        <svg width="40" height="40" viewBox="0 0 48 48"><title>Corrosive</title>
-          <rect x="6" y="6" width="36" height="36" fill="#f5891f" transform="rotate(45 24 24)"/>
-          <rect x="17" y="12" width="7" height="10" rx="1" fill="#1a1a18"/>
-          <path d="M20 22 L18 30" stroke="#1a1a18" stroke-width="1.8"/>
-          <path d="M18 30 Q15 32 16 35" fill="none" stroke="#1a1a18" stroke-width="1.5"/>
+        <svg width="44" height="44" viewBox="0 0 48 48"><title>Corrosive</title>
+          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
+          <path d="M15 9 L26 11 Q28 11.5 27.5 13.5 Q27 15 25 14.5 L15 12.5 Z" fill="none" stroke="#1a1a18" stroke-width="1.3"/>
+          <path d="M18 13 L15 24" stroke="#1a1a18" stroke-width="1.6" fill="none"/>
+          <path d="M10 26 L18 26" stroke="#1a1a18" stroke-width="1.3"/>
+          <path d="M8 26 Q6 29 8 32 Q10 35 8 38" fill="none" stroke="#1a1a18" stroke-width="1.6"/>
+          <path d="M13 26 Q11 29 13 32" fill="none" stroke="#1a1a18" stroke-width="1.4"/>
+          <path d="M23 14 L30 24" stroke="#1a1a18" stroke-width="1.6" fill="none"/>
+          <path d="M26 27 L35 27 L35 34 L26 34 Z" fill="none" stroke="#1a1a18" stroke-width="1.6"/>
+          <path d="M28 34 Q27 37 29 39" fill="none" stroke="#1a1a18" stroke-width="1.3"/>
+          <path d="M32 34 Q31 37 33 39" fill="none" stroke="#1a1a18" stroke-width="1.3"/>
         </svg>
         <div class="img-caption">Corrosive<br>腐蚀性</div>
       </div>
       <div class="hazard-cell">
-        <svg width="40" height="40" viewBox="0 0 48 48"><title>Irritant</title>
-          <rect x="6" y="6" width="36" height="36" fill="#f5891f" transform="rotate(45 24 24)"/>
-          <line x1="17" y1="17" x2="31" y2="31" stroke="#1a1a18" stroke-width="2.5"/>
-          <line x1="31" y1="17" x2="17" y2="31" stroke="#1a1a18" stroke-width="2.5"/>
+        <svg width="44" height="44" viewBox="0 0 48 48"><title>Irritant</title>
+          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
+          <path d="M22 12 Q22 10 24 10 Q26 10 26 12 L25 27 Q25 29 24 29 Q23 29 23 27 Z" fill="#1a1a18"/>
+          <circle cx="24" cy="34" r="3" fill="#1a1a18"/>
         </svg>
         <div class="img-caption">Irritant<br>刺激性</div>
       </div>
       <div class="hazard-cell">
-        <svg width="40" height="40" viewBox="0 0 48 48"><title>Explosive</title>
-          <rect x="6" y="6" width="36" height="36" fill="#f5891f" transform="rotate(45 24 24)"/>
-          <circle cx="24" cy="24" r="3" fill="#1a1a18"/>
-          <line x1="24" y1="24" x2="24" y2="12" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="24" y1="24" x2="34" y2="18" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="24" y1="24" x2="34" y2="30" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="24" y1="24" x2="24" y2="36" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="24" y1="24" x2="14" y2="30" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="24" y1="24" x2="14" y2="18" stroke="#1a1a18" stroke-width="1.5"/>
+        <svg width="44" height="44" viewBox="0 0 48 48"><title>Explosive</title>
+          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
+          <circle cx="20" cy="27" r="5" fill="#1a1a18"/>
+          <path d="M20 22 L18 9" stroke="#1a1a18" stroke-width="1.8"/>
+          <path d="M18 9 L16 13 M18 9 L21 12" stroke="#1a1a18" stroke-width="1.1" fill="none"/>
+          <path d="M24 24 L36 15" stroke="#1a1a18" stroke-width="1.8"/>
+          <path d="M24 30 L37 32" stroke="#1a1a18" stroke-width="1.8"/>
+          <path d="M22 32 L14 40" stroke="#1a1a18" stroke-width="1.8"/>
+          <path d="M16 25 L6 24" stroke="#1a1a18" stroke-width="1.4"/>
+          <path d="M17 31 L9 35" stroke="#1a1a18" stroke-width="1.4"/>
+          <path d="M26 20 L30 10" stroke="#1a1a18" stroke-width="1.4"/>
         </svg>
         <div class="img-caption">Explosive<br>爆炸性</div>
       </div>
       <div class="hazard-cell">
-        <svg width="40" height="40" viewBox="0 0 48 48"><title>Radioactive</title>
-          <rect x="6" y="6" width="36" height="36" fill="#f5891f" transform="rotate(45 24 24)"/>
-          <circle cx="24" cy="24" r="3" fill="#1a1a18"/>
-          <path d="M24 24 L18 13 A13 13 0 0 1 30 13 Z" fill="#1a1a18"/>
-          <path d="M24 24 L35 30 A13 13 0 0 1 24 37 Z" fill="#1a1a18"/>
+        <svg width="44" height="44" viewBox="0 0 48 48"><title>Radioactive</title>
+          <circle cx="24" cy="24" r="22" fill="#ffde17" stroke="#1a1a18" stroke-width="2"/>
+          <circle cx="24" cy="24" r="4" fill="#1a1a18"/>
+          <path d="M24 24 L15 9 A17 17 0 0 1 33 9 Z" fill="#1a1a18"/>
+          <path d="M24 24 L39 33 A17 17 0 0 1 24 41 Z" fill="#1a1a18"/>
+          <path d="M24 24 L9 33 A17 17 0 0 1 15 9 Z" fill="#1a1a18"/>
         </svg>
         <div class="img-caption">Radioactive<br>放射性</div>
       </div>
@@ -442,14 +555,14 @@ function buildQuiz(containerId, feedbackId, options, correctIndex, correctMsg, w
   });
 }
 
-buildQuiz('q-unit', 'fb-unit', ['0.25 m', '2.5 m', '25 m'], 0, '答对了！100 cm = 1 m，250 ÷ 100 = 2.5... 等等，检查一下：250 cm = 2.5 m', 'cm变m要除以100');
-buildQuiz('q-vernier', 'fb-vernier', ['3.40 cm', '3.45 cm', '3.50 cm'], 1, '答对了！3.40 + 0.05 = 3.45 cm', '再想想——main scale + vernier scale 要相加');
-buildQuiz('q-density', 'fb-density', ['0.4 g/cm³', '2.5 g/cm³', '70 g/cm³'], 1, '答对了！50 ÷ 20 = 2.5 g/cm³', 'Density = Mass ÷ Volume，再算一次');
+buildQuiz('q-unit', 'fb-unit', ['0.25 m', '2.5 m', '25 m'], 1, 'Correct! 250 ÷ 100 = 2.5 m', '1 m = 100 cm, so divide by 100');
+buildQuiz('q-vernier', 'fb-vernier', ['3.07 cm', '3.70 cm', '3.7 cm'], 0, 'Correct! Main scale = 3, vernier = 7 × 0.01 = 0.07 → 3 + 0.07 = 3.07 cm', 'Add main scale + (vernier line × 0.01) — don\'t mix up the decimal place');
+buildQuiz('q-density', 'fb-density', ['0.4 g/cm³', '2.5 g/cm³', '70 g/cm³'], 1, 'Correct! 50 ÷ 20 = 2.5 g/cm³', 'Density = Mass ÷ Volume, try again');
 
 const steps = [
   { n:1, color:'#7f77dd', title:'Identify problem 识别问题', sub:'把案件讲清楚', body:'不是「谁看起来最像贼」，而是「钱是什么时候不见的、谁有机会拿」——问出一个能查的问题。' },
   { n:2, color:'#1d9e75', title:'Form hypothesis 提出假设', sub:'锁定有根据的疑犯', body:'假设：小偷是下课时间最后留在教室的人。这个可以查证，不是乱猜「感觉他看起来最像贼」。' },
-  { n:3, color:'#d85a30', title:'Control variables 控制变量', sub:'一次只审一个疑犯', body:'如果同时怀疑好几个人，又混进「谁欠钱」「谁上次也丢过东西」这些无关线索，案件会查不清。只锁定「当时在场」这一个条件。' },
+  { n:3, color:'#d85a30', title:'Control variables 控制变量', sub:'一次只审一个疑犯', body:'如果同时怀疑好几个人，又混进「谁欠钱」「谁上次也丢过东西」这些无关线索，案件会查不清。只锁定「当时在场」这一个条件。<br><br><strong>三个关键词：</strong><br>• Manipulated variable 操纵变量 — 你主动去改变的那个条件（例：阳光多少）<br>• Responding variable 应变变量 — 因为操纵变量改变，而跟着改变的结果（例：植物长高的速度）<br>• Constant variable 控制变量 — 全程保持不变的条件（例：水量、花盆、土壤）' },
   { n:4, color:'#d4537e', title:'Design experiment 设计实验', sub:'安排公平的测试', body:'例如查监控、或安排某人不知情的情况下观察反应——设计一个能真正验证假设的方法。' },
   { n:5, color:'#7f77dd', title:'Collect data 收集数据', sub:'找证据，不是找感觉', body:'记录下监控时间、在场人员名单——用事实说话，不是「我觉得是他」。' },
   { n:6, color:'#1d9e75', title:'Conclusion 下结论', sub:'证据够了才能定罪', body:'如果证据支持假设，才能说是他。如果证据不够，就要放人重新调查——这才是公平，不是随便冤枉人。' }
