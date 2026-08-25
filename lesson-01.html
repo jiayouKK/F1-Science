@@ -367,7 +367,49 @@
       <p id="fb-vernier" class="qfb"></p>
     </div>
 
-    <div style="font-size:13px; font-weight:600; margin:20px 0 6px;">Screw gauge (Micrometer) 千分尺 — 怎么读数</div>
+    <div style="font-size:13px; font-weight:600; margin:20px 0 6px;">Screw gauge (Micrometer) 千分尺 — 整体外观</div>
+    <svg width="100%" viewBox="0 0 380 180" role="img"><title>Screw gauge overview with zoomed reading window</title>
+      <!-- C-shaped frame -->
+      <path d="M30 40 Q8 90 30 140" fill="none" stroke="#3d3d3a" stroke-width="7" stroke-linecap="round"/>
+      <!-- anvil -->
+      <rect x="30" y="83" width="10" height="14" fill="#8a8983"/>
+      <text x="35" y="78" font-size="8" text-anchor="middle" fill="#6b6a63">Anvil</text>
+      <!-- object -->
+      <circle cx="55" cy="90" r="9" fill="#f0dcc0" stroke="#c7c5ba" stroke-width="1"/>
+      <!-- spindle -->
+      <line x1="64" y1="90" x2="110" y2="90" stroke="#8a8983" stroke-width="5"/>
+      <text x="85" y="78" font-size="8" text-anchor="middle" fill="#6b6a63">Spindle</text>
+      <!-- sleeve -->
+      <rect x="110" y="78" width="45" height="24" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
+      <text x="132" y="70" font-size="8" text-anchor="middle" fill="#6b6a63">Sleeve</text>
+      <g stroke="#3d3d3a" stroke-width="0.6">
+        <line x1="118" y1="78" x2="118" y2="83"/><line x1="132" y1="78" x2="132" y2="83"/>
+      </g>
+      <!-- thimble -->
+      <path d="M155 65 L200 75 L200 105 L155 115 Z" fill="#d3cfc2" stroke="#3d3d3a" stroke-width="1.2"/>
+      <text x="175" y="58" font-size="8" text-anchor="middle" fill="#6b6a63">Thimble</text>
+
+      <!-- dashed callout lines to zoom box -->
+      <line x1="150" y1="80" x2="230" y2="95" stroke="#8a8983" stroke-width="0.6" stroke-dasharray="2,2"/>
+      <line x1="150" y1="100" x2="230" y2="170" stroke="#8a8983" stroke-width="0.6" stroke-dasharray="2,2"/>
+
+      <!-- zoom box -->
+      <rect x="230" y="95" width="130" height="75" fill="#fff" stroke="#3d3d3a" stroke-width="1.2"/>
+      <text x="295" y="110" font-size="9" text-anchor="middle" fill="#3d3d3a" font-weight="600">zoomed reading window</text>
+      <line x1="245" y1="130" x2="345" y2="130" stroke="#1a1a18" stroke-width="1"/>
+      <line x1="245" y1="123" x2="245" y2="130" stroke="#1a1a18" stroke-width="0.7"/>
+      <line x1="295" y1="120" x2="295" y2="130" stroke="#d43b2e" stroke-width="1"/>
+      <text x="245" y="118" font-size="8" text-anchor="middle" fill="#6b6a63">3</text>
+      <text x="295" y="116" font-size="8" text-anchor="middle" fill="#d43b2e">3.5</text>
+      <line x1="245" y1="142" x2="345" y2="142" stroke="#2a5fd4" stroke-width="1"/>
+      <line x1="280" y1="142" x2="280" y2="153" stroke="#d43b2e" stroke-width="1"/>
+      <text x="245" y="160" font-size="8" text-anchor="middle" fill="#2a5fd4">30</text>
+      <text x="280" y="163" font-size="8" text-anchor="middle" fill="#d43b2e">38</text>
+      <text x="345" y="160" font-size="8" text-anchor="middle" fill="#2a5fd4">45</text>
+    </svg>
+    <p style="font-size:11px; color:#8a8983; text-align:center; margin-top:2px;">考题通常只会放大显示读数窗口那一块（如下面Step 1和Step 2的做法）</p>
+
+    <div style="font-size:13px; font-weight:600; margin:16px 0 6px;">Screw gauge (Micrometer) 千分尺 — 怎么读数</div>
     <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">同样分两步：先看Sleeve（主尺，横的），再看Thimble（旋转刻度筒）对齐在哪一格。</p>
 
     <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
@@ -452,63 +494,68 @@
       <div class="hazard-cell">
         <svg width="44" height="44" viewBox="0 0 48 48"><title>Flammable</title>
           <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <path d="M24 12 C18 22 29 23 24 34 C32 30 33 18 24 12 Z" fill="#1a1a18"/>
+          <ellipse cx="24" cy="30" rx="9" ry="10" fill="#1a1a18"/>
+          <ellipse cx="24" cy="20" rx="5" ry="9" fill="#1a1a18"/>
+          <ellipse cx="24" cy="26" rx="3" ry="6" fill="#fff"/>
         </svg>
         <div class="img-caption">Flammable<br>易燃</div>
       </div>
       <div class="hazard-cell">
         <svg width="44" height="44" viewBox="0 0 48 48"><title>Toxic</title>
           <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <ellipse cx="24" cy="19" rx="8" ry="9" fill="#1a1a18"/>
-          <ellipse cx="21" cy="17" rx="2.2" ry="2.8" fill="#fff"/>
-          <ellipse cx="27" cy="17" rx="2.2" ry="2.8" fill="#fff"/>
-          <path d="M22.5 22 L21.5 25 L24 24 L26.5 25 L25.5 22 Z" fill="#fff"/>
-          <path d="M13 33 L20 27 L20 30 L28 30 L28 27 L35 33 L28 30 L28 33 L20 33 L20 30 Z" fill="#1a1a18"/>
+          <circle cx="24" cy="19" r="8" fill="#1a1a18"/>
+          <circle cx="21" cy="17" r="2" fill="#fff"/>
+          <circle cx="27" cy="17" r="2" fill="#fff"/>
+          <rect x="22.5" y="21" width="3" height="4" fill="#fff"/>
+          <rect x="8" y="30" width="18" height="3.5" rx="1.5" fill="#1a1a18" transform="rotate(35 17 31.75)"/>
+          <rect x="8" y="30" width="18" height="3.5" rx="1.5" fill="#1a1a18" transform="rotate(-35 17 31.75)"/>
+          <rect x="22" y="30" width="18" height="3.5" rx="1.5" fill="#1a1a18" transform="rotate(35 31 31.75)"/>
+          <rect x="22" y="30" width="18" height="3.5" rx="1.5" fill="#1a1a18" transform="rotate(-35 31 31.75)"/>
         </svg>
         <div class="img-caption">Poison/Toxic<br>有毒</div>
       </div>
       <div class="hazard-cell">
         <svg width="44" height="44" viewBox="0 0 48 48"><title>Corrosive</title>
           <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <path d="M15 9 L26 11 Q28 11.5 27.5 13.5 Q27 15 25 14.5 L15 12.5 Z" fill="none" stroke="#1a1a18" stroke-width="1.3"/>
-          <path d="M18 13 L15 24" stroke="#1a1a18" stroke-width="1.6" fill="none"/>
-          <path d="M10 26 L18 26" stroke="#1a1a18" stroke-width="1.3"/>
-          <path d="M8 26 Q6 29 8 32 Q10 35 8 38" fill="none" stroke="#1a1a18" stroke-width="1.6"/>
-          <path d="M13 26 Q11 29 13 32" fill="none" stroke="#1a1a18" stroke-width="1.4"/>
-          <path d="M23 14 L30 24" stroke="#1a1a18" stroke-width="1.6" fill="none"/>
-          <path d="M26 27 L35 27 L35 34 L26 34 Z" fill="none" stroke="#1a1a18" stroke-width="1.6"/>
-          <path d="M28 34 Q27 37 29 39" fill="none" stroke="#1a1a18" stroke-width="1.3"/>
-          <path d="M32 34 Q31 37 33 39" fill="none" stroke="#1a1a18" stroke-width="1.3"/>
+          <rect x="10" y="8" width="14" height="6" rx="1" fill="#1a1a18" transform="rotate(-20 17 11)"/>
+          <line x1="14" y1="15" x2="12" y2="26" stroke="#1a1a18" stroke-width="2"/>
+          <rect x="4" y="27" width="16" height="3" fill="#1a1a18"/>
+          <line x1="8" y1="30" x2="7" y2="36" stroke="#1a1a18" stroke-width="1.5"/>
+          <line x1="12" y1="30" x2="11" y2="35" stroke="#1a1a18" stroke-width="1.5"/>
+          <rect x="24" y="8" width="14" height="6" rx="1" fill="#1a1a18" transform="rotate(20 31 11)"/>
+          <line x1="30" y1="15" x2="32" y2="26" stroke="#1a1a18" stroke-width="2"/>
+          <rect x="26" y="27" width="16" height="8" rx="1" fill="#1a1a18"/>
+          <line x1="30" y1="35" x2="29" y2="40" stroke="#1a1a18" stroke-width="1.5"/>
+          <line x1="36" y1="35" x2="37" y2="40" stroke="#1a1a18" stroke-width="1.5"/>
         </svg>
         <div class="img-caption">Corrosive<br>腐蚀性</div>
       </div>
       <div class="hazard-cell">
         <svg width="44" height="44" viewBox="0 0 48 48"><title>Irritant</title>
           <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <path d="M22 12 Q22 10 24 10 Q26 10 26 12 L25 27 Q25 29 24 29 Q23 29 23 27 Z" fill="#1a1a18"/>
-          <circle cx="24" cy="34" r="3" fill="#1a1a18"/>
+          <rect x="20.5" y="10" width="7" height="18" rx="3.5" fill="#1a1a18"/>
+          <circle cx="24" cy="34" r="3.5" fill="#1a1a18"/>
         </svg>
         <div class="img-caption">Irritant<br>刺激性</div>
       </div>
       <div class="hazard-cell">
         <svg width="44" height="44" viewBox="0 0 48 48"><title>Explosive</title>
           <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <circle cx="20" cy="27" r="5" fill="#1a1a18"/>
-          <path d="M20 22 L18 9" stroke="#1a1a18" stroke-width="1.8"/>
-          <path d="M18 9 L16 13 M18 9 L21 12" stroke="#1a1a18" stroke-width="1.1" fill="none"/>
-          <path d="M24 24 L36 15" stroke="#1a1a18" stroke-width="1.8"/>
-          <path d="M24 30 L37 32" stroke="#1a1a18" stroke-width="1.8"/>
-          <path d="M22 32 L14 40" stroke="#1a1a18" stroke-width="1.8"/>
-          <path d="M16 25 L6 24" stroke="#1a1a18" stroke-width="1.4"/>
-          <path d="M17 31 L9 35" stroke="#1a1a18" stroke-width="1.4"/>
-          <path d="M26 20 L30 10" stroke="#1a1a18" stroke-width="1.4"/>
+          <circle cx="22" cy="26" r="6" fill="#1a1a18"/>
+          <line x1="22" y1="20" x2="19" y2="8" stroke="#1a1a18" stroke-width="2"/>
+          <line x1="27" y1="22" x2="38" y2="12" stroke="#1a1a18" stroke-width="2"/>
+          <line x1="28" y1="26" x2="41" y2="26" stroke="#1a1a18" stroke-width="2"/>
+          <line x1="27" y1="30" x2="37" y2="38" stroke="#1a1a18" stroke-width="2"/>
+          <line x1="21" y1="32" x2="16" y2="42" stroke="#1a1a18" stroke-width="2"/>
+          <line x1="16" y1="24" x2="6" y2="22" stroke="#1a1a18" stroke-width="1.5"/>
+          <line x1="17" y1="30" x2="9" y2="34" stroke="#1a1a18" stroke-width="1.5"/>
         </svg>
         <div class="img-caption">Explosive<br>爆炸性</div>
       </div>
       <div class="hazard-cell">
         <svg width="44" height="44" viewBox="0 0 48 48"><title>Radioactive</title>
           <circle cx="24" cy="24" r="22" fill="#ffde17" stroke="#1a1a18" stroke-width="2"/>
-          <circle cx="24" cy="24" r="4" fill="#1a1a18"/>
+          <circle cx="24" cy="24" r="4.5" fill="#1a1a18"/>
           <path d="M24 24 L15 9 A17 17 0 0 1 33 9 Z" fill="#1a1a18"/>
           <path d="M24 24 L39 33 A17 17 0 0 1 24 41 Z" fill="#1a1a18"/>
           <path d="M24 24 L9 33 A17 17 0 0 1 15 9 Z" fill="#1a1a18"/>
@@ -562,7 +609,7 @@ buildQuiz('q-density', 'fb-density', ['0.4 g/cm³', '2.5 g/cm³', '70 g/cm³'], 
 const steps = [
   { n:1, color:'#7f77dd', title:'Identify problem 识别问题', sub:'把案件讲清楚', body:'不是「谁看起来最像贼」，而是「钱是什么时候不见的、谁有机会拿」——问出一个能查的问题。' },
   { n:2, color:'#1d9e75', title:'Form hypothesis 提出假设', sub:'锁定有根据的疑犯', body:'假设：小偷是下课时间最后留在教室的人。这个可以查证，不是乱猜「感觉他看起来最像贼」。' },
-  { n:3, color:'#d85a30', title:'Control variables 控制变量', sub:'一次只审一个疑犯', body:'如果同时怀疑好几个人，又混进「谁欠钱」「谁上次也丢过东西」这些无关线索，案件会查不清。只锁定「当时在场」这一个条件。<br><br><strong>三个关键词：</strong><br>• Manipulated variable 操纵变量 — 你主动去改变的那个条件（例：阳光多少）<br>• Responding variable 应变变量 — 因为操纵变量改变，而跟着改变的结果（例：植物长高的速度）<br>• Constant variable 控制变量 — 全程保持不变的条件（例：水量、花盆、土壤）' },
+  { n:3, color:'#d85a30', title:'Control variables 控制变量', sub:'一次只审一个疑犯', body:'如果同时怀疑好几个人，又混进「谁欠钱」「谁上次也丢过东西」这些无关线索，案件会查不清。只锁定「当时在场」这一个条件。<br><br><strong>用这个案件对应三个关键词：</strong><br>• <strong>Manipulated variable 操纵变量</strong> — 你主动去比较的那个条件（例：是不是「当时在场」）<br>• <strong>Responding variable 应变变量</strong> — 跟着改变、你要观察的结果（例：这个人有没有作案嫌疑）<br>• <strong>Constant variable 控制变量</strong> — 全程保持不变、避免混淆判断的条件（例：同一间教室、同一天、同样的调查方式）' },
   { n:4, color:'#d4537e', title:'Design experiment 设计实验', sub:'安排公平的测试', body:'例如查监控、或安排某人不知情的情况下观察反应——设计一个能真正验证假设的方法。' },
   { n:5, color:'#7f77dd', title:'Collect data 收集数据', sub:'找证据，不是找感觉', body:'记录下监控时间、在场人员名单——用事实说话，不是「我觉得是他」。' },
   { n:6, color:'#1d9e75', title:'Conclusion 下结论', sub:'证据够了才能定罪', body:'如果证据支持假设，才能说是他。如果证据不够，就要放人重新调查——这才是公平，不是随便冤枉人。' }
