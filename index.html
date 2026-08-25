@@ -9,7 +9,7 @@
 <body>
 <div class="wrap">
   <h1 class="page-title">科学小课堂</h1>
-  <div class="page-subtitle">点击一课开始学习</div>
+  <div class="page-subtitle">临时抱佛脚 · 快抱！</div>
   <div id="lesson-list">
     <a href="lesson-01.html" class="lesson-link">
       <span class="lesson-subject">中一科学</span>
@@ -28,21 +28,5 @@
     </a>
   </div>
 </div>
-
-<script src="content.js"></script>
-<script>
-  const list = document.getElementById('lesson-list');
-  lessons.forEach(lesson => {
-    const a = document.createElement('a');
-    a.href = `lesson.html?id=${lesson.id}`;
-    a.className = 'lesson-link';
-    a.innerHTML = `
-      <span class="lesson-subject">${lesson.subject}</span>
-      <span class="lesson-title">${lesson.title}</span>
-      <span class="arrow">›</span>
-    `;
-    list.appendChild(a);
-  });
-</script>
 </body>
 </html>
