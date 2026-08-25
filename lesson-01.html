@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chapter 1: Introduction to Scientific Investigation</title>
 <link rel="stylesheet" href="style.css">
+<script src="games.js" defer></script>
 <style>
   .section { background:#fff; border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
   .section h2 { font-size:16px; font-weight:600; margin:0 0 4px; }
@@ -43,7 +44,8 @@
   .qfb { font-size:13px; margin-top:8px; display:none; font-weight:600; }
 </style>
 </head>
-<body>
+<body class="ch-accent ch-1">
+<div class="ch-bar"></div>
 <div class="wrap">
   <a href="index.html" class="back-link">‹ 返回列表</a>
   <h1 class="page-title">Chapter 1: Introduction to Scientific Investigation</h1>
@@ -70,11 +72,7 @@
     <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Time 时间</div>
     <div class="prefix-line">1 day = 24 h　|　1 h = 60 min　|　1 min = 60 s</div>
 
-    <div class="quiz-box">
-      <div class="qtitle">🎯 Quiz: 250 cm = ____ m?</div>
-      <div id="q-unit"></div>
-      <p id="fb-unit" class="qfb"></p>
-    </div>
+    <div id="game-units"></div>
   </div>
 
   <div class="section">
@@ -153,6 +151,7 @@
         <td class="fn-cell">To evaporate excess solvent<br>蒸发多余溶剂</td>
       </tr>
     </table>
+    <div id="game-apparatus"></div>
   </div>
 
   <div class="section">
@@ -362,7 +361,7 @@
     <div class="prefix-line">Total reading = Main scale + Vernier scale<br>= 2.20 + 0.05 = <strong>2.25 cm</strong></div>
 
     <div class="quiz-box">
-      <div class="qtitle">🎯 Quiz: Main scale's "0" is between 3 and 4. Vernier's "7" lines up. What is the reading?</div>
+      <div class="qtitle">Quiz: Vernier 0 is between 3 and 4. Vernier's "7" lines up. What is the reading?</div>
       <div id="q-vernier"></div>
       <p id="fb-vernier" class="qfb"></p>
     </div>
