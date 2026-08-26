@@ -28,5 +28,21 @@
     </a>
   </div>
 </div>
+
+<script src="content.js"></script>
+<script>
+  const list = document.getElementById('lesson-list');
+  lessons.forEach(lesson => {
+    const a = document.createElement('a');
+    a.href = `lesson.html?id=${lesson.id}`;
+    a.className = 'lesson-link';
+    a.innerHTML = `
+      <span class="lesson-subject">${lesson.subject}</span>
+      <span class="lesson-title">${lesson.title}</span>
+      <span class="arrow">›</span>
+    `;
+    list.appendChild(a);
+  });
+</script>
 </body>
 </html>

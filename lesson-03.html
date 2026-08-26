@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chapter 3: Coordination and Response</title>
 <link rel="stylesheet" href="style.css">
+<script src="games.js" defer></script>
 <style>
   .section { background:#fff; border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
   .section h2 { font-size:16px; font-weight:600; margin:0 0 4px; }
@@ -28,7 +29,8 @@
   .qfb { font-size:13px; margin-top:8px; display:none; font-weight:600; }
 </style>
 </head>
-<body>
+<body class="ch-accent ch-3">
+<div class="ch-bar"></div>
 <div class="wrap">
   <a href="index.html" class="back-link">‹ 返回列表</a>
   <h1 class="page-title">Chapter 3: Coordination and Response</h1>
@@ -132,6 +134,14 @@ function buildQuiz(containerId, feedbackId, options, correctIndex, correctMsg, w
   });
 }
 buildQuiz('q-temp', 'fb-temp', ['Widen (vasodilation)', 'Narrow (vasoconstriction)', 'No change'], 0, 'Correct! Blood vessels widen to release more heat.', 'When hot, vessels widen (vasodilation) to lose heat faster');
+
+window.addEventListener('DOMContentLoaded', () => {
+  function init() {
+    if (!window.Games) { setTimeout(init, 30); return; }
+    Games.attachProgress();
+  }
+  init();
+});
 
 const transEvents = [
   { title: '☀️ During the day / hot weather', body: 'Stomata OPEN more to allow gas exchange (CO₂ in for photosynthesis) — but this also means more water vapour escapes (higher transpiration rate).' },

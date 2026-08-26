@@ -17,9 +17,6 @@
   .prefix-line { font-family: "SF Mono", monospace; font-size:13px; background:#f5f4f0; padding:8px 10px; border-radius:8px; }
   .img-row { display:flex; gap:8px; margin:12px 0; flex-wrap:wrap; }
   .img-cell { flex:1; min-width:90px; text-align:center; }
-  .img-caption { font-size:11px; color:#8a8983; margin-top:4px; line-height:1.4; }
-  .hazard-row { display:flex; gap:10px; justify-content:center; margin:14px 0; flex-wrap:wrap; }
-  .hazard-cell { text-align:center; width:64px; }
   .thief-intro { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-bottom:12px; font-size:14px; line-height:1.7; }
   .step-card { border:0.5px solid #e5e3da; border-radius:12px; margin-bottom:8px; overflow:hidden; }
   .step-header { width:100%; display:flex; align-items:center; gap:10px; padding:12px 14px; background:#faf9f6; border:none; cursor:pointer; text-align:left; font-family:inherit; }
@@ -211,15 +208,12 @@
       <path d="M140 30 L140 130 L200 130 L200 30" fill="#eef4fa" stroke="#c7c5ba" stroke-width="1"/>
       <line x1="140" y1="70" x2="200" y2="70" stroke="#d43b2e" stroke-width="1.5"/>
       <text x="170" y="24" font-size="10" text-anchor="middle" fill="#d43b2e">scale reading</text>
-
       <text x="245" y="42" font-size="18">👁</text>
       <text x="270" y="42" font-size="16" fill="#d43b2e">✗</text>
       <path d="M200 70 L245 42" stroke="#8a8983" stroke-width="0.8" stroke-dasharray="3,2"/>
-
       <text x="245" y="82" font-size="18">👁</text>
       <text x="270" y="82" font-size="16" fill="#2a5fd4">✓</text>
       <path d="M200 70 L245 78" stroke="#2a5fd4" stroke-width="0.8" stroke-dasharray="3,2"/>
-
       <text x="245" y="122" font-size="18">👁</text>
       <text x="270" y="122" font-size="16" fill="#d43b2e">✗</text>
       <path d="M200 70 L245 118" stroke="#8a8983" stroke-width="0.8" stroke-dasharray="3,2"/>
@@ -261,193 +255,11 @@
 
   <div class="section">
     <h2>4. Vernier Caliper & Screw Gauge <span class="weight-tag">喜欢考</span></h2>
-    <div class="eng">游标卡尺与千分尺</div>
+    <div class="eng">游标卡尺与千分尺 — 拖动滑块试试看</div>
     <p style="font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px;">⚠ 图片仅供参考，考试如果需要画仪器，请以课本为准</p>
     <p style="font-size:13px; color:#4a4943; line-height:1.7; margin:0 0 10px;">Vernier caliper 精确度 0.01 cm；Screw gauge 精确度 0.01 mm，测更小的物体更准确。</p>
-
-    <div style="font-size:13px; font-weight:600; margin-bottom:6px;">Vernier caliper 游标卡尺 — 整体外观</div>
-    <svg width="100%" viewBox="0 0 380 190" role="img"><title>Vernier caliper overview with zoomed reading window</title>
-      <!-- main body -->
-      <rect x="20" y="60" width="180" height="14" rx="2" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
-      <!-- fixed jaw (upper, left, taller) -->
-      <path d="M35 60 L35 25 Q35 20 40 20 L46 20 Q51 20 51 25 L51 60" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
-      <!-- sliding block -->
-      <rect x="95" y="60" width="30" height="26" fill="#d3cfc2" stroke="#3d3d3a" stroke-width="1.2"/>
-      <!-- sliding jaw (upper) -->
-      <path d="M100 60 L100 25 Q100 20 105 20 L111 20 Q116 20 116 25 L116 60" fill="#d3cfc2" stroke="#3d3d3a" stroke-width="1.2"/>
-      <!-- object gripped between jaws -->
-      <circle cx="75" cy="38" r="16" fill="#f0dcc0" stroke="#c7c5ba" stroke-width="1"/>
-      <!-- main scale ticks on body -->
-      <g stroke="#3d3d3a" stroke-width="0.6">
-        <line x1="130" y1="60" x2="130" y2="65"/><line x1="150" y1="60" x2="150" y2="65"/>
-        <line x1="170" y1="60" x2="170" y2="65"/>
-      </g>
-      <text x="130" y="57" font-size="8" text-anchor="middle" fill="#6b6a63">4</text>
-      <text x="150" y="57" font-size="8" text-anchor="middle" fill="#6b6a63">5</text>
-      <text x="170" y="57" font-size="8" text-anchor="middle" fill="#6b6a63">6</text>
-      <text x="60" y="12" font-size="9" text-anchor="middle" fill="#6b6a63">Fixed jaw</text>
-      <text x="108" y="12" font-size="9" text-anchor="middle" fill="#6b6a63">Sliding jaw</text>
-
-      <!-- dashed callout lines to zoom box -->
-      <line x1="125" y1="62" x2="230" y2="95" stroke="#8a8983" stroke-width="0.6" stroke-dasharray="2,2"/>
-      <line x1="125" y1="86" x2="230" y2="170" stroke="#8a8983" stroke-width="0.6" stroke-dasharray="2,2"/>
-
-      <!-- zoom box -->
-      <rect x="230" y="95" width="130" height="75" fill="#fff" stroke="#3d3d3a" stroke-width="1.2"/>
-      <text x="295" y="110" font-size="9" text-anchor="middle" fill="#3d3d3a" font-weight="600">zoomed reading window</text>
-
-      <line x1="245" y1="130" x2="345" y2="130" stroke="#1a1a18" stroke-width="1"/>
-      <line x1="245" y1="123" x2="245" y2="130" stroke="#1a1a18" stroke-width="0.7"/>
-      <line x1="295" y1="120" x2="295" y2="130" stroke="#d43b2e" stroke-width="1"/>
-      <line x1="345" y1="123" x2="345" y2="130" stroke="#1a1a18" stroke-width="0.7"/>
-      <text x="245" y="118" font-size="8" text-anchor="middle" fill="#6b6a63">4</text>
-      <text x="295" y="116" font-size="8" text-anchor="middle" fill="#d43b2e">5</text>
-      <text x="345" y="118" font-size="8" text-anchor="middle" fill="#6b6a63">6</text>
-
-      <line x1="245" y1="142" x2="345" y2="142" stroke="#2a5fd4" stroke-width="1"/>
-      <line x1="245" y1="142" x2="245" y2="148" stroke="#2a5fd4" stroke-width="0.6"/>
-      <line x1="280" y1="142" x2="280" y2="153" stroke="#d43b2e" stroke-width="1"/>
-      <line x1="345" y1="142" x2="345" y2="148" stroke="#2a5fd4" stroke-width="0.6"/>
-      <text x="245" y="160" font-size="8" text-anchor="middle" fill="#2a5fd4">0</text>
-      <text x="280" y="163" font-size="8" text-anchor="middle" fill="#d43b2e">6</text>
-      <text x="345" y="160" font-size="8" text-anchor="middle" fill="#2a5fd4">10</text>
-    </svg>
-    <p style="font-size:11px; color:#8a8983; text-align:center; margin-top:2px;">考题通常只会放大显示读数窗口那一块（如下面Step 1和Step 2的做法）</p>
-
-    <div style="font-size:13px; font-weight:600; margin:16px 0 6px;">Vernier caliper 游标卡尺 — 怎么读数</div>
-    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">游标卡尺有两排刻度：上面是Main scale（固定），下面是Vernier scale（会滑动）。读数分两步：</p>
-
-    <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
-      <div style="font-size:12px; font-weight:600; color:#3d3d3a; margin-bottom:6px;">Step 1 — 看Main scale，游标尺的"0"停在哪两个数字之间</div>
-      <svg width="100%" viewBox="0 0 340 50" role="img"><title>Main scale reading example</title>
-        <line x1="10" y1="30" x2="330" y2="30" stroke="#1a1a18" stroke-width="1.2"/>
-        <g stroke="#1a1a18" stroke-width="1">
-          <line x1="10" y1="20" x2="10" y2="30"/><line x1="90" y1="20" x2="90" y2="30"/>
-          <line x1="170" y1="20" x2="170" y2="30"/><line x1="250" y1="20" x2="250" y2="30"/>
-          <line x1="330" y1="20" x2="330" y2="30"/>
-        </g>
-        <text x="10" y="15" font-size="11" text-anchor="middle">0</text>
-        <text x="90" y="15" font-size="11" text-anchor="middle">1</text>
-        <text x="170" y="15" font-size="11" text-anchor="middle" fill="#d43b2e">2</text>
-        <text x="250" y="15" font-size="11" text-anchor="middle">3</text>
-        <text x="330" y="15" font-size="11" text-anchor="middle">4</text>
-        <line x1="196" y1="30" x2="196" y2="42" stroke="#2a5fd4" stroke-width="1.5"/>
-        <polygon points="196,42 191,48 201,48" fill="#2a5fd4"/>
-      </svg>
-      <p style="font-size:12px; color:#4a4943; margin:6px 0 0; text-align:center;">游标尺的"0"（蓝色箭头）停在 <strong>2 和 3 之间</strong> → Main scale reading = <strong>2 cm 多一点</strong>（精确的部分交给Step 2）</p>
-    </div>
-
-    <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
-      <div style="font-size:12px; font-weight:600; color:#3d3d3a; margin-bottom:6px;">Step 2 — 看Vernier scale，哪一格跟Main scale「对得最齐」</div>
-      <svg width="100%" viewBox="0 0 340 50" role="img"><title>Vernier scale reading example</title>
-        <line x1="10" y1="20" x2="330" y2="20" stroke="#2a5fd4" stroke-width="1.2"/>
-        <g stroke="#2a5fd4" stroke-width="0.8">
-          <line x1="10" y1="20" x2="10" y2="28"/><line x1="42" y1="20" x2="42" y2="28"/>
-          <line x1="74" y1="20" x2="74" y2="28"/><line x1="106" y1="20" x2="106" y2="28"/>
-          <line x1="138" y1="20" x2="138" y2="28"/><line x1="170" y1="20" x2="170" y2="34"/>
-          <line x1="202" y1="20" x2="202" y2="28"/><line x1="234" y1="20" x2="234" y2="28"/>
-          <line x1="266" y1="20" x2="266" y2="28"/><line x1="298" y1="20" x2="298" y2="28"/>
-          <line x1="330" y1="20" x2="330" y2="28"/>
-        </g>
-        <text x="10" y="42" font-size="10" text-anchor="middle" fill="#2a5fd4">0</text>
-        <text x="170" y="42" font-size="10" text-anchor="middle" fill="#d43b2e">5</text>
-        <text x="330" y="42" font-size="10" text-anchor="middle" fill="#2a5fd4">10</text>
-        <line x1="170" y1="8" x2="170" y2="18" stroke="#d43b2e" stroke-width="1.5"/>
-        <polygon points="170,8 165,2 175,2" fill="#d43b2e"/>
-      </svg>
-      <p style="font-size:12px; color:#4a4943; margin:6px 0 0; text-align:center;">第 <strong>5</strong> 格（红色箭头）跟Main scale对得最齐 → Vernier reading = 5 × 0.01 = <strong>0.05 cm</strong></p>
-    </div>
-
-    <div class="prefix-line">Total reading = Main scale + Vernier scale<br>= 2.20 + 0.05 = <strong>2.25 cm</strong></div>
-
-    <div class="quiz-box">
-      <div class="qtitle">Quiz: Vernier 0 is between 3 and 4. Vernier's "7" lines up. What is the reading?</div>
-      <div id="q-vernier"></div>
-      <p id="fb-vernier" class="qfb"></p>
-    </div>
-
-    <div style="font-size:13px; font-weight:600; margin:20px 0 6px;">Screw gauge (Micrometer) 千分尺 — 整体外观</div>
-    <svg width="100%" viewBox="0 0 380 180" role="img"><title>Screw gauge overview with zoomed reading window</title>
-      <!-- C-shaped frame -->
-      <path d="M30 40 Q8 90 30 140" fill="none" stroke="#3d3d3a" stroke-width="7" stroke-linecap="round"/>
-      <!-- anvil -->
-      <rect x="30" y="83" width="10" height="14" fill="#8a8983"/>
-      <text x="35" y="78" font-size="8" text-anchor="middle" fill="#6b6a63">Anvil</text>
-      <!-- object -->
-      <circle cx="55" cy="90" r="9" fill="#f0dcc0" stroke="#c7c5ba" stroke-width="1"/>
-      <!-- spindle -->
-      <line x1="64" y1="90" x2="110" y2="90" stroke="#8a8983" stroke-width="5"/>
-      <text x="85" y="78" font-size="8" text-anchor="middle" fill="#6b6a63">Spindle</text>
-      <!-- sleeve -->
-      <rect x="110" y="78" width="45" height="24" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
-      <text x="132" y="70" font-size="8" text-anchor="middle" fill="#6b6a63">Sleeve</text>
-      <g stroke="#3d3d3a" stroke-width="0.6">
-        <line x1="118" y1="78" x2="118" y2="83"/><line x1="132" y1="78" x2="132" y2="83"/>
-      </g>
-      <!-- thimble -->
-      <path d="M155 65 L200 75 L200 105 L155 115 Z" fill="#d3cfc2" stroke="#3d3d3a" stroke-width="1.2"/>
-      <text x="175" y="58" font-size="8" text-anchor="middle" fill="#6b6a63">Thimble</text>
-
-      <!-- dashed callout lines to zoom box -->
-      <line x1="150" y1="80" x2="230" y2="95" stroke="#8a8983" stroke-width="0.6" stroke-dasharray="2,2"/>
-      <line x1="150" y1="100" x2="230" y2="170" stroke="#8a8983" stroke-width="0.6" stroke-dasharray="2,2"/>
-
-      <!-- zoom box -->
-      <rect x="230" y="95" width="130" height="75" fill="#fff" stroke="#3d3d3a" stroke-width="1.2"/>
-      <text x="295" y="110" font-size="9" text-anchor="middle" fill="#3d3d3a" font-weight="600">zoomed reading window</text>
-      <line x1="245" y1="130" x2="345" y2="130" stroke="#1a1a18" stroke-width="1"/>
-      <line x1="245" y1="123" x2="245" y2="130" stroke="#1a1a18" stroke-width="0.7"/>
-      <line x1="295" y1="120" x2="295" y2="130" stroke="#d43b2e" stroke-width="1"/>
-      <text x="245" y="118" font-size="8" text-anchor="middle" fill="#6b6a63">3</text>
-      <text x="295" y="116" font-size="8" text-anchor="middle" fill="#d43b2e">3.5</text>
-      <line x1="245" y1="142" x2="345" y2="142" stroke="#2a5fd4" stroke-width="1"/>
-      <line x1="280" y1="142" x2="280" y2="153" stroke="#d43b2e" stroke-width="1"/>
-      <text x="245" y="160" font-size="8" text-anchor="middle" fill="#2a5fd4">30</text>
-      <text x="280" y="163" font-size="8" text-anchor="middle" fill="#d43b2e">38</text>
-      <text x="345" y="160" font-size="8" text-anchor="middle" fill="#2a5fd4">45</text>
-    </svg>
-    <p style="font-size:11px; color:#8a8983; text-align:center; margin-top:2px;">考题通常只会放大显示读数窗口那一块（如下面Step 1和Step 2的做法）</p>
-
-    <div style="font-size:13px; font-weight:600; margin:16px 0 6px;">Screw gauge (Micrometer) 千分尺 — 怎么读数</div>
-    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">同样分两步：先看Sleeve（主尺，横的），再看Thimble（旋转刻度筒）对齐在哪一格。</p>
-
-    <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
-      <div style="font-size:12px; font-weight:600; color:#3d3d3a; margin-bottom:6px;">Step 1 — Sleeve主尺露出到哪一条线（每格0.5mm）</div>
-      <svg width="100%" viewBox="0 0 340 50" role="img"><title>Sleeve scale reading example</title>
-        <line x1="10" y1="30" x2="330" y2="30" stroke="#1a1a18" stroke-width="1.2"/>
-        <g stroke="#1a1a18" stroke-width="1">
-          <line x1="10" y1="22" x2="10" y2="30"/><line x1="90" y1="22" x2="90" y2="30"/>
-          <line x1="170" y1="22" x2="170" y2="30"/><line x1="250" y1="15" x2="250" y2="30"/>
-          <line x1="330" y1="22" x2="330" y2="30"/>
-        </g>
-        <text x="10" y="18" font-size="11" text-anchor="middle">2</text>
-        <text x="90" y="18" font-size="11" text-anchor="middle">3</text>
-        <text x="170" y="18" font-size="11" text-anchor="middle">3.5</text>
-        <text x="250" y="12" font-size="11" text-anchor="middle" fill="#d43b2e">4</text>
-      </svg>
-      <p style="font-size:12px; color:#4a4943; margin:6px 0 0; text-align:center;">刻度露出到 <strong>3.5 mm</strong> 那条线 → Sleeve reading = <strong>3.50 mm</strong></p>
-    </div>
-
-    <div style="background:#faf9f6; border-radius:10px; padding:14px; margin-bottom:12px;">
-      <div style="font-size:12px; font-weight:600; color:#3d3d3a; margin-bottom:6px;">Step 2 — Thimble刻度筒，哪一格跟中线对齐（每格0.01mm）</div>
-      <svg width="100%" viewBox="0 0 340 60" role="img"><title>Thimble scale reading example</title>
-        <line x1="170" y1="5" x2="170" y2="55" stroke="#d43b2e" stroke-width="1" stroke-dasharray="3,2"/>
-        <text x="170" y="60" font-size="9" text-anchor="middle" fill="#d43b2e">reference line</text>
-        <line x1="10" y1="30" x2="330" y2="30" stroke="#2a5fd4" stroke-width="1.2"/>
-        <g stroke="#2a5fd4" stroke-width="0.8">
-          <line x1="10" y1="22" x2="10" y2="30"/><line x1="90" y1="22" x2="90" y2="30"/>
-          <line x1="170" y1="15" x2="170" y2="30"/><line x1="250" y1="22" x2="250" y2="30"/>
-          <line x1="330" y1="22" x2="330" y2="30"/>
-        </g>
-        <text x="10" y="18" font-size="10" text-anchor="middle" fill="#2a5fd4">30</text>
-        <text x="90" y="18" font-size="10" text-anchor="middle" fill="#2a5fd4">35</text>
-        <text x="170" y="12" font-size="10" text-anchor="middle" fill="#d43b2e">38</text>
-        <text x="250" y="18" font-size="10" text-anchor="middle" fill="#2a5fd4">40</text>
-      </svg>
-      <p style="font-size:12px; color:#4a4943; margin:6px 0 0; text-align:center;"><strong>38</strong> 这格跟中线对齐 → Thimble reading = 38 × 0.01 = <strong>0.38 mm</strong></p>
-    </div>
-
-    <div class="prefix-line">Total reading = Sleeve + Thimble<br>= 3.50 + 0.38 = <strong>3.88 mm</strong></div>
+    <div id="game-vernier"></div>
+    <div id="game-screwgauge"></div>
   </div>
 
   <div class="section">
@@ -489,79 +301,7 @@
     <h2>7. Hazard Symbols</h2>
     <div class="eng">安全标志</div>
     <p style="font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px;">⚠ 图片仅供参考，考试如果需要画标志，请以课本为准</p>
-    <div class="hazard-row">
-      <div class="hazard-cell">
-        <svg width="44" height="44" viewBox="0 0 48 48"><title>Flammable</title>
-          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <ellipse cx="24" cy="30" rx="9" ry="10" fill="#1a1a18"/>
-          <ellipse cx="24" cy="20" rx="5" ry="9" fill="#1a1a18"/>
-          <ellipse cx="24" cy="26" rx="3" ry="6" fill="#fff"/>
-        </svg>
-        <div class="img-caption">Flammable<br>易燃</div>
-      </div>
-      <div class="hazard-cell">
-        <svg width="44" height="44" viewBox="0 0 48 48"><title>Toxic</title>
-          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <circle cx="24" cy="19" r="8" fill="#1a1a18"/>
-          <circle cx="21" cy="17" r="2" fill="#fff"/>
-          <circle cx="27" cy="17" r="2" fill="#fff"/>
-          <rect x="22.5" y="21" width="3" height="4" fill="#fff"/>
-          <rect x="8" y="30" width="18" height="3.5" rx="1.5" fill="#1a1a18" transform="rotate(35 17 31.75)"/>
-          <rect x="8" y="30" width="18" height="3.5" rx="1.5" fill="#1a1a18" transform="rotate(-35 17 31.75)"/>
-          <rect x="22" y="30" width="18" height="3.5" rx="1.5" fill="#1a1a18" transform="rotate(35 31 31.75)"/>
-          <rect x="22" y="30" width="18" height="3.5" rx="1.5" fill="#1a1a18" transform="rotate(-35 31 31.75)"/>
-        </svg>
-        <div class="img-caption">Poison/Toxic<br>有毒</div>
-      </div>
-      <div class="hazard-cell">
-        <svg width="44" height="44" viewBox="0 0 48 48"><title>Corrosive</title>
-          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <rect x="10" y="8" width="14" height="6" rx="1" fill="#1a1a18" transform="rotate(-20 17 11)"/>
-          <line x1="14" y1="15" x2="12" y2="26" stroke="#1a1a18" stroke-width="2"/>
-          <rect x="4" y="27" width="16" height="3" fill="#1a1a18"/>
-          <line x1="8" y1="30" x2="7" y2="36" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="12" y1="30" x2="11" y2="35" stroke="#1a1a18" stroke-width="1.5"/>
-          <rect x="24" y="8" width="14" height="6" rx="1" fill="#1a1a18" transform="rotate(20 31 11)"/>
-          <line x1="30" y1="15" x2="32" y2="26" stroke="#1a1a18" stroke-width="2"/>
-          <rect x="26" y="27" width="16" height="8" rx="1" fill="#1a1a18"/>
-          <line x1="30" y1="35" x2="29" y2="40" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="36" y1="35" x2="37" y2="40" stroke="#1a1a18" stroke-width="1.5"/>
-        </svg>
-        <div class="img-caption">Corrosive<br>腐蚀性</div>
-      </div>
-      <div class="hazard-cell">
-        <svg width="44" height="44" viewBox="0 0 48 48"><title>Irritant</title>
-          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <rect x="20.5" y="10" width="7" height="18" rx="3.5" fill="#1a1a18"/>
-          <circle cx="24" cy="34" r="3.5" fill="#1a1a18"/>
-        </svg>
-        <div class="img-caption">Irritant<br>刺激性</div>
-      </div>
-      <div class="hazard-cell">
-        <svg width="44" height="44" viewBox="0 0 48 48"><title>Explosive</title>
-          <polygon points="24,2 46,24 24,46 2,24" fill="#fff" stroke="#e2231a" stroke-width="4"/>
-          <circle cx="22" cy="26" r="6" fill="#1a1a18"/>
-          <line x1="22" y1="20" x2="19" y2="8" stroke="#1a1a18" stroke-width="2"/>
-          <line x1="27" y1="22" x2="38" y2="12" stroke="#1a1a18" stroke-width="2"/>
-          <line x1="28" y1="26" x2="41" y2="26" stroke="#1a1a18" stroke-width="2"/>
-          <line x1="27" y1="30" x2="37" y2="38" stroke="#1a1a18" stroke-width="2"/>
-          <line x1="21" y1="32" x2="16" y2="42" stroke="#1a1a18" stroke-width="2"/>
-          <line x1="16" y1="24" x2="6" y2="22" stroke="#1a1a18" stroke-width="1.5"/>
-          <line x1="17" y1="30" x2="9" y2="34" stroke="#1a1a18" stroke-width="1.5"/>
-        </svg>
-        <div class="img-caption">Explosive<br>爆炸性</div>
-      </div>
-      <div class="hazard-cell">
-        <svg width="44" height="44" viewBox="0 0 48 48"><title>Radioactive</title>
-          <circle cx="24" cy="24" r="22" fill="#ffde17" stroke="#1a1a18" stroke-width="2"/>
-          <circle cx="24" cy="24" r="4.5" fill="#1a1a18"/>
-          <path d="M24 24 L15 9 A17 17 0 0 1 33 9 Z" fill="#1a1a18"/>
-          <path d="M24 24 L39 33 A17 17 0 0 1 24 41 Z" fill="#1a1a18"/>
-          <path d="M24 24 L9 33 A17 17 0 0 1 15 9 Z" fill="#1a1a18"/>
-        </svg>
-        <div class="img-caption">Radioactive<br>放射性</div>
-      </div>
-    </div>
+    <div class="hazard-row" id="hazard-icons"></div>
   </div>
 
   <div class="section">
@@ -600,9 +340,6 @@ function buildQuiz(containerId, feedbackId, options, correctIndex, correctMsg, w
     container.appendChild(btn);
   });
 }
-
-buildQuiz('q-unit', 'fb-unit', ['0.25 m', '2.5 m', '25 m'], 1, 'Correct! 250 ÷ 100 = 2.5 m', '1 m = 100 cm, so divide by 100');
-buildQuiz('q-vernier', 'fb-vernier', ['3.07 cm', '3.70 cm', '3.7 cm'], 0, 'Correct! Main scale = 3, vernier = 7 × 0.01 = 0.07 → 3 + 0.07 = 3.07 cm', 'Add main scale + (vernier line × 0.01) — don\'t mix up the decimal place');
 buildQuiz('q-density', 'fb-density', ['0.4 g/cm³', '2.5 g/cm³', '70 g/cm³'], 1, 'Correct! 50 ÷ 20 = 2.5 g/cm³', 'Density = Mass ÷ Volume, try again');
 
 const steps = [
@@ -641,6 +378,65 @@ steps.forEach((s) => {
     else { body.style.maxHeight = '0'; icon.style.transform = 'rotate(0deg)'; }
   });
   card.appendChild(header); card.appendChild(body); container.appendChild(card);
+});
+
+// 等games.js（defer）加载完成后再初始化互动组件
+window.addEventListener('DOMContentLoaded', () => {
+  function init() {
+    if (!window.Games) { setTimeout(init, 30); return; }
+
+    Games.match(document.getElementById('game-units'), {
+      title: 'Unit Conversion Match',
+      items: [
+        { prompt: '250 cm = ?', answer: '2.5 m' },
+        { prompt: '3 kg = ?', answer: '3000 g' },
+        { prompt: '2 h = ?', answer: '120 min' },
+        { prompt: '50 mm = ?', answer: '5 cm' }
+      ],
+      choices: ['2.5 m', '3000 g', '120 min', '5 cm'],
+      takeaway: '换算方向记住：大单位→小单位要乘，小单位→大单位要除。'
+    });
+
+    Games.match(document.getElementById('game-apparatus'), {
+      title: 'Apparatus Function Match',
+      items: [
+        { prompt: 'Measuring cylinder', answer: 'Measure volume of liquid' },
+        { prompt: 'Tripod stand', answer: 'Support apparatus during heating' },
+        { prompt: 'Filter funnel', answer: 'Filter insoluble solids from mixtures' },
+        { prompt: 'Evaporating dish', answer: 'Evaporate excess solvent' }
+      ],
+      choices: ['Measure volume of liquid', 'Support apparatus during heating', 'Filter insoluble solids from mixtures', 'Evaporate excess solvent'],
+      takeaway: '功能记不熟的，回去看第2节的表格对照。'
+    });
+
+    Games.vernier(document.getElementById('game-vernier'), {
+      title: 'Vernier Caliper — drag & read',
+      takeaway: 'Main scale 读到0.1cm，Vernier对齐的那一格 × 0.01 是补上的小数。'
+    });
+
+    Games.meter(document.getElementById('game-screwgauge'), {
+      title: 'Screw Gauge — drag & read',
+      takeaway: 'Sleeve 读到0.5mm，Thimble对齐中线的那一格 × 0.01 是补上的小数。'
+    });
+
+    const hazardWrap = document.getElementById('hazard-icons');
+    [
+      ['flammable', 'Flammable', '易燃'],
+      ['toxic', 'Poison/Toxic', '有毒'],
+      ['corrosive', 'Corrosive', '腐蚀性'],
+      ['irritant', 'Irritant', '刺激性'],
+      ['explosive', 'Explosive', '爆炸性'],
+      ['radioactive', 'Radioactive', '放射性']
+    ].forEach(([kind, en, cn]) => {
+      const cell = document.createElement('div');
+      cell.className = 'hazard-cell';
+      cell.innerHTML = `${Games.ghsIcon(kind, 44)}<div class="img-caption">${en}<br>${cn}</div>`;
+      hazardWrap.appendChild(cell);
+    });
+
+    Games.attachProgress();
+  }
+  init();
 });
 </script>
 </body>

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Chapter 2: Cell as the Basic Unit of Life</title>
 <link rel="stylesheet" href="style.css">
+<script src="games.js" defer></script>
 <style>
   .section { background:#fff; border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
   .section h2 { font-size:16px; font-weight:600; margin:0 0 4px; }
@@ -35,7 +36,8 @@
   .qfb { font-size:13px; margin-top:8px; display:none; font-weight:600; }
 </style>
 </head>
-<body>
+<body class="ch-accent ch-2">
+<div class="ch-bar"></div>
 <div class="wrap">
   <a href="index.html" class="back-link">‹ 返回列表</a>
   <h1 class="page-title">Chapter 2: Cell as the Basic Unit of Life</h1>
@@ -350,6 +352,14 @@ function buildQuiz(containerId, feedbackId, options, correctIndex, correctMsg, w
   });
 }
 buildQuiz('q-org', 'fb-org', ['Cell', 'Organ', 'System'], 1, 'Correct! Cell → Tissue → Organ → System → Organism', 'Order is: Cell → Tissue → Organ → System → Organism');
+
+window.addEventListener('DOMContentLoaded', () => {
+  function init() {
+    if (!window.Games) { setTimeout(init, 30); return; }
+    Games.attachProgress();
+  }
+  init();
+});
 </script>
 </body>
 </html>
