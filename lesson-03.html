@@ -16,17 +16,13 @@
   .example-item { flex:1; min-width:130px; background:#faf9f6; border-radius:10px; padding:10px; }
   .example-item .title { font-size:12px; font-weight:600; margin-bottom:4px; }
   .example-item .desc { font-size:11px; color:#6b6a63; line-height:1.5; }
-  .step-card { border:0.5px solid #e5e3da; border-radius:12px; margin-bottom:8px; overflow:hidden; }
-  .step-header { width:100%; display:flex; align-items:center; gap:10px; padding:10px 12px; background:#faf9f6; border:none; cursor:pointer; text-align:left; font-family:inherit; }
-  .step-badge { width:24px; height:24px; min-width:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; color:#fff; }
-  .step-title { display:block; font-size:13px; font-weight:600; flex:1; }
-  .step-chevron { font-size:15px; color:#b5b3aa; transition:transform 0.2s; }
-  .step-body { max-height:0; overflow:hidden; transition:max-height 0.25s ease; background:#fff; }
-  .step-body-inner { padding:10px 12px; font-size:12px; line-height:1.65; color:#4a4943; }
-  .quiz-box { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-top:14px; }
-  .quiz-box .qtitle { font-size:13px; font-weight:600; margin-bottom:8px; }
   .qopt { padding:10px; text-align:left; border:0.5px solid #d9d7cd; border-radius:8px; background:#fff; cursor:pointer; font-size:13px; display:block; width:100%; margin-bottom:6px; }
-  .qfb { font-size:13px; margin-top:8px; display:none; font-weight:600; }
+  .qopt:disabled { cursor:default; opacity:0.9; }
+
+  .sim-box { background:#faf9f6; border-radius:12px; padding:16px; text-align:center; margin-top:12px; }
+  .ctrl-btn { background:#1d9e75; color:#fff; border:none; padding:9px 12px; border-radius:8px; font-size:12px; font-weight:600; cursor:pointer; }
+  #tempStatus, #stomaLabel { font-size:13px; font-weight:600; color:#4a4943; }
+  .guard-cell { transition: transform 0.6s ease; }
 </style>
 </head>
 <body class="ch-accent ch-3">
@@ -59,6 +55,16 @@
       </div>
     </div>
     <p style="font-size:12px; color:#8a8983; margin-top:10px;">生活化例子：夏天你会流汗降温；冬天冷到发抖，其实是肌肉在制造热量。</p>
+
+    <p style="font-size:12px; color:#6b6a63; margin-top:14px;">🎮 Try it: pick a scenario, then choose the body's correct response. 试试看：点选情境，然后选出身体正确的反应。</p>
+    <div class="sim-box">
+      <div id="tempStatus">Body temperature: 37.0°C (normal) 体温：37.0°C（正常）</div>
+      <div style="margin-top:12px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+        <button class="ctrl-btn" style="background:#d85a30;" onclick="triggerTemp('hot')">🔥 Too hot 太热</button>
+        <button class="ctrl-btn" style="background:#2a6fd4;" onclick="triggerTemp('cold')">🥶 Too cold 太冷</button>
+      </div>
+      <div id="tempActions" style="margin-top:12px; text-align:left;"></div>
+    </div>
   </div>
 
   <div class="section">
@@ -76,11 +82,8 @@
     </div>
     <p style="font-size:12px; color:#8a8983; margin-top:10px;">生活化例子：喝很多水后，你会更常想上厕所——这就是身体在排掉多余的水分。</p>
 
-    <div class="quiz-box">
-      <div class="qtitle">🎯 Quiz: When you're too hot, what happens to blood vessels near the skin?</div>
-      <div id="q-temp"></div>
-      <p id="fb-temp" class="qfb"></p>
-    </div>
+    <p style="font-size:12px; color:#6b6a63; margin-top:14px;">Match each situation to the body's correct response. 把每个情况和身体正确的反应配对。</p>
+    <div id="water-game"></div>
   </div>
 
   <div class="section">
@@ -89,87 +92,115 @@
     <p style="font-size:13px; color:#4a4943; line-height:1.7;"><strong>Transpiration</strong> = loss of water vapour from a plant, mainly through tiny pores on leaves called <strong>stomata</strong>.</p>
     <p style="font-size:12px; color:#6b6a63; margin-top:8px;">植物也有自己一套"调节系统"——透过控制气孔的开关，来平衡水分和气体交换。</p>
 
-    <div style="font-size:12px; font-weight:600; margin:14px 0 6px;">Guard cells control the stoma 保卫细胞控制气孔</div>
-    <svg width="100%" viewBox="0 0 320 220" role="img"><title>Stoma open and closed</title>
-      <text x="160" y="18" font-size="12" text-anchor="middle" fill="#3d3d3a" font-weight="600">Stoma OPEN</text>
-      <text x="160" y="32" font-size="10" text-anchor="middle" fill="#8a8983">day time, water available</text>
-      <path d="M130 75 Q160 55 190 75 Q160 95 130 75 Z" fill="#e9f5e3" stroke="#3d3d3a" stroke-width="1.3"/>
-      <ellipse cx="130" cy="75" rx="12" ry="22" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1"/>
-      <ellipse cx="190" cy="75" rx="12" ry="22" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1"/>
-      <text x="160" y="112" font-size="10" text-anchor="middle" fill="#6b6a63">guard cells curve apart</text>
+    <div style="font-size:12px; font-weight:600; margin:14px 0 6px;">🎮 Try it: toggle the conditions and watch the stoma respond. 试试看：切换环境条件，观察气孔的反应。</div>
+    <div class="sim-box">
+      <svg width="220" height="130" viewBox="0 0 220 130" role="img"><title>Interactive stoma</title>
+        <ellipse id="guardLeft" class="guard-cell" cx="95" cy="65" rx="14" ry="26" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1.2"/>
+        <ellipse id="guardRight" class="guard-cell" cx="125" cy="65" rx="14" ry="26" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1.2"/>
+      </svg>
+      <div id="stomaLabel">Stoma: OPEN ☀️ — more gas exchange, more water lost. 气孔：打开——气体交换增加，水分流失也增加。</div>
+      <div style="margin-top:12px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+        <button class="ctrl-btn" onclick="setStoma(true)">☀️ Day / water available 白天/水分充足</button>
+        <button class="ctrl-btn" style="background:#d85a30;" onclick="setStoma(false)">🌙 Hot &amp; dry 炎热干燥</button>
+      </div>
+    </div>
 
-      <line x1="20" y1="135" x2="300" y2="135" stroke="#eeece5" stroke-width="1"/>
-
-      <text x="160" y="158" font-size="12" text-anchor="middle" fill="#3d3d3a" font-weight="600">Stoma CLOSED</text>
-      <text x="160" y="172" font-size="10" text-anchor="middle" fill="#8a8983">very hot / low water</text>
-      <ellipse cx="150" cy="200" rx="11" ry="18" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1"/>
-      <ellipse cx="170" cy="200" rx="11" ry="18" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1"/>
-    </svg>
-
-    <div id="transpiration-steps" style="margin-top:12px;"></div>
+    <p style="font-size:12px; color:#6b6a63; margin-top:14px;">Match each condition to what happens to transpiration. 把每种环境条件和蒸腾作用的变化配对。</p>
+    <div id="transpiration-game"></div>
   </div>
 
 </div>
 
 <script>
-function buildQuiz(containerId, feedbackId, options, correctIndex, correctMsg, wrongMsg) {
-  const container = document.getElementById(containerId);
-  options.forEach((opt, i) => {
+function shuffleArr(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ---- Section 2: interactive hot/cold response challenge ----
+function triggerTemp(type) {
+  const status = document.getElementById('tempStatus');
+  const actions = document.getElementById('tempActions');
+  actions.innerHTML = '';
+  let correct, wrong;
+
+  if (type === 'hot') {
+    status.innerHTML = '🥵 Body temperature: 38.5°C (too hot!) 体温：38.5°C（过热！）';
+    correct = 'Blood vessels widen + sweat more (vasodilation) 血管舒张 + 大量出汗';
+    wrong = 'Muscles shiver to produce heat 肌肉发抖产生热量';
+  } else {
+    status.innerHTML = '🥶 Body temperature: 35.2°C (too cold!) 体温：35.2°C（过冷！）';
+    correct = 'Blood vessels narrow + shiver (vasoconstriction) 血管收缩 + 肌肉发抖';
+    wrong = 'Sweat glands produce more sweat 大量出汗';
+  }
+
+  shuffleArr([correct, wrong]).forEach(text => {
     const btn = document.createElement('button');
     btn.className = 'qopt';
-    btn.textContent = opt;
+    btn.textContent = text;
     btn.addEventListener('click', () => {
-      const fb = document.getElementById(feedbackId);
-      fb.style.display = 'block';
-      container.querySelectorAll('.qopt').forEach(b => { b.style.opacity = '0.5'; b.style.borderColor = '#d9d7cd'; });
-      if (i === correctIndex) {
-        btn.style.opacity = '1'; btn.style.borderColor = '#1d9e75';
-        fb.style.color = '#0f6e56'; fb.innerHTML = '✓ ' + correctMsg;
+      actions.querySelectorAll('.qopt').forEach(b => b.disabled = true);
+      if (text === correct) {
+        btn.style.borderColor = '#1d9e75'; btn.style.background = '#e9f5e3';
+        status.innerHTML = '😌 Correct! Body returns to 37.0°C (balanced). 正确！体温恢复到37.0°C（平衡状态）。';
       } else {
-        btn.style.opacity = '1'; btn.style.borderColor = '#d85a30';
-        fb.style.color = '#993c1d'; fb.innerHTML = '✗ ' + wrongMsg;
+        btn.style.borderColor = '#d85a30'; btn.style.background = '#fdf0e8';
+        status.innerHTML += '<br>❌ Not quite — that response would make it worse. 不对——这样反应会让情况更糟。';
       }
     });
-    container.appendChild(btn);
+    actions.appendChild(btn);
   });
 }
-buildQuiz('q-temp', 'fb-temp', ['Widen (vasodilation)', 'Narrow (vasoconstriction)', 'No change'], 0, 'Correct! Blood vessels widen to release more heat.', 'When hot, vessels widen (vasodilation) to lose heat faster');
+
+// ---- Section 4: interactive stoma toggle ----
+function setStoma(isOpen) {
+  const left = document.getElementById('guardLeft');
+  const right = document.getElementById('guardRight');
+  const label = document.getElementById('stomaLabel');
+  if (isOpen) {
+    left.style.transform = 'translateX(-8px)';
+    right.style.transform = 'translateX(8px)';
+    label.innerHTML = 'Stoma: OPEN ☀️ — more gas exchange, more water lost. 气孔：打开——气体交换增加，水分流失也增加。';
+  } else {
+    left.style.transform = 'translateX(6px)';
+    right.style.transform = 'translateX(-6px)';
+    label.innerHTML = 'Stoma: CLOSED 🌙 — less water lost, less CO₂ taken in. 气孔：关闭——水分流失减少，但CO₂摄入也减少。';
+  }
+}
+
+// ---- Games.match data ----
+const waterSituations = [
+  { prompt: 'The body has too little water. What happens?', answer: 'Feel thirsty; kidneys make less, more concentrated urine 感到口渴；肾脏产生更少、更浓缩的尿液' },
+  { prompt: 'The body has too much water. What happens?', answer: 'Kidneys make more, diluted urine to remove the excess 肾脏产生更多、较稀的尿液以排出多余水分' }
+];
+const transpirationFactors = [
+  { prompt: 'During the day / hot weather, why does the transpiration rate increase?', answer: 'Stomata open wider for gas exchange, so more water vapour escapes 气孔开得更大以进行气体交换，因此更多水蒸气散失' },
+  { prompt: 'At night, or when it is very hot and dry, why do stomata close?', answer: 'To reduce water loss, even though this limits CO₂ intake 减少水分流失，尽管这会限制CO₂的摄入' },
+  { prompt: 'Why does windy weather increase the transpiration rate?', answer: 'Wind blows away water vapour near the leaf surface 风把叶片表面的水蒸气吹走' }
+];
 
 window.addEventListener('DOMContentLoaded', () => {
   function init() {
     if (!window.Games) { setTimeout(init, 30); return; }
     Games.attachProgress();
+
+    Games.match(document.getElementById('water-game'), {
+      title: 'Water Regulation Match 水分调节配对',
+      items: waterSituations,
+      takeaway: "The kidneys constantly adjust urine concentration to keep the body's water level balanced. 肾脏不断调整尿液浓度，以维持体内水分平衡。"
+    });
+
+    Games.match(document.getElementById('transpiration-game'), {
+      title: 'Transpiration Factors Match 蒸腾作用因素配对',
+      items: transpirationFactors,
+      takeaway: 'Stomata constantly balance two needs: letting CO₂ in for photosynthesis, and keeping water in. 气孔不断在两者之间取得平衡：让CO₂进入以进行光合作用，同时保留水分。'
+    });
   }
   init();
-});
-
-const transEvents = [
-  { title: '☀️ During the day / hot weather', body: 'Stomata OPEN more to allow gas exchange (CO₂ in for photosynthesis) — but this also means more water vapour escapes (higher transpiration rate).' },
-  { title: '🌙 At night / very hot & dry', body: 'Stomata CLOSE to reduce water loss when the plant risks drying out — even though this limits CO₂ intake.' },
-  { title: '💨 Windy conditions', body: 'Wind blows away water vapour near the leaf surface, increasing the rate of transpiration.' }
-];
-const transContainer = document.getElementById('transpiration-steps');
-transEvents.forEach((t, i) => {
-  const card = document.createElement('div');
-  card.className = 'step-card';
-  const colors = ['#7f77dd','#1d9e75','#d85a30'];
-  const header = document.createElement('button');
-  header.className = 'step-header';
-  header.innerHTML = `<span class="step-badge" style="background:${colors[i]}">${i+1}</span><span class="step-title">${t.title}</span><span class="step-chevron">▾</span>`;
-  const body = document.createElement('div');
-  body.className = 'step-body';
-  const inner = document.createElement('div');
-  inner.className = 'step-body-inner';
-  inner.textContent = t.body;
-  body.appendChild(inner);
-  let open = false;
-  header.addEventListener('click', () => {
-    open = !open;
-    const icon = header.querySelector('.step-chevron');
-    if (open) { body.style.maxHeight = body.scrollHeight + 10 + 'px'; icon.style.transform = 'rotate(180deg)'; }
-    else { body.style.maxHeight = '0'; icon.style.transform = 'rotate(0deg)'; }
-  });
-  card.appendChild(header); card.appendChild(body); transContainer.appendChild(card);
 });
 </script>
 </body>
