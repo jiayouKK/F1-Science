@@ -1,443 +1,373 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chapter 1: Introduction to Scientific Investigation</title>
-<link rel="stylesheet" href="style.css">
-<script src="games.js" defer></script>
-<style>
-  .section { background:#fff; border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
-  .section h2 { font-size:16px; font-weight:600; margin:0 0 4px; }
-  .section .eng { font-size:12px; color:#9a998f; margin-bottom:12px; }
-  .weight-tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:6px; background:#f0efe9; color:#8a8983; margin-left:6px; }
-  table.unit-tbl { width:100%; border-collapse:collapse; font-size:13px; margin-bottom:8px; }
-  table.unit-tbl th, table.unit-tbl td { text-align:left; padding:6px 4px; border-bottom:1px solid #eeece5; }
-  table.unit-tbl th { color:#8a8983; font-weight:500; }
-  .prefix-line { font-family: "SF Mono", monospace; font-size:13px; background:#f5f4f0; padding:8px 10px; border-radius:8px; }
-  .img-row { display:flex; gap:8px; margin:12px 0; flex-wrap:wrap; }
-  .img-cell { flex:1; min-width:90px; text-align:center; }
-  .thief-intro { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-bottom:12px; font-size:14px; line-height:1.7; }
-  .step-card { border:0.5px solid #e5e3da; border-radius:12px; margin-bottom:8px; overflow:hidden; }
-  .step-header { width:100%; display:flex; align-items:center; gap:10px; padding:12px 14px; background:#faf9f6; border:none; cursor:pointer; text-align:left; font-family:inherit; }
-  .step-badge { width:26px; height:26px; min-width:26px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600; color:#fff; }
-  .step-title-wrap { flex:1; }
-  .step-title { display:block; font-size:14px; font-weight:600; }
-  .step-sub { display:block; font-size:11px; color:#9a998f; margin-top:1px; }
-  .step-chevron { font-size:16px; color:#b5b3aa; transition:transform 0.2s; }
-  .step-body { max-height:0; overflow:hidden; transition:max-height 0.25s ease; background:#fff; }
-  .step-body-inner { padding:12px 14px; font-size:13px; line-height:1.7; color:#4a4943; }
-  .attitude-grid { display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
-  .attitude-item { background:#faf9f6; border-radius:8px; padding:8px 10px; font-size:13px; }
-  .attitude-item .en { color:#9a998f; font-size:11px; }
-  .app-tbl { width:100%; border-collapse:collapse; font-size:12px; }
-  .app-tbl td { padding:8px 4px; border-bottom:1px solid #eeece5; vertical-align:middle; }
-  .app-tbl .icon-cell { width:56px; text-align:center; }
-  .app-tbl .name-cell { width:82px; font-weight:600; color:#3d3d3a; }
-  .app-tbl .fn-cell { color:#6b6a63; font-size:11px; line-height:1.5; }
-  .quiz-box { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-top:14px; }
-  .quiz-box .qtitle { font-size:13px; font-weight:600; margin-bottom:8px; }
-  .qopt { padding:10px; text-align:left; border:0.5px solid #d9d7cd; border-radius:8px; background:#fff; cursor:pointer; font-size:13px; display:block; width:100%; margin-bottom:6px; }
-  .qfb { font-size:13px; margin-top:8px; display:none; font-weight:600; }
-</style>
-</head>
-<body class="ch-accent ch-1">
-<div class="ch-bar"></div>
-<div class="wrap">
-  <a href="index.html" class="back-link">‹ 返回列表</a>
-  <h1 class="page-title">Chapter 1: Introduction to Scientific Investigation</h1>
-  <div class="page-subtitle">临时抱佛脚版</div>
+(function (global) {
+  const GHS_RED = '#e2231a';
 
-  <div class="section">
-    <h2>1. Physical Quantities & Units</h2>
-    <div class="eng">物理量与单位</div>
-    <table class="unit-tbl">
-      <tr><th>Quantity</th><th>Unit</th><th>Symbol</th></tr>
-      <tr><td>Length</td><td>metre</td><td>m</td></tr>
-      <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
-      <tr><td>Time</td><td>second</td><td>s</td></tr>
-      <tr><td>Temperature</td><td>Kelvin</td><td>K</td></tr>
-      <tr><td>Current</td><td>Ampere</td><td>A</td></tr>
-    </table>
-
-    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Length 长度</div>
-    <div class="prefix-line">1 km = 1000 m　|　1 m = 100 cm　|　1 cm = 10 mm</div>
-
-    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Mass 质量</div>
-    <div class="prefix-line">1 kg = 1000 g　|　1 g = 1000 mg</div>
-
-    <div style="font-size:13px; font-weight:600; margin:12px 0 6px;">Time 时间</div>
-    <div class="prefix-line">1 day = 24 h　|　1 h = 60 min　|　1 min = 60 s</div>
-
-    <div id="game-units"></div>
-  </div>
-
-  <div class="section">
-    <h2>2. Apparatus & Function</h2>
-    <div class="eng">实验室仪器与用途</div>
-    <p style="font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px;">⚠ 图片仅供参考，考试如果需要画apparatus，请以课本为准</p>
-    <table class="app-tbl">
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M15 4 L15 30 Q15 36 20 36 Q25 36 25 30 L25 4" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="13" y1="4" x2="27" y2="4" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
-        <td class="name-cell">Test tube<br>试管</td>
-        <td class="fn-cell">To hold small amount of chemicals<br>盛装少量化学品</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M13 4 L13 28 Q13 36 20 36 Q27 36 27 28 L27 4" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="11" y1="4" x2="29" y2="4" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
-        <td class="name-cell">Boiling tube<br>沸腾管</td>
-        <td class="fn-cell">To heat small amount of chemicals<br>加热少量化学品</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M11 8 L11 32 L29 32 L29 8" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="9" y1="8" x2="31" y2="8" stroke="#3d3d3a" stroke-width="1.3"/><path d="M29 8 L33 6" stroke="#3d3d3a" stroke-width="1.3" fill="none"/></svg></td>
-        <td class="name-cell">Beaker<br>烧杯</td>
-        <td class="fn-cell">To hold larger amount of chemicals<br>盛装较大量化学品</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M17 6 L17 15 L7 32 L33 32 L23 15 L23 6" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="15" y1="6" x2="25" y2="6" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
-        <td class="name-cell">Conical flask<br>锥形瓶</td>
-        <td class="fn-cell">To hold larger amount of chemicals<br>盛装较大量化学品</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="18" y1="4" x2="18" y2="14" stroke="#3d3d3a" stroke-width="1.3"/><line x1="22" y1="4" x2="22" y2="14" stroke="#3d3d3a" stroke-width="1.3"/><circle cx="20" cy="24" r="11" fill="none" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
-        <td class="name-cell">Flat-bottom flask<br>平底烧瓶</td>
-        <td class="fn-cell">To hold larger amount of chemicals<br>盛装较大量化学品</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="15" y="4" width="10" height="30" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><path d="M13 34 L13 37 L27 37 L27 34" stroke="#3d3d3a" stroke-width="1.3" fill="none"/><line x1="15" y1="12" x2="19" y2="12" stroke="#3d3d3a" stroke-width="0.9"/><line x1="15" y1="20" x2="19" y2="20" stroke="#3d3d3a" stroke-width="0.9"/><line x1="15" y1="28" x2="19" y2="28" stroke="#3d3d3a" stroke-width="0.9"/></svg></td>
-        <td class="name-cell">Measuring cylinder<br>量筒</td>
-        <td class="fn-cell">To measure volume of liquid<br>量取液体体积</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="20" y1="2" x2="20" y2="24" stroke="#3d3d3a" stroke-width="1.3"/><rect x="14" y="24" width="12" height="5" fill="none" stroke="#3d3d3a" stroke-width="1.1"/><path d="M20 29 L20 36 L16 40 M20 36 L24 40" stroke="#3d3d3a" stroke-width="1.1" fill="none"/><line x1="14" y1="8" x2="18" y2="8" stroke="#3d3d3a" stroke-width="0.8"/><line x1="14" y1="14" x2="18" y2="14" stroke="#3d3d3a" stroke-width="0.8"/></svg></td>
-        <td class="name-cell">Burette<br>滴定管</td>
-        <td class="fn-cell">To measure volume of liquid accurately<br>精准量取液体体积</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="20" y1="2" x2="20" y2="12" stroke="#3d3d3a" stroke-width="1.3"/><ellipse cx="20" cy="18" rx="6" ry="7" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><line x1="20" y1="25" x2="20" y2="38" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
-        <td class="name-cell">Pipette<br>移液管</td>
-        <td class="fn-cell">To measure a fixed volume of liquid<br>量取固定体积液体</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><line x1="20" y1="4" x2="9" y2="32" stroke="#3d3d3a" stroke-width="1.3"/><line x1="20" y1="4" x2="31" y2="32" stroke="#3d3d3a" stroke-width="1.3"/><line x1="6" y1="32" x2="34" y2="32" stroke="#3d3d3a" stroke-width="1.3"/><circle cx="20" cy="20" r="9" fill="none" stroke="#3d3d3a" stroke-width="1"/></svg></td>
-        <td class="name-cell">Tripod stand<br>三脚架</td>
-        <td class="fn-cell">To support apparatus during heating<br>加热时支撑器材</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="6" y="16" width="28" height="10" fill="none" stroke="#3d3d3a" stroke-width="1"/><line x1="10" y1="16" x2="10" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="14" y1="16" x2="14" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="18" y1="16" x2="18" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="22" y1="16" x2="22" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="26" y1="16" x2="26" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="30" y1="16" x2="30" y2="26" stroke="#3d3d3a" stroke-width="0.5"/><line x1="6" y1="19" x2="34" y2="19" stroke="#3d3d3a" stroke-width="0.5"/><line x1="6" y1="23" x2="34" y2="23" stroke="#3d3d3a" stroke-width="0.5"/><ellipse cx="20" cy="21" rx="8" ry="4" fill="#fff" stroke="#3d3d3a" stroke-width="1"/></svg></td>
-        <td class="name-cell">Wire gauze<br>石棉网</td>
-        <td class="fn-cell">To spread heat evenly during heating<br>加热时平均分散热量</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M8 6 L32 6 L21 22 L21 34 L19 34 L19 22 Z" fill="none" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
-        <td class="name-cell">Filter funnel<br>漏斗</td>
-        <td class="fn-cell">To filter insoluble solids from mixtures<br>过滤不溶物</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="11" y="6" width="18" height="30" fill="none" stroke="#3d3d3a" stroke-width="1.3"/><rect x="13" y="4" width="14" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.1"/></svg></td>
-        <td class="name-cell">Gas jar<br>集气瓶</td>
-        <td class="fn-cell">To contain gas<br>收集气体</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><rect x="6" y="34" width="16" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.2"/><line x1="12" y1="4" x2="12" y2="34" stroke="#3d3d3a" stroke-width="1.2"/><rect x="12" y="14" width="12" height="4" fill="none" stroke="#3d3d3a" stroke-width="1.1"/><line x1="24" y1="16" x2="24" y2="24" stroke="#3d3d3a" stroke-width="1.1"/></svg></td>
-        <td class="name-cell">Retort stand with clamp<br>铁架台</td>
-        <td class="fn-cell">To hold or support apparatus<br>固定或支撑器材</td>
-      </tr>
-      <tr>
-        <td class="icon-cell"><svg width="40" height="40" viewBox="0 0 40 40"><path d="M8 18 Q20 30 32 18 L32 21 Q20 32 8 21 Z" fill="none" stroke="#3d3d3a" stroke-width="1.3"/></svg></td>
-        <td class="name-cell">Evaporating dish<br>蒸发皿</td>
-        <td class="fn-cell">To evaporate excess solvent<br>蒸发多余溶剂</td>
-      </tr>
-    </table>
-    <div id="game-apparatus"></div>
-  </div>
-
-  <div class="section">
-    <h2>3. Accuracy, Consistency, Sensitivity</h2>
-    <div class="eng">准确度、一致性、灵敏度</div>
-    <div class="img-row">
-      <div class="img-cell">
-        <svg width="100%" viewBox="0 0 110 110" role="img"><title>Accuracy</title>
-          <circle cx="55" cy="55" r="48" fill="#fff" stroke="#1a1a18" stroke-width="1.5"/>
-          <circle cx="55" cy="55" r="36" fill="#1a1a18"/>
-          <circle cx="55" cy="55" r="24" fill="#fff" stroke="#1a1a18" stroke-width="1.5"/>
-          <circle cx="55" cy="55" r="12" fill="#d43b2e"/>
-          <circle cx="53" cy="54" r="3" fill="#2a5fd4"/>
-          <circle cx="57" cy="56" r="3" fill="#2a5fd4"/>
-          <circle cx="55" cy="53" r="3" fill="#2a5fd4"/>
-        </svg>
-        <div class="img-caption">Accuracy 准确度<br>close to true value</div>
-      </div>
-      <div class="img-cell">
-        <svg width="100%" viewBox="0 0 110 110" role="img"><title>Consistency</title>
-          <circle cx="55" cy="55" r="48" fill="#fff" stroke="#1a1a18" stroke-width="1.5"/>
-          <circle cx="55" cy="55" r="36" fill="#1a1a18"/>
-          <circle cx="55" cy="55" r="24" fill="#fff" stroke="#1a1a18" stroke-width="1.5"/>
-          <circle cx="55" cy="55" r="12" fill="#d43b2e"/>
-          <circle cx="80" cy="30" r="3" fill="#2a5fd4"/>
-          <circle cx="84" cy="34" r="3" fill="#2a5fd4"/>
-          <circle cx="82" cy="28" r="3" fill="#2a5fd4"/>
-        </svg>
-        <div class="img-caption">Consistency 一致性<br>close to each other</div>
-      </div>
-      <div class="img-cell">
-        <svg width="100%" viewBox="0 0 110 130" role="img"><title>Sensitivity</title>
-          <rect x="14" y="15" width="20" height="90" fill="#fff" stroke="#1a1a18" stroke-width="1"/>
-          <line x1="14" y1="30" x2="24" y2="30" stroke="#1a1a18" stroke-width="1"/>
-          <line x1="14" y1="60" x2="24" y2="60" stroke="#1a1a18" stroke-width="1"/>
-          <line x1="14" y1="90" x2="24" y2="90" stroke="#1a1a18" stroke-width="1"/>
-          <rect x="60" y="15" width="20" height="90" fill="#fff" stroke="#1a1a18" stroke-width="1"/>
-          <line x1="60" y1="22" x2="70" y2="22" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="30" x2="70" y2="30" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="38" x2="70" y2="38" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="46" x2="70" y2="46" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="54" x2="70" y2="54" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="62" x2="70" y2="62" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="70" x2="70" y2="70" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="78" x2="70" y2="78" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="86" x2="70" y2="86" stroke="#1a1a18" stroke-width="0.7"/>
-          <line x1="60" y1="94" x2="70" y2="94" stroke="#1a1a18" stroke-width="0.7"/>
-          <path d="M38 55 L56 55" stroke="#d85a30" stroke-width="1.5" marker-end="url(#arr2)"/>
-          <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#d85a30"/></marker></defs>
-        </svg>
-        <div class="img-caption">Sensitivity 灵敏度<br>finer scale = more sensitive</div>
-      </div>
-    </div>
-
-    <div style="font-size:13px; font-weight:600; margin-top:14px;">Parallax error 视差</div>
-    <svg width="100%" viewBox="0 0 320 160" role="img" style="margin-top:8px;"><title>Parallax error</title>
-      <path d="M140 30 L140 130 L200 130 L200 30" fill="#eef4fa" stroke="#c7c5ba" stroke-width="1"/>
-      <line x1="140" y1="70" x2="200" y2="70" stroke="#d43b2e" stroke-width="1.5"/>
-      <text x="170" y="24" font-size="10" text-anchor="middle" fill="#d43b2e">scale reading</text>
-      <text x="245" y="42" font-size="18">👁</text>
-      <text x="270" y="42" font-size="16" fill="#d43b2e">✗</text>
-      <path d="M200 70 L245 42" stroke="#8a8983" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="245" y="82" font-size="18">👁</text>
-      <text x="270" y="82" font-size="16" fill="#2a5fd4">✓</text>
-      <path d="M200 70 L245 78" stroke="#2a5fd4" stroke-width="0.8" stroke-dasharray="3,2"/>
-      <text x="245" y="122" font-size="18">👁</text>
-      <text x="270" y="122" font-size="16" fill="#d43b2e">✗</text>
-      <path d="M200 70 L245 118" stroke="#8a8983" stroke-width="0.8" stroke-dasharray="3,2"/>
-    </svg>
-    <div style="font-size:12px; color:#6b6a63; text-align:center; margin-top:4px;">Eyes must be perpendicular (level) to the reading — 眼睛要跟刻度打平视线</div>
-
-    <div style="font-size:13px; color:#4a4943; line-height:1.7; margin-top:14px;"><strong>Zero error 零误差</strong>（秤上面没有东西但是有重量了）：</div>
-    <div class="img-row" style="margin-top:8px;">
-      <div class="img-cell">
-        <svg width="100%" viewBox="0 0 100 70" role="img"><title>No zero error</title>
-          <line x1="50" y1="15" x2="50" y2="30" stroke="#1a1a18" stroke-width="1"/>
-          <text x="50" y="12" font-size="10" text-anchor="middle">0</text>
-          <line x1="30" y1="40" x2="30" y2="55" stroke="#2a5fd4" stroke-width="1.5"/>
-          <text x="30" y="65" font-size="9" text-anchor="middle" fill="#2a5fd4">0对齐</text>
-        </svg>
-        <div class="img-caption">No zero error</div>
-      </div>
-      <div class="img-cell">
-        <svg width="100%" viewBox="0 0 100 70" role="img"><title>Positive zero error</title>
-          <line x1="50" y1="15" x2="50" y2="30" stroke="#1a1a18" stroke-width="1"/>
-          <text x="50" y="12" font-size="10" text-anchor="middle">0</text>
-          <line x1="65" y1="40" x2="65" y2="55" stroke="#d85a30" stroke-width="1.5"/>
-          <text x="65" y="65" font-size="9" text-anchor="middle" fill="#d85a30">+0.03</text>
-        </svg>
-        <div class="img-caption">Positive 正零误差<br>读数中要减掉</div>
-      </div>
-      <div class="img-cell">
-        <svg width="100%" viewBox="0 0 100 70" role="img"><title>Negative zero error</title>
-          <line x1="50" y1="15" x2="50" y2="30" stroke="#1a1a18" stroke-width="1"/>
-          <text x="50" y="12" font-size="10" text-anchor="middle">0</text>
-          <line x1="35" y1="40" x2="35" y2="55" stroke="#d85a30" stroke-width="1.5"/>
-          <text x="35" y="65" font-size="9" text-anchor="middle" fill="#d85a30">−0.06</text>
-        </svg>
-        <div class="img-caption">Negative 负零误差<br>读数中要加回</div>
-      </div>
-    </div>
-    <div class="prefix-line" style="margin-top:8px;">Actual reading = Reading − Zero error</div>
-  </div>
-
-  <div class="section">
-    <h2>4. Vernier Caliper & Screw Gauge <span class="weight-tag">喜欢考</span></h2>
-    <div class="eng">游标卡尺与千分尺 — 拖动滑块试试看</div>
-    <p style="font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px;">⚠ 图片仅供参考，考试如果需要画仪器，请以课本为准</p>
-    <p style="font-size:13px; color:#4a4943; line-height:1.7; margin:0 0 10px;">Vernier caliper 精确度 0.01 cm；Screw gauge 精确度 0.01 mm，测更小的物体更准确。</p>
-    <div id="game-vernier"></div>
-    <div id="game-screwgauge"></div>
-  </div>
-
-  <div class="section">
-    <h2>5. Density</h2>
-    <div class="eng">密度</div>
-    <div style="font-size:14px; margin-bottom:10px;">Density = Mass ÷ Volume　（ρ = m/V）　unit: kg/m³ or g/cm³</div>
-    <svg width="100%" viewBox="0 0 380 190" role="img"><title>Floating and sinking</title>
-      <rect x="20" y="30" width="150" height="130" rx="6" fill="none" stroke="#c7c5ba" stroke-width="1"/>
-      <rect x="21" y="60" width="148" height="99" fill="#cfe4f5"/>
-      <rect x="35" y="50" width="45" height="18" rx="3" fill="#b8875a"/>
-      <circle cx="130" cy="140" r="14" fill="#6b6a63"/>
-      <text x="82" y="26" font-size="11" fill="#6b6a63">wood block</text>
-      <text x="20" y="100" font-size="11" fill="#6b6a63">metal ball</text>
-      <text x="95" y="180" font-size="11" text-anchor="middle" fill="#8a8983">density &lt; water → float</text>
-
-      <rect x="220" y="30" width="150" height="130" rx="6" fill="none" stroke="#c7c5ba" stroke-width="1"/>
-      <rect x="221" y="60" width="148" height="99" fill="#cfe4f5"/>
-      <path d="M 240 62 L 350 62 L 340 78 L 250 78 Z" fill="#6b6a63"/>
-      <text x="295" y="180" font-size="11" text-anchor="middle" fill="#8a8983">same metal, boat shape → float</text>
-      <text x="295" y="55" font-size="11" text-anchor="middle" fill="#6b6a63">metal boat</text>
-    </svg>
-    <div style="font-size:13px; color:#4a4943; margin-top:6px;">同样是铁，形状改变了体积（不是密度）→ 船能浮</div>
-
-    <div class="quiz-box">
-      <div class="qtitle">🎯 Quiz: A stone has mass 50g and volume 20cm³. What is its density?</div>
-      <div id="q-density"></div>
-      <p id="fb-density" class="qfb"></p>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>6. Scientific Investigation Steps</h2>
-    <div class="eng">科学探究六步骤</div>
-    <div class="thief-intro">班上的零食钱不见了，全班都是嫌疑人。点开下面每一步，看看要怎么找出谁看起来最像贼。</div>
-    <div id="steps"></div>
-  </div>
-
-  <div class="section">
-    <h2>7. Hazard Symbols</h2>
-    <div class="eng">安全标志</div>
-    <p style="font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px;">⚠ 图片仅供参考，考试如果需要画标志，请以课本为准</p>
-    <div class="hazard-row" id="hazard-icons"></div>
-  </div>
-
-  <div class="section">
-    <h2>8. Scientific Attitudes <span class="weight-tag">不太考</span></h2>
-    <div class="eng">科学态度</div>
-    <div class="attitude-grid">
-      <div class="attitude-item">好奇心 <span class="en">curious</span></div>
-      <div class="attitude-item">诚实 <span class="en">honest</span></div>
-      <div class="attitude-item">细心 <span class="en">meticulous</span></div>
-      <div class="attitude-item">愿意合作 <span class="en">cooperative</span></div>
-      <div class="attitude-item">失败了愿意重做 <span class="en">persistent</span></div>
-    </div>
-  </div>
-
-</div>
-
-<script>
-function buildQuiz(containerId, feedbackId, options, correctIndex, correctMsg, wrongMsg) {
-  const container = document.getElementById(containerId);
-  options.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'qopt';
-    btn.textContent = opt;
-    btn.addEventListener('click', () => {
-      const fb = document.getElementById(feedbackId);
-      fb.style.display = 'block';
-      container.querySelectorAll('.qopt').forEach(b => { b.style.opacity = '0.5'; b.style.borderColor = '#d9d7cd'; });
-      if (i === correctIndex) {
-        btn.style.opacity = '1'; btn.style.borderColor = '#1d9e75';
-        fb.style.color = '#0f6e56'; fb.innerHTML = '✓ ' + correctMsg;
-      } else {
-        btn.style.opacity = '1'; btn.style.borderColor = '#d85a30';
-        fb.style.color = '#993c1d'; fb.innerHTML = '✗ ' + wrongMsg;
-      }
-    });
-    container.appendChild(btn);
-  });
-}
-buildQuiz('q-density', 'fb-density', ['0.4 g/cm³', '2.5 g/cm³', '70 g/cm³'], 1, 'Correct! 50 ÷ 20 = 2.5 g/cm³', 'Density = Mass ÷ Volume, try again');
-
-const steps = [
-  { n:1, color:'#7f77dd', title:'Identify problem 识别问题', sub:'把案件讲清楚', body:'不是「谁看起来最像贼」，而是「钱是什么时候不见的、谁有机会拿」——问出一个能查的问题。' },
-  { n:2, color:'#1d9e75', title:'Form hypothesis 提出假设', sub:'锁定有根据的疑犯', body:'假设：小偷是下课时间最后留在教室的人。这个可以查证，不是乱猜「感觉他看起来最像贼」。' },
-  { n:3, color:'#d85a30', title:'Control variables 控制变量', sub:'一次只审一个疑犯', body:'如果同时怀疑好几个人，又混进「谁欠钱」「谁上次也丢过东西」这些无关线索，案件会查不清。只锁定「当时在场」这一个条件。<br><br><strong>用这个案件对应三个关键词：</strong><br>• <strong>Manipulated variable 操纵变量</strong> — 你主动去比较的那个条件（例：是不是「当时在场」）<br>• <strong>Responding variable 应变变量</strong> — 跟着改变、你要观察的结果（例：这个人有没有作案嫌疑）<br>• <strong>Constant variable 控制变量</strong> — 全程保持不变、避免混淆判断的条件（例：同一间教室、同一天、同样的调查方式）' },
-  { n:4, color:'#d4537e', title:'Design experiment 设计实验', sub:'安排公平的测试', body:'例如查监控、或安排某人不知情的情况下观察反应——设计一个能真正验证假设的方法。' },
-  { n:5, color:'#7f77dd', title:'Collect data 收集数据', sub:'找证据，不是找感觉', body:'记录下监控时间、在场人员名单——用事实说话，不是「我觉得是他」。' },
-  { n:6, color:'#1d9e75', title:'Conclusion 下结论', sub:'证据够了才能定罪', body:'如果证据支持假设，才能说是他。如果证据不够，就要放人重新调查——这才是公平，不是随便冤枉人。' }
-];
-const container = document.getElementById('steps');
-steps.forEach((s) => {
-  const card = document.createElement('div');
-  card.className = 'step-card';
-  const header = document.createElement('button');
-  header.className = 'step-header';
-  header.innerHTML = `
-    <span class="step-badge" style="background:${s.color}">${s.n}</span>
-    <span class="step-title-wrap">
-      <span class="step-title">${s.title}</span>
-      <span class="step-sub">${s.sub}</span>
-    </span>
-    <span class="step-chevron">▾</span>
-  `;
-  const body = document.createElement('div');
-  body.className = 'step-body';
-  const inner = document.createElement('div');
-  inner.className = 'step-body-inner';
-  inner.innerHTML = s.body;
-  body.appendChild(inner);
-  let open = false;
-  header.addEventListener('click', () => {
-    open = !open;
-    const icon = header.querySelector('.step-chevron');
-    if (open) { body.style.maxHeight = body.scrollHeight + 20 + 'px'; icon.style.transform = 'rotate(180deg)'; }
-    else { body.style.maxHeight = '0'; icon.style.transform = 'rotate(0deg)'; }
-  });
-  card.appendChild(header); card.appendChild(body); container.appendChild(card);
-});
-
-// 等games.js（defer）加载完成后再初始化互动组件
-window.addEventListener('DOMContentLoaded', () => {
-  function init() {
-    if (!window.Games) { setTimeout(init, 30); return; }
-
-    Games.match(document.getElementById('game-units'), {
-      title: 'Unit Conversion Match',
-      items: [
-        { prompt: '250 cm = ?', answer: '2.5 m' },
-        { prompt: '3 kg = ?', answer: '3000 g' },
-        { prompt: '2 h = ?', answer: '120 min' },
-        { prompt: '50 mm = ?', answer: '5 cm' }
-      ],
-      choices: ['2.5 m', '3000 g', '120 min', '5 cm'],
-      takeaway: '换算方向记住：大单位→小单位要乘，小单位→大单位要除。'
-    });
-
-    Games.match(document.getElementById('game-apparatus'), {
-      title: 'Apparatus Function Match',
-      items: [
-        { prompt: 'Measuring cylinder', answer: 'Measure volume of liquid' },
-        { prompt: 'Tripod stand', answer: 'Support apparatus during heating' },
-        { prompt: 'Filter funnel', answer: 'Filter insoluble solids from mixtures' },
-        { prompt: 'Evaporating dish', answer: 'Evaporate excess solvent' }
-      ],
-      choices: ['Measure volume of liquid', 'Support apparatus during heating', 'Filter insoluble solids from mixtures', 'Evaporate excess solvent'],
-      takeaway: '功能记不熟的，回去看第2节的表格对照。'
-    });
-
-    Games.vernier(document.getElementById('game-vernier'), {
-      title: 'Vernier Caliper — drag & read',
-      takeaway: 'Main scale 读到0.1cm，Vernier对齐的那一格 × 0.01 是补上的小数。'
-    });
-
-    Games.meter(document.getElementById('game-screwgauge'), {
-      title: 'Screw Gauge — drag & read',
-      takeaway: 'Sleeve 读到0.5mm，Thimble对齐中线的那一格 × 0.01 是补上的小数。'
-    });
-
-    const hazardWrap = document.getElementById('hazard-icons');
-    [
-      ['flammable', 'Flammable', '易燃'],
-      ['toxic', 'Poison/Toxic', '有毒'],
-      ['corrosive', 'Corrosive', '腐蚀性'],
-      ['irritant', 'Irritant', '刺激性'],
-      ['explosive', 'Explosive', '爆炸性'],
-      ['radioactive', 'Radioactive', '放射性']
-    ].forEach(([kind, en, cn]) => {
-      const cell = document.createElement('div');
-      cell.className = 'hazard-cell';
-      cell.innerHTML = `${Games.ghsIcon(kind, 44)}<div class="img-caption">${en}<br>${cn}</div>`;
-      hazardWrap.appendChild(cell);
-    });
-
-    Games.attachProgress();
+  function diamond(inner) {
+    return `<polygon points="24,2.2 45.8,24 24,45.8 2.2,24" fill="#fff" stroke="${GHS_RED}" stroke-width="2.8"/>${inner}`;
   }
-  init();
-});
-</script>
-</body>
-</html>
+
+  const ICONS = {
+    flammable: diamond(`
+      <path d="M24 39c-6.2 0-10.5-4.6-10.5-10.4 0-4.2 2.2-7.4 4.6-10.6 1.4 3.2 3.4 4.8 5.6 4.8C23.4 14 27 8.2 30.2 4.5c.6 6.2 5.6 10.8 5.6 17.6 0 8.2-5.2 16.9-11.8 16.9z" fill="#1a1a18"/>
+      <path d="M22.5 33c-2.2 0-3.8-1.7-3.8-3.8 0-1.6.8-2.8 1.8-4 .6 1.2 1.4 1.8 2.4 1.8.2-2.6 1.6-4.6 3-6.2.2 2.4 2.2 4.2 2.2 6.6 0 3.2-2.2 5.6-5.6 5.6z" fill="#fff"/>
+    `),
+    toxic: diamond(`
+      <circle cx="24" cy="18" r="7.2" fill="#1a1a18"/>
+      <circle cx="21.2" cy="17.2" r="1.7" fill="#fff"/>
+      <circle cx="26.8" cy="17.2" r="1.7" fill="#fff"/>
+      <path d="M24 20.2 L22.6 23.4 L25.4 23.4 Z" fill="#fff"/>
+      <rect x="21.6" y="23.2" width="4.8" height="2.2" rx="0.6" fill="#1a1a18"/>
+      <g fill="#1a1a18">
+        <rect x="8" y="29.2" width="15" height="3.2" rx="1.4" transform="rotate(32 15.5 30.8)"/>
+        <rect x="8" y="29.2" width="15" height="3.2" rx="1.4" transform="rotate(-32 15.5 30.8)"/>
+        <rect x="25" y="29.2" width="15" height="3.2" rx="1.4" transform="rotate(32 32.5 30.8)"/>
+        <rect x="25" y="29.2" width="15" height="3.2" rx="1.4" transform="rotate(-32 32.5 30.8)"/>
+      </g>
+    `),
+    corrosive: diamond(`
+      <path d="M11 10 h10 v4 l-3 1.2 v6" fill="none" stroke="#1a1a18" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M14 22 l-2 6" stroke="#1a1a18" stroke-width="1.6"/>
+      <path d="M6 29 h14 l-2 5 h-10 z" fill="#1a1a18"/>
+      <path d="M28 10 h10 v4 l3 1.2 v5" fill="none" stroke="#1a1a18" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M38 21 l3 5" stroke="#1a1a18" stroke-width="1.6"/>
+      <path d="M27 28 h16 v3 l-4 6 h-8 z" fill="#1a1a18"/>
+      <path d="M31 37 l1.5 4 M36 37 l1.5 4" stroke="#1a1a18" stroke-width="1.4"/>
+    `),
+    irritant: diamond(`
+      <rect x="21.2" y="9" width="5.6" height="20" rx="2.8" fill="#1a1a18"/>
+      <circle cx="24" cy="35.2" r="3.1" fill="#1a1a18"/>
+    `),
+    explosive: diamond(`
+      <circle cx="20" cy="28" r="6.2" fill="#1a1a18"/>
+      <path d="M20 22 L17 8 M25 23 L37 12 M26 28 L42 27 M25 32 L36 40 M19 34 L13 43 M14 27 L5 24 M15 32 L6 36" stroke="#1a1a18" stroke-width="2" stroke-linecap="round"/>
+    `),
+    radioactive: `
+      <circle cx="24" cy="24" r="21.5" fill="#ffde17" stroke="#1a1a18" stroke-width="1.8"/>
+      <circle cx="24" cy="24" r="4.2" fill="#1a1a18"/>
+      <path d="M24 24 L16.2 8.4 A18 18 0 0 1 31.8 8.4 Z" fill="#1a1a18"/>
+      <path d="M24 24 L39.6 32.6 A18 18 0 0 1 24 41.5 Z" fill="#1a1a18"/>
+      <path d="M24 24 L8.4 32.6 A18 18 0 0 1 16.2 8.4 Z" fill="#1a1a18"/>
+    `
+  };
+
+  function el(html) {
+    const t = document.createElement('div');
+    t.innerHTML = html.trim();
+    return t.firstElementChild;
+  }
+
+  function shuffle(arr) {
+    const a = arr.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function shell(title) {
+    return `<div class="game-box">
+      <div class="game-kicker">Mini-game</div>
+      <div class="game-title">${title}</div>
+      <div class="game-body"></div>
+    </div>`;
+  }
+
+  function takeaway(text) {
+    return `<p class="game-takeaway">${text}</p>`;
+  }
+
+  function ghsIcon(kind, size) {
+    size = size || 52;
+    return `<svg class="ghs-icon" width="${size}" height="${size}" viewBox="0 0 48 48" role="img" aria-hidden="true">${ICONS[kind]}</svg>`;
+  }
+
+  // Match — MCQ round game. Each round shows the correct answer + up to 3
+  // distractors (max 4 options total), so item pools bigger than 4 don't
+  // overwhelm the learner. Ends with score, a "Play again" button, and a
+  // full notes recap of every prompt + answer covered.
+  function match(mount, opts) {
+    const root = el(shell(opts.title));
+    const body = root.querySelector('.game-body');
+    mount.appendChild(root);
+    let items = opts.items.slice();
+    let i = 0;
+    let score = 0;
+
+    function pickOptions(item) {
+      const fullPool = opts.choices || items.map(x => x.answer);
+      const distractorPool = fullPool.filter(a => a !== item.answer);
+      const distractors = shuffle(distractorPool).slice(0, 3);
+      return shuffle([item.answer, ...distractors]);
+    }
+
+    function renderRecap() {
+      const notes = items.map(it => `
+        <div class="game-note" style="padding:8px 0; border-top:1px solid #eeece5;">
+          <div style="font-size:12px; font-weight:600; color:#3d3d3a;">${it.prompt}</div>
+          <div style="font-size:12px; color:#6b6a63; margin-top:2px;">${it.answer}</div>
+        </div>
+      `).join('');
+      return `
+        <details class="game-recap" style="margin-top:12px; background:#faf9f6; border-radius:10px; padding:10px 12px;">
+          <summary style="cursor:pointer; font-size:12px; font-weight:600; color:#4a4943;">📖 Full notes / 完整知识点</summary>
+          ${notes}
+        </details>
+      `;
+    }
+
+    function render() {
+      if (i >= items.length) {
+        body.innerHTML = `
+          <div class="game-score">Got ${score} / ${items.length}</div>
+          ${takeaway(opts.takeaway)}
+          <button type="button" class="game-opt primary game-replay">🔄 Play again</button>
+          ${renderRecap()}
+        `;
+        body.querySelector('.game-replay').addEventListener('click', () => {
+          i = 0; score = 0;
+          items = shuffle(items);
+          render();
+        });
+        return;
+      }
+      const item = items[i];
+      const labels = pickOptions(item);
+      body.innerHTML = `
+        <div class="game-meta">Round ${i + 1} / ${items.length}</div>
+        <div class="game-prompt">${item.prompt}</div>
+        <div class="game-opts"></div>
+        <p class="game-fb" hidden></p>
+      `;
+      const optWrap = body.querySelector('.game-opts');
+      const fb = body.querySelector('.game-fb');
+      labels.forEach(label => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'game-opt';
+        btn.textContent = label;
+        btn.addEventListener('click', () => {
+          const ok = label === item.answer;
+          if (ok) score++;
+          fb.hidden = false;
+          fb.className = 'game-fb ' + (ok ? 'ok' : 'bad');
+          fb.textContent = ok ? 'Correct.' : `Answer: ${item.answer}`;
+          optWrap.querySelectorAll('button').forEach(b => { b.disabled = true; });
+          btn.classList.add(ok ? 'is-ok' : 'is-bad');
+          setTimeout(() => { i++; render(); }, ok ? 550 : 900);
+        });
+        optWrap.appendChild(btn);
+      });
+    }
+    render();
+  }
+
+  function order(mount, opts) {
+    const root = el(shell(opts.title));
+    const body = root.querySelector('.game-body');
+    mount.appendChild(root);
+    const correct = opts.items.slice();
+    let pool = shuffle(correct);
+    let picked = [];
+
+    function render() {
+      body.innerHTML = `
+        <p class="game-prompt">${opts.prompt || 'Tap in the exam order.'}</p>
+        <div class="order-picked"></div>
+        <div class="order-pool"></div>
+        <div class="game-actions"></div>
+        <p class="game-fb" hidden></p>
+      `;
+      const pickedEl = body.querySelector('.order-picked');
+      const poolEl = body.querySelector('.order-pool');
+      const actions = body.querySelector('.game-actions');
+      const fb = body.querySelector('.game-fb');
+
+      if (!picked.length) {
+        pickedEl.innerHTML = '<span class="order-placeholder">Your order appears here</span>';
+      } else {
+        picked.forEach((name, idx) => {
+          const chip = document.createElement('span');
+          chip.className = 'order-chip on';
+          chip.textContent = `${idx + 1}. ${name}`;
+          pickedEl.appendChild(chip);
+        });
+      }
+
+      pool.forEach(name => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'game-opt';
+        btn.textContent = name;
+        btn.addEventListener('click', () => {
+          picked.push(name);
+          pool = pool.filter(n => n !== name);
+          render();
+        });
+        poolEl.appendChild(btn);
+      });
+
+      if (picked.length) {
+        const undo = document.createElement('button');
+        undo.type = 'button';
+        undo.className = 'game-opt ghost';
+        undo.textContent = 'Undo';
+        undo.addEventListener('click', () => {
+          pool.push(picked.pop());
+          render();
+        });
+        actions.appendChild(undo);
+      }
+
+      if (picked.length === correct.length) {
+        const check = document.createElement('button');
+        check.type = 'button';
+        check.className = 'game-opt primary';
+        check.textContent = 'Check';
+        check.addEventListener('click', () => {
+          const ok = picked.every((n, idx) => n === correct[idx]);
+          fb.hidden = false;
+          fb.className = 'game-fb ' + (ok ? 'ok' : 'bad');
+          fb.textContent = ok ? 'Correct order.' : `Exam order: ${correct.join(' → ')}`;
+          if (ok) body.insertAdjacentHTML('beforeend', takeaway(opts.takeaway));
+        });
+        actions.appendChild(check);
+      }
+    }
+    render();
+  }
+
+  // Screw gauge draggable simulator — verified: sleeve = floor(total/0.5)*0.5, thimble = round((total-sleeve)*100)
+  function meter(mount, opts) {
+    const root = el(shell(opts.title || 'Turn the thimble'));
+    const body = root.querySelector('.game-body');
+    mount.appendChild(root);
+    body.innerHTML = `
+      <p class="game-prompt">Drag the thimble. Sleeve = last exposed 0.5 mm mark. Thimble = 0.01 mm each.</p>
+      <div class="meter-svg"></div>
+      <input class="meter-range" type="range" min="0" max="1000" value="388" step="1" aria-label="Micrometer opening">
+      <div class="meter-readout"></div>
+      ${takeaway(opts.takeaway)}
+    `;
+    const svgWrap = body.querySelector('.meter-svg');
+    const range = body.querySelector('.meter-range');
+    const readout = body.querySelector('.meter-readout');
+
+    function draw(hundredths) {
+      const total = hundredths / 100;
+      const sleeve = Math.floor(total / 0.5) * 0.5;
+      const thimble = Math.round((total - sleeve) * 100);
+      readout.innerHTML = `Sleeve <strong>${sleeve.toFixed(2)} mm</strong> + Thimble <strong>${thimble} × 0.01</strong> = <strong>${total.toFixed(2)} mm</strong>`;
+
+      const sleeveEnd = 70 + sleeve * 28;
+      svgWrap.innerHTML = `
+        <svg width="100%" viewBox="0 0 420 150" role="img">
+          <title>Interactive screw gauge</title>
+          <path d="M28 28 C6 75 6 75 28 122" fill="none" stroke="#3d3d3a" stroke-width="14" stroke-linecap="round"/>
+          <rect x="28" y="68" width="16" height="14" fill="#6b6a63"/>
+          <text x="36" y="62" font-size="9" text-anchor="middle" fill="#6b6a63">Anvil</text>
+          <circle cx="54" cy="75" r="8" fill="#f0dcc0" stroke="#c7c5ba"/>
+          <rect x="62" y="70" width="48" height="10" fill="#8a8983"/>
+          <text x="86" y="62" font-size="9" text-anchor="middle" fill="#6b6a63">Spindle</text>
+          <rect x="108" y="58" width="118" height="34" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
+          <text x="160" y="52" font-size="9" text-anchor="middle" fill="#6b6a63">Sleeve</text>
+          <line x1="118" y1="75" x2="220" y2="75" stroke="#1a1a18" stroke-width="1"/>
+          ${[0,1,2,3,4,5].map(n => {
+            const x = 120 + n * 16;
+            return `<line x1="${x}" y1="75" x2="${x}" y2="86" stroke="#1a1a18" stroke-width="1"/><text x="${x}" y="96" font-size="8" text-anchor="middle">${n}</text>`;
+          }).join('')}
+          <rect x="${sleeveEnd}" y="50" width="88" height="50" rx="4" fill="#d3cfc2" stroke="#3d3d3a" stroke-width="1.2"/>
+          <text x="${sleeveEnd + 44}" y="44" font-size="9" text-anchor="middle" fill="#6b6a63">Thimble</text>
+          <text x="${sleeveEnd + 18}" y="78" font-size="16" fill="#d43b2e" font-weight="700">${thimble}</text>
+          <text x="${sleeveEnd + 44}" y="95" font-size="8" text-anchor="middle" fill="#6b6a63">× 0.01 mm</text>
+        </svg>
+      `;
+    }
+
+    range.addEventListener('input', () => draw(Number(range.value)));
+    draw(Number(range.value));
+  }
+
+  // Vernier caliper draggable simulator — verified: main = floor(h/10)/10, vernierDigit = h%10, exact reconstruction
+  function vernier(mount, opts) {
+    const root = el(shell(opts.title || 'Drag the sliding jaw'));
+    const body = root.querySelector('.game-body');
+    mount.appendChild(root);
+    body.innerHTML = `
+      <p class="game-prompt">Drag to move the sliding jaw. Main scale reads to 0.1 cm; the highlighted vernier line adds the last 0.01 cm.</p>
+      <div class="meter-svg"></div>
+      <input class="meter-range" type="range" min="0" max="500" value="322" step="1" aria-label="Vernier caliper opening">
+      <div class="meter-readout"></div>
+      ${takeaway(opts.takeaway)}
+    `;
+    const svgWrap = body.querySelector('.meter-svg');
+    const range = body.querySelector('.meter-range');
+    const readout = body.querySelector('.meter-readout');
+
+    function draw(hundredths) {
+      const main = Math.floor(hundredths / 10) / 10;
+      const vernierDigit = hundredths % 10;
+      const total = main + vernierDigit * 0.01;
+      readout.innerHTML = `Main <strong>${main.toFixed(1)} cm</strong> + Vernier <strong>${vernierDigit} × 0.01</strong> = <strong>${total.toFixed(2)} cm</strong>`;
+
+      const pxPerCm = 60;
+      const pointerX = 30 + main * pxPerCm;
+      const vernierBoxX = pointerX;
+
+      // Vernier scale strip: 10 ticks (0-9), highlight the coinciding one
+      let vernierTicks = '';
+      for (let d = 0; d <= 9; d++) {
+        const x = 6 + d * 9;
+        const isHit = d === vernierDigit;
+        vernierTicks += `<line x1="${x}" y1="0" x2="${x}" y2="${isHit ? 12 : 7}" stroke="${isHit ? '#d43b2e' : '#2a5fd4'}" stroke-width="${isHit ? 1.6 : 0.7}"/>`;
+        if (isHit) vernierTicks += `<text x="${x}" y="24" font-size="8" text-anchor="middle" fill="#d43b2e" font-weight="700">${d}</text>`;
+      }
+
+      svgWrap.innerHTML = `
+        <svg width="100%" viewBox="0 0 400 130" role="img">
+          <title>Interactive vernier caliper</title>
+          <rect x="20" y="55" width="330" height="12" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
+          <path d="M32 55 L32 25 L44 25 L44 55" fill="#e8e5da" stroke="#3d3d3a" stroke-width="1.2"/>
+          <g stroke="#3d3d3a" stroke-width="0.6">
+            ${[0,1,2,3,4,5].map(n => {
+              const x = 30 + n * pxPerCm;
+              return `<line x1="${x}" y1="55" x2="${x}" y2="60"/><text x="${x}" y="50" font-size="9" text-anchor="middle" fill="#6b6a63">${n}</text>`;
+            }).join('')}
+          </g>
+          <line x1="${pointerX}" y1="67" x2="${pointerX}" y2="76" stroke="#d43b2e" stroke-width="1.5"/>
+          <polygon points="${pointerX},76 ${pointerX-4},82 ${pointerX+4},82" fill="#d43b2e"/>
+
+          <g transform="translate(${vernierBoxX - 6}, 90)">
+            <rect x="-2" y="-4" width="94" height="30" fill="#fff" stroke="#3d3d3a" stroke-width="1"/>
+            ${vernierTicks}
+          </g>
+          <text x="${vernierBoxX + 40}" y="86" font-size="9" text-anchor="middle" fill="#6b6a63">vernier scale (slides with jaw)</text>
+        </svg>
+      `;
+    }
+
+    range.addEventListener('input', () => draw(Number(range.value)));
+    draw(Number(range.value));
+  }
+
+  function attachProgress() {
+    const sections = [...document.querySelectorAll('.section')];
+    if (!sections.length) return;
+    const bar = document.createElement('div');
+    bar.className = 'cram-progress';
+    bar.innerHTML = '<span class="cram-progress-fill"></span><span class="cram-progress-text"></span>';
+    const wrap = document.querySelector('.wrap');
+    wrap.insertBefore(bar, wrap.firstChild);
+    const update = () => {
+      let idx = 0;
+      sections.forEach((s, i) => {
+        if (s.getBoundingClientRect().top < window.innerHeight * 0.42) idx = i;
+      });
+      bar.querySelector('.cram-progress-text').textContent = `第 ${idx + 1} / ${sections.length} 节`;
+      bar.querySelector('.cram-progress-fill').style.width = ((idx + 1) / sections.length * 100) + '%';
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
+  global.Games = { ghsIcon, match, order, meter, vernier, attachProgress };
+})(window);
