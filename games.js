@@ -81,21 +81,57 @@
     return `<svg class="ghs-icon" width="${size}" height="${size}" viewBox="0 0 48 48" role="img" aria-hidden="true">${ICONS[kind]}</svg>`;
   }
 
+  // Match — MCQ round game. Each round shows the correct answer + up to 3
+  // distractors (max 4 options total), so item pools bigger than 4 don't
+  // overwhelm the learner. Ends with score, a "Play again" button, and a
+  // full notes recap of every prompt + answer covered.
   function match(mount, opts) {
     const root = el(shell(opts.title));
     const body = root.querySelector('.game-body');
     mount.appendChild(root);
-    const items = opts.items.slice();
+    let items = opts.items.slice();
     let i = 0;
     let score = 0;
 
+    function pickOptions(item) {
+      const fullPool = opts.choices || items.map(x => x.answer);
+      const distractorPool = fullPool.filter(a => a !== item.answer);
+      const distractors = shuffle(distractorPool).slice(0, 3);
+      return shuffle([item.answer, ...distractors]);
+    }
+
+    function renderRecap() {
+      const notes = items.map(it => `
+        <div class="game-note" style="padding:8px 0; border-top:1px solid #eeece5;">
+          <div style="font-size:12px; font-weight:600; color:#3d3d3a;">${it.prompt}</div>
+          <div style="font-size:12px; color:#6b6a63; margin-top:2px;">${it.answer}</div>
+        </div>
+      `).join('');
+      return `
+        <details class="game-recap" style="margin-top:12px; background:#faf9f6; border-radius:10px; padding:10px 12px;">
+          <summary style="cursor:pointer; font-size:12px; font-weight:600; color:#4a4943;">📖 Full notes / 完整知识点</summary>
+          ${notes}
+        </details>
+      `;
+    }
+
     function render() {
       if (i >= items.length) {
-        body.innerHTML = `<div class="game-score">Got ${score} / ${items.length}</div>${takeaway(opts.takeaway)}`;
+        body.innerHTML = `
+          <div class="game-score">Got ${score} / ${items.length}</div>
+          ${takeaway(opts.takeaway)}
+          <button type="button" class="game-opt primary game-replay">🔄 Play again</button>
+          ${renderRecap()}
+        `;
+        body.querySelector('.game-replay').addEventListener('click', () => {
+          i = 0; score = 0;
+          items = shuffle(items);
+          render();
+        });
         return;
       }
       const item = items[i];
-      const labels = shuffle(opts.choices || items.map(x => x.answer));
+      const labels = pickOptions(item);
       body.innerHTML = `
         <div class="game-meta">Round ${i + 1} / ${items.length}</div>
         <div class="game-prompt">${item.prompt}</div>
