@@ -62,33 +62,40 @@
 
   <div class="section">
     <h2>2. Animal Cell vs Plant Cell — Structure</h2>
-    <p class="warn-note">⚠ Diagram is for reference only — follow your textbook's drawing in exams. 图片仅供参考，考试作画请以课本为准</p>
+    <p class="warn-note">⚠ 图片仅供参考，考试作画请以课本为准</p>
     <div class="compare-wrap">
       <div class="compare-col">
         <h3>Animal Cell</h3>
         <div class="cell-zoom-wrap" onclick="openZoom('animalCellSvg')">
-          <svg id="animalCellSvg" width="100%" viewBox="0 0 220 180" role="img"><title>Animal cell labeled diagram</title>
-            <ellipse cx="100" cy="90" rx="70" ry="60" fill="#fdf3e3" stroke="#3d3d3a" stroke-width="1.3"/>
-            <circle cx="85" cy="85" r="20" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1"/>
-            <circle cx="85" cy="85" r="6" fill="#a67cb5"/>
-            <ellipse cx="130" cy="70" rx="8" ry="5" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.8"/>
-            <ellipse cx="125" cy="110" rx="8" ry="5" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.8"/>
-            <circle cx="60" cy="120" r="6" fill="#a7d3e0" stroke="#3d3d3a" stroke-width="0.8"/>
+          <svg id="animalCellSvg" width="100%" viewBox="0 0 290 200" role="img"><title>Animal cell labeled diagram</title>
+            <path d="M50 45 C28 60 20 90 32 115 C45 142 78 155 113 150 C148 145 178 120 181 90 C184 60 161 32 125 26 C93 21 65 32 50 45 Z" fill="#fdf3e3" stroke="#3d3d3a" stroke-width="1.4"/>
 
-            <line x1="85" y1="65" x2="30" y2="30" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="10" y="26" font-size="9" fill="#6b6a63">Nucleus</text>
+            <circle cx="95" cy="90" r="24" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1.2"/>
+            <circle cx="90" cy="85" r="7" fill="#a67cb5"/>
 
-            <line x1="130" y1="70" x2="180" y2="45" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="150" y="40" font-size="9" fill="#6b6a63">Mitochondria</text>
+            <path d="M140 50 C150 43 160 48 159 60 C158 72 146 77 137 69 C131 63 131 55 140 50 Z" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.9"/>
+            <path d="M141 54 L154 58 M140 60 L152 63" stroke="#c9782e" stroke-width="0.9" fill="none"/>
 
-            <line x1="60" y1="120" x2="15" y2="140" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="0" y="155" font-size="9" fill="#6b6a63">Vacuole</text>
+            <path d="M135 118 C145 111 155 116 154 126 C153 136 143 140 135 133 C130 128 130 122 135 118 Z" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.9"/>
+            <path d="M136 121 L148 124" stroke="#c9782e" stroke-width="0.9" fill="none"/>
 
-            <line x1="30" y1="120" x2="15" y2="90" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="0" y="88" font-size="9" fill="#6b6a63">Cell membrane</text>
+            <circle cx="52" cy="110" r="6" fill="#a7d3e0" stroke="#3d3d3a" stroke-width="0.8"/>
+            <circle cx="65" cy="130" r="5" fill="#a7d3e0" stroke="#3d3d3a" stroke-width="0.8"/>
 
-            <line x1="150" y1="120" x2="185" y2="130" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="150" y="145" font-size="9" fill="#6b6a63">Cytoplasm</text>
+            <line x1="95" y1="68" x2="200" y2="32" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="35" font-size="10" fill="#6b6a63">Nucleus</text>
+
+            <line x1="150" y1="55" x2="200" y2="62" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="65" font-size="10" fill="#6b6a63">Mitochondria</text>
+
+            <line x1="60" y1="115" x2="200" y2="92" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="95" font-size="10" fill="#6b6a63">Vacuole</text>
+
+            <line x1="35" y1="55" x2="200" y2="122" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="125" font-size="10" fill="#6b6a63">Cell membrane</text>
+
+            <line x1="100" y1="140" x2="200" y2="152" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="155" font-size="10" fill="#6b6a63">Cytoplasm</text>
           </svg>
         </div>
         <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
@@ -97,29 +104,38 @@
       <div class="compare-col">
         <h3>Plant Cell</h3>
         <div class="cell-zoom-wrap" onclick="openZoom('plantCellSvg')">
-          <svg id="plantCellSvg" width="100%" viewBox="0 0 220 180" role="img"><title>Plant cell labeled diagram</title>
-            <rect x="30" y="20" width="140" height="140" rx="6" fill="#e9f5e3" stroke="#3d3d3a" stroke-width="1.5"/>
-            <rect x="38" y="28" width="124" height="124" rx="4" fill="none" stroke="#3d3d3a" stroke-width="0.8"/>
-            <circle cx="80" cy="80" r="16" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1"/>
-            <circle cx="80" cy="80" r="5" fill="#a67cb5"/>
-            <ellipse cx="120" cy="60" rx="7" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.8"/>
-            <ellipse cx="125" cy="100" rx="7" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.8"/>
-            <rect x="55" y="105" width="35" height="30" rx="4" fill="#cfe4f0" stroke="#3d3d3a" stroke-width="0.8"/>
+          <svg id="plantCellSvg" width="100%" viewBox="0 0 290 200" role="img"><title>Plant cell labeled diagram</title>
+            <rect x="28" y="18" width="150" height="150" rx="8" fill="#e9f5e3" stroke="#3d3d3a" stroke-width="2.4"/>
+            <rect x="34" y="24" width="138" height="138" rx="6" fill="none" stroke="#3d3d3a" stroke-width="0.8"/>
 
-            <line x1="30" y1="20" x2="12" y2="10" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="0" y="8" font-size="9" fill="#6b6a63">Cell wall</text>
+            <rect x="52" y="40" width="104" height="108" rx="10" fill="#cfe4f5" stroke="#5a9bc4" stroke-width="1.2"/>
 
-            <line x1="80" y1="65" x2="55" y2="20" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="30" y="16" font-size="9" fill="#6b6a63">Nucleus</text>
+            <circle cx="46" cy="36" r="13" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1"/>
+            <circle cx="43" cy="33" r="4" fill="#a67cb5"/>
 
-            <line x1="125" y1="60" x2="180" y2="45" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="150" y="40" font-size="9" fill="#6b6a63">Chloroplast</text>
+            <ellipse cx="168" cy="52" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
+            <path d="M160 49 L176 49 M160 52 L176 52 M160 55 L176 55" stroke="#4a7c1f" stroke-width="0.7"/>
 
-            <line x1="70" y1="120" x2="15" y2="145" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="0" y="160" font-size="9" fill="#6b6a63">Vacuole</text>
+            <ellipse cx="168" cy="112" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
+            <path d="M160 109 L176 109 M160 112 L176 112 M160 115 L176 115" stroke="#4a7c1f" stroke-width="0.7"/>
 
-            <line x1="120" y1="130" x2="175" y2="150" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="150" y="163" font-size="9" fill="#6b6a63">Cytoplasm</text>
+            <ellipse cx="44" cy="124" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
+            <path d="M36 121 L52 121 M36 124 L52 124 M36 127 L52 127" stroke="#4a7c1f" stroke-width="0.7"/>
+
+            <line x1="34" y1="24" x2="200" y2="32" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="35" font-size="10" fill="#6b6a63">Cell wall</text>
+
+            <line x1="46" y1="36" x2="200" y2="62" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="65" font-size="10" fill="#6b6a63">Nucleus</text>
+
+            <line x1="168" y1="52" x2="200" y2="92" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="95" font-size="10" fill="#6b6a63">Chloroplast</text>
+
+            <line x1="104" y1="90" x2="200" y2="122" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="125" font-size="10" fill="#6b6a63">Vacuole</text>
+
+            <line x1="44" y1="124" x2="200" y2="152" stroke="#8a8983" stroke-width="0.6"/>
+            <text x="205" y="155" font-size="10" fill="#6b6a63">Cytoplasm</text>
           </svg>
         </div>
         <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
@@ -152,6 +168,14 @@
     <div id="animal-game"></div>
     <div style="font-size:12px; font-weight:600; margin:16px 0 8px; color:#1d9e75;">🌿 Plant cells</div>
     <div id="plant-game"></div>
+
+    <div style="margin-top:16px;">
+      <div style="font-size:12px; font-weight:600; margin-bottom:8px; color:#4a4943;">Cross-section of a leaf 叶片横切面</div>
+      <div class="cell-zoom-wrap" onclick="openZoom('leafCrossSvg')">
+        <div id="leaf-cross-section"></div>
+      </div>
+      <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
+    </div>
   </div>
 
   <div class="section">
@@ -174,6 +198,64 @@
       <div class="spec-item"><div class="name">Excretory system 排泄系统</div><div class="fn">Removes waste</div></div>
       <div class="spec-item"><div class="name">Skeletal system 骨骼系统</div><div class="fn">Supports & protects body</div></div>
     </div>
+
+    <p class="warn-note" style="margin-top:14px;">⚠ 图片仅供参考，考试作画请以课本为准</p>
+    <div class="cell-zoom-wrap" onclick="openZoom('bodySystemSvg')">
+      <svg id="bodySystemSvg" width="100%" viewBox="0 0 380 420" role="img"><title>Human body systems diagram</title>
+        <path d="M100 95 Q120 88 140 95 M95 108 Q120 100 145 108 M92 122 Q120 113 148 122 M92 136 Q120 128 148 136" fill="none" stroke="#c7c5ba" stroke-width="2"/>
+        <line x1="120" y1="80" x2="120" y2="235" stroke="#c7c5ba" stroke-width="2"/>
+        <ellipse cx="120" cy="238" rx="30" ry="14" fill="none" stroke="#c7c5ba" stroke-width="2"/>
+
+        <circle cx="120" cy="40" r="28" fill="#fdf3e3" stroke="#3d3d3a" stroke-width="1.5"/>
+        <rect x="110" y="66" width="20" height="18" fill="#fdf3e3" stroke="#3d3d3a" stroke-width="1.2"/>
+        <path d="M75 84 Q120 74 165 84 L172 235 Q120 250 68 235 Z" fill="#fdf3e3" stroke="#3d3d3a" stroke-width="1.5"/>
+        <path d="M75 90 L35 210" stroke="#3d3d3a" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <path d="M165 90 L205 210" stroke="#3d3d3a" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <path d="M95 240 L85 395" stroke="#3d3d3a" stroke-width="13" stroke-linecap="round" fill="none"/>
+        <path d="M145 240 L155 395" stroke="#3d3d3a" stroke-width="13" stroke-linecap="round" fill="none"/>
+
+        <ellipse cx="120" cy="38" rx="16" ry="12" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1"/>
+
+        <path d="M95 105 C80 108 78 130 92 138 C102 143 108 128 105 112 Z" fill="#f4b6c2" stroke="#3d3d3a" stroke-width="1"/>
+        <path d="M145 105 C160 108 162 130 148 138 C138 143 132 128 135 112 Z" fill="#f4b6c2" stroke="#3d3d3a" stroke-width="1"/>
+
+        <path d="M120 128 C112 118 98 122 98 134 C98 145 120 158 120 158 C120 158 142 145 142 134 C142 122 128 118 120 128 Z" fill="#d43b2e" stroke="#3d3d3a" stroke-width="1"/>
+
+        <ellipse cx="105" cy="175" rx="16" ry="13" fill="#f2c78a" stroke="#3d3d3a" stroke-width="1"/>
+        <path d="M90 195 Q110 190 110 205 Q110 220 130 215 Q150 210 145 225 Q140 235 120 230" fill="none" stroke="#e08a3c" stroke-width="7" stroke-linecap="round"/>
+
+        <path d="M88 178 C82 178 80 188 86 192 C92 196 96 188 94 182 Z" fill="#8a4a3d" stroke="#3d3d3a" stroke-width="0.8"/>
+        <path d="M152 178 C158 178 160 188 154 192 C148 196 144 188 146 182 Z" fill="#8a4a3d" stroke="#3d3d3a" stroke-width="0.8"/>
+
+        <line x1="132" y1="35" x2="220" y2="30" stroke="#8a8983" stroke-width="0.6"/>
+        <text x="225" y="33" font-size="10" fill="#6b6a63">Brain 脑 — Nervous</text>
+
+        <line x1="140" y1="97" x2="220" y2="65" stroke="#8a8983" stroke-width="0.6"/>
+        <text x="225" y="68" font-size="10" fill="#6b6a63">Ribs/Spine — Skeletal</text>
+
+        <line x1="105" y1="120" x2="220" y2="105" stroke="#8a8983" stroke-width="0.6"/>
+        <text x="225" y="108" font-size="10" fill="#6b6a63">Lungs 肺 — Respiratory</text>
+
+        <line x1="130" y1="140" x2="220" y2="140" stroke="#8a8983" stroke-width="0.6"/>
+        <text x="225" y="143" font-size="10" fill="#6b6a63">Heart 心脏 — Circulatory</text>
+
+        <line x1="118" y1="180" x2="220" y2="175" stroke="#8a8983" stroke-width="0.6"/>
+        <text x="225" y="178" font-size="10" fill="#6b6a63">Stomach 胃 — Digestive</text>
+
+        <line x1="128" y1="215" x2="220" y2="210" stroke="#8a8983" stroke-width="0.6"/>
+        <text x="225" y="213" font-size="10" fill="#6b6a63">Intestines 肠 — Digestive</text>
+
+        <line x1="152" y1="188" x2="220" y2="245" stroke="#8a8983" stroke-width="0.6"/>
+        <text x="225" y="248" font-size="10" fill="#6b6a63">Kidneys 肾 — Excretory</text>
+      </svg>
+    </div>
+    <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
+
+    <p style="font-size:12px; color:#6b6a63; margin:16px 0 8px;">Game 1: which system does this organ belong to? 这个器官属于哪个系统？</p>
+    <div id="body-system-game"></div>
+
+    <p style="font-size:12px; color:#6b6a63; margin:16px 0 8px;">Game 2: what does this system do? 这个系统的功能是什么？</p>
+    <div id="body-function-game"></div>
 
     <div class="quiz-box">
       <div class="qtitle">🎯 Quiz: Which comes right after "Tissue" in cell organisation?</div>
@@ -208,7 +290,7 @@
 
   <div class="section">
     <h2>7. Test for Starch 淀粉测试</h2>
-    <p class="warn-note">⚠ Diagram is for reference only — follow your textbook's drawing in exams. 图片仅供参考，考试作画请以课本为准</p>
+    <p class="warn-note">⚠ 图片仅供参考，考试作画请以课本为准</p>
     <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">Will the leaf change colour after adding iodine solution? Click to test! 滴加碘液后，叶片会变色吗？点击测试看看：</p>
     <div class="starch-sim">
       <svg id="leafSvg" width="140" height="160" viewBox="0 0 120 140" role="img"><title>Leaf for iodine test</title>
@@ -237,7 +319,7 @@
   <div class="zoom-modal-inner" onclick="event.stopPropagation()">
     <button class="zoom-close" onclick="closeZoom(event)">✕</button>
     <div id="zoomModalInner"></div>
-    <p class="warn-note" style="margin-top:12px;">⚠ Diagram is for reference only — follow your textbook's drawing in exams. 图片仅供参考，考试作画请以课本为准</p>
+    <p class="warn-note" style="margin-top:12px;">⚠ 图片仅供参考，考试作画请以课本为准</p>
   </div>
 </div>
 
@@ -276,12 +358,64 @@ function testStarch(hasLight) {
   }, 600);
 }
 
+// ---- Leaf cross-section diagram (built with JS loops to keep the markup manageable) ----
+function buildLeafCrossSection(containerId) {
+  const container = document.getElementById(containerId);
+  const palisadeCount = 7;
+  const startX = 20, totalW = 260, cellW = totalW / palisadeCount;
+  let palisadeSvg = '';
+  for (let i = 0; i < palisadeCount; i++) {
+    const x = startX + i * cellW;
+    palisadeSvg += `<rect x="${x + 1}" y="34" width="${cellW - 2}" height="50" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="0.6"/>`;
+    for (let d = 0; d < 3; d++) {
+      const cy = 44 + d * 13;
+      palisadeSvg += `<circle cx="${x + cellW / 2}" cy="${cy}" r="3" fill="#4a9c3a"/>`;
+    }
+  }
+  const spongyPositions = [[35,100],[70,108],[105,98],[140,112],[175,100],[210,108],[245,98],[55,132],[95,136],[135,128],[175,134],[215,128],[248,132]];
+  let spongySvg = '';
+  spongyPositions.forEach(([cx, cy]) => {
+    spongySvg += `<ellipse cx="${cx}" cy="${cy}" rx="16" ry="12" fill="#dbeedb" stroke="#3d3d3a" stroke-width="0.6"/>`;
+    spongySvg += `<circle cx="${cx - 4}" cy="${cy - 2}" r="2.5" fill="#4a9c3a"/><circle cx="${cx + 4}" cy="${cy + 3}" r="2.5" fill="#4a9c3a"/>`;
+  });
+
+  container.innerHTML = `
+    <svg id="leafCrossSvg" width="100%" viewBox="0 0 300 210" role="img"><title>Leaf cross section</title>
+      <line x1="20" y1="18" x2="280" y2="18" stroke="#8bc78a" stroke-width="2"/>
+      <text x="285" y="21" font-size="8" fill="#6b6a63">Cuticle</text>
+
+      <rect x="20" y="20" width="260" height="14" fill="#eef7ea" stroke="#3d3d3a" stroke-width="1"/>
+      <text x="285" y="30" font-size="8" fill="#6b6a63">Upper epidermis</text>
+
+      ${palisadeSvg}
+      <text x="285" y="60" font-size="8" fill="#6b6a63">Palisade</text>
+      <text x="285" y="70" font-size="8" fill="#6b6a63">mesophyll</text>
+
+      ${spongySvg}
+      <text x="285" y="115" font-size="8" fill="#6b6a63">Spongy</text>
+      <text x="285" y="125" font-size="8" fill="#6b6a63">mesophyll</text>
+
+      <rect x="20" y="150" width="115" height="14" fill="#eef7ea" stroke="#3d3d3a" stroke-width="1"/>
+      <rect x="165" y="150" width="115" height="14" fill="#eef7ea" stroke="#3d3d3a" stroke-width="1"/>
+      <ellipse cx="140" cy="157" rx="11" ry="7" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1"/>
+      <ellipse cx="160" cy="157" rx="11" ry="7" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1"/>
+      <ellipse cx="150" cy="157" rx="4" ry="3" fill="#fff"/>
+      <text x="285" y="160" font-size="8" fill="#6b6a63">Lower epidermis</text>
+      <text x="150" y="180" font-size="8" text-anchor="middle" fill="#6b6a63">guard cells &amp; stoma</text>
+
+      <text x="150" y="196" font-size="13" text-anchor="middle" fill="#2a6fd4">💧⬇</text>
+      <text x="150" y="207" font-size="8" text-anchor="middle" fill="#2a6fd4">water vapour escapes (transpiration) 水蒸气散失（蒸腾作用）</text>
+    </svg>
+  `;
+}
+buildLeafCrossSection('leaf-cross-section');
+
 // ---- Photosynthesis experiments - guess first game ----
 const exps = [
-  { q: 'One leaf covered with foil (no light) vs one leaf exposed to light. Both destarched first.', factor: 'Light', result: 'Covered leaf: NO starch. Exposed leaf: starch present.', conclusion: 'Light is needed for photosynthesis.' },
-  { q: 'Use a variegated leaf (green + white patches), test with iodine.', factor: 'Chlorophyll', result: 'Only the GREEN parts turn blue-black. White parts stay orange-brown.', conclusion: 'Chlorophyll is needed for photosynthesis.' },
-  { q: 'One plant in a jar with soda lime (absorbs CO₂) vs one plant in normal air.', factor: 'CO₂', result: 'Plant without CO₂: NO starch. Plant in normal air: starch present.', conclusion: 'CO₂ is needed for photosynthesis.' },
-  { q: 'One plant well-watered vs one plant deprived of water for several days.', factor: 'Water', result: 'Watered plant: starch present. Unwatered plant: little/no starch.', conclusion: 'Water is needed for photosynthesis.' }
+  { q: 'One leaf covered with foil (no light) vs one leaf exposed to light. Both destarched first.', factor: 'Light', result: "Covered leaf: <strong>no starch</strong> (stays <strong>orange-brown</strong> with <strong>iodine</strong>). Exposed leaf: <strong>starch present</strong> (turns <strong>blue-black</strong>).", conclusion: '<strong>Light</strong> is needed for photosynthesis.' },
+  { q: 'Use a variegated leaf (green + white patches), test with iodine.', factor: 'Chlorophyll', result: "Only the <strong>green parts</strong> turn <strong>blue-black</strong> with <strong>iodine</strong>. White parts stay <strong>orange-brown</strong>.", conclusion: '<strong>Chlorophyll</strong> is needed for photosynthesis.' },
+  { q: 'One plant in a jar with soda lime (absorbs CO₂) vs one plant in normal air.', factor: 'CO₂', result: "Plant without CO₂: <strong>no starch</strong> (<strong>orange-brown</strong> with <strong>iodine</strong>). Plant in normal air: <strong>starch present</strong> (<strong>blue-black</strong>).", conclusion: '<strong>CO₂</strong> is needed for photosynthesis.' },
+  { q: 'One plant well-watered vs one plant deprived of water for several days.', factor: 'Water', result: "Watered plant: <strong>starch present</strong> (<strong>blue-black</strong> with <strong>iodine</strong>). Unwatered plant: <strong>little/no starch</strong>.", conclusion: '<strong>Water</strong> is needed for photosynthesis.' }
 ];
 const expContainer = document.getElementById('photo-exp');
 exps.forEach((e, i) => {
@@ -345,7 +479,7 @@ const organelles = [
 ];
 const animalCells = [
   { name: 'Nerve cell 神经细胞', fn: 'Carries electrical impulses around the body 在体内传递神经冲动' },
-  { name: 'Red blood cell 红血球', fn: 'Has no nucleus; carries oxygen 没有细胞核，负责运送氧气' },
+  { name: 'Red blood cell 红血球', fn: 'Biconcave disc shape, no nucleus, contains haemoglobin to carry oxygen 双凹圆盘状，没有细胞核，含血红蛋白以运输氧气' },
   { name: 'White blood cell 白血球', fn: 'Changes shape to engulf and destroy germs 能改变形状以吞噬并消灭病菌' },
   { name: 'Muscle cell 肌肉细胞', fn: 'Contracts and relaxes to produce movement 收缩与放松以产生运动' },
   { name: 'Epithelium cell 上皮细胞', fn: 'Lines and protects organs; some secrete mucus 覆盖并保护器官，部分能分泌黏液' },
@@ -356,6 +490,22 @@ const plantCells = [
   { name: 'Palisade cell 栅栏细胞', fn: 'Packed with chloroplasts for photosynthesis 含大量叶绿体，负责光合作用' },
   { name: 'Epidermis cell 表皮细胞', fn: 'Reduces water loss and protects the leaf 减少水分流失并保护叶片' },
   { name: 'Root hair cell 根毛细胞', fn: 'Absorbs water and mineral salts from soil 从土壤中吸收水分和矿物盐' }
+];
+const bodySystemOrgans = [
+  { prompt: 'The brain belongs to which system?', answer: 'Nervous system 神经系统' },
+  { prompt: 'The lungs belong to which system?', answer: 'Respiratory system 呼吸系统' },
+  { prompt: 'The heart belongs to which system?', answer: 'Circulatory system 循环系统' },
+  { prompt: 'The stomach and intestines belong to which system?', answer: 'Digestive system 消化系统' },
+  { prompt: 'The kidneys belong to which system?', answer: 'Excretory system 排泄系统' },
+  { prompt: 'The ribs and spine belong to which system?', answer: 'Skeletal system 骨骼系统' }
+];
+const bodySystemFunctions = [
+  { prompt: 'What is the function of the digestive system?', answer: 'Breaks down food into nutrients the body can absorb 将食物分解为身体可吸收的养分' },
+  { prompt: 'What is the function of the respiratory system?', answer: 'Exchanges gases — takes in O₂, removes CO₂ 进行气体交换——吸入O₂，排出CO₂' },
+  { prompt: 'What is the function of the circulatory system?', answer: 'Transports blood, oxygen and nutrients around the body 在体内运输血液、氧气和养分' },
+  { prompt: 'What is the function of the nervous system?', answer: "Controls and coordinates the body's actions 控制和协调身体的各种活动" },
+  { prompt: 'What is the function of the excretory system?', answer: 'Removes waste products from the body 排出体内的废物' },
+  { prompt: 'What is the function of the skeletal system?', answer: "Supports and protects the body's organs 支撑并保护体内器官" }
 ];
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -379,6 +529,18 @@ window.addEventListener('DOMContentLoaded', () => {
       title: 'Plant Cells Match 植物细胞配对',
       items: plantCells.map(c => ({ prompt: `What is the function of the ${c.name}?`, answer: c.fn })),
       takeaway: "Plant cells are also specialised for jobs like photosynthesis, support and absorption. 植物细胞也依功能特化，例如光合作用、支持和吸收。"
+    });
+
+    Games.match(document.getElementById('body-system-game'), {
+      title: 'Which System? 属于哪个系统？',
+      items: bodySystemOrgans,
+      takeaway: 'Each organ belongs to a system that works with other organs to do a shared job. 每个器官都属于某个系统，与其他器官共同完成同一项任务。'
+    });
+
+    Games.match(document.getElementById('body-function-game'), {
+      title: 'System Function 系统的功能',
+      items: bodySystemFunctions,
+      takeaway: 'All systems work together to keep the whole body alive and balanced. 所有系统共同合作，维持整个身体的生命和平衡。'
     });
   }
   init();
