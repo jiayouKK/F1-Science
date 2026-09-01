@@ -33,6 +33,7 @@
   .app-tbl .fn-cell { color:#6b6a63; font-size:11px; line-height:1.5; }
 
   .cell-zoom-wrap { cursor: zoom-in; }
+  .cell-zoom-wrap img { border-radius:8px; }
   .zoom-hint { font-size:10px; color:#8a8983; text-align:center; margin-top:2px; }
   .zoom-modal { display:none; position:fixed; inset:0; background:rgba(20,20,18,0.82); z-index:999; align-items:center; justify-content:center; padding:24px; }
   .zoom-modal.open { display:flex; }
@@ -72,36 +73,7 @@
       <div class="compare-col">
         <h3>Animal Cell</h3>
         <div class="cell-zoom-wrap" onclick="openZoom('animalCellSvg')">
-          <svg id="animalCellSvg" width="100%" viewBox="0 0 290 200" role="img"><title>Animal cell labeled diagram</title>
-            <path d="M50 45 C28 60 20 90 32 115 C45 142 78 155 113 150 C148 145 178 120 181 90 C184 60 161 32 125 26 C93 21 65 32 50 45 Z" fill="#fdf3e3" stroke="#3d3d3a" stroke-width="1.4"/>
-
-            <circle cx="95" cy="90" r="24" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1.2"/>
-            <circle cx="90" cy="85" r="7" fill="#a67cb5"/>
-
-            <path d="M140 50 C150 43 160 48 159 60 C158 72 146 77 137 69 C131 63 131 55 140 50 Z" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M141 54 L154 58 M140 60 L152 63" stroke="#c9782e" stroke-width="0.9" fill="none"/>
-
-            <path d="M135 118 C145 111 155 116 154 126 C153 136 143 140 135 133 C130 128 130 122 135 118 Z" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M136 121 L148 124" stroke="#c9782e" stroke-width="0.9" fill="none"/>
-
-            <circle cx="52" cy="110" r="6" fill="#a7d3e0" stroke="#3d3d3a" stroke-width="0.8"/>
-            <circle cx="65" cy="130" r="5" fill="#a7d3e0" stroke="#3d3d3a" stroke-width="0.8"/>
-
-            <line x1="95" y1="68" x2="200" y2="32" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="35" font-size="10" fill="#6b6a63">Nucleus</text>
-
-            <line x1="150" y1="55" x2="200" y2="62" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="65" font-size="10" fill="#6b6a63">Mitochondria</text>
-
-            <line x1="60" y1="115" x2="200" y2="92" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="95" font-size="10" fill="#6b6a63">Vacuole</text>
-
-            <line x1="35" y1="55" x2="200" y2="122" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="125" font-size="10" fill="#6b6a63">Cell membrane</text>
-
-            <line x1="100" y1="140" x2="200" y2="152" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="155" font-size="10" fill="#6b6a63">Cytoplasm</text>
-          </svg>
+          <img id="animalCellSvg" src="images/animal-cell.jpg" alt="Animal cell labeled diagram" style="width:100%; display:block;">
         </div>
         <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
         <div style="font-size:10px; color:#8a8983; text-align:center; margin-top:4px;">No cell wall · irregular shape</div>
@@ -109,39 +81,7 @@
       <div class="compare-col">
         <h3>Plant Cell</h3>
         <div class="cell-zoom-wrap" onclick="openZoom('plantCellSvg')">
-          <svg id="plantCellSvg" width="100%" viewBox="0 0 290 200" role="img"><title>Plant cell labeled diagram</title>
-            <rect x="28" y="18" width="150" height="150" rx="8" fill="#e9f5e3" stroke="#3d3d3a" stroke-width="2.4"/>
-            <rect x="34" y="24" width="138" height="138" rx="6" fill="none" stroke="#3d3d3a" stroke-width="0.8"/>
-
-            <rect x="52" y="40" width="104" height="108" rx="10" fill="#cfe4f5" stroke="#5a9bc4" stroke-width="1.2"/>
-
-            <circle cx="46" cy="36" r="13" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1"/>
-            <circle cx="43" cy="33" r="4" fill="#a67cb5"/>
-
-            <ellipse cx="168" cy="52" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M160 49 L176 49 M160 52 L176 52 M160 55 L176 55" stroke="#4a7c1f" stroke-width="0.7"/>
-
-            <ellipse cx="168" cy="112" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M160 109 L176 109 M160 112 L176 112 M160 115 L176 115" stroke="#4a7c1f" stroke-width="0.7"/>
-
-            <ellipse cx="44" cy="124" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M36 121 L52 121 M36 124 L52 124 M36 127 L52 127" stroke="#4a7c1f" stroke-width="0.7"/>
-
-            <line x1="34" y1="24" x2="200" y2="32" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="35" font-size="10" fill="#6b6a63">Cell wall</text>
-
-            <line x1="46" y1="36" x2="200" y2="62" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="65" font-size="10" fill="#6b6a63">Nucleus</text>
-
-            <line x1="168" y1="52" x2="200" y2="92" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="95" font-size="10" fill="#6b6a63">Chloroplast</text>
-
-            <line x1="104" y1="90" x2="200" y2="122" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="125" font-size="10" fill="#6b6a63">Vacuole</text>
-
-            <line x1="44" y1="124" x2="200" y2="152" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="155" font-size="10" fill="#6b6a63">Cytoplasm</text>
-          </svg>
+          <img id="plantCellSvg" src="images/plant-cell.jpg" alt="Plant cell labeled diagram" style="width:100%; display:block;">
         </div>
         <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
         <div style="font-size:10px; color:#8a8983; text-align:center; margin-top:4px;">Has cell wall · fixed shape</div>
@@ -298,14 +238,14 @@
 </div>
 
 <script>
-// ---- Click-to-zoom for cell diagrams ----
-function openZoom(svgId) {
-  const svg = document.getElementById(svgId);
+// ---- Click-to-zoom for cell diagrams (works for both <img> and <svg>) ----
+function openZoom(elId) {
+  const el = document.getElementById(elId);
   const modalInner = document.getElementById('zoomModalInner');
-  modalInner.innerHTML = svg.outerHTML;
-  const bigSvg = modalInner.querySelector('svg');
-  bigSvg.style.width = '100%';
-  bigSvg.style.height = 'auto';
+  modalInner.innerHTML = el.outerHTML;
+  const bigEl = modalInner.querySelector('img, svg');
+  bigEl.style.width = '100%';
+  bigEl.style.height = 'auto';
   document.getElementById('zoomModal').classList.add('open');
 }
 function closeZoom(e) {
