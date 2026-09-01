@@ -209,3 +209,11 @@ body {
 .hazard-row { display: flex; gap: 10px; justify-content: center; margin: 14px 0; flex-wrap: wrap; }
 .hazard-cell { text-align: center; width: 72px; }
 .img-caption { font-size: 11px; color: #8a8983; margin-top: 4px; line-height: 1.4; }
+
+.cell-zoom-wrap img {
+  border-radius: 8px;
+  width: 100%;
+  max-height: 280px;
+  object-fit: contain;
+  display: block;
+}
