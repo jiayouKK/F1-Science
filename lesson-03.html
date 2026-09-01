@@ -23,6 +23,12 @@
   .ctrl-btn { background:#1d9e75; color:#fff; border:none; padding:9px 12px; border-radius:8px; font-size:12px; font-weight:600; cursor:pointer; }
   #tempStatus, #stomaLabel { font-size:13px; font-weight:600; color:#4a4943; }
   .guard-cell { transition: transform 0.6s ease; }
+  .org-flow { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:4px; }
+  .org-node { background:#faf9f6; border-radius:8px; padding:8px 10px; font-size:11px; text-align:center; flex:1; min-width:60px; }
+  .org-arrow { color:#b5b3aa; font-size:14px; }
+  .cycle-tabs { display:flex; gap:8px; margin-bottom:10px; }
+  .cycle-tab { flex:1; padding:8px; border-radius:8px; border:0.5px solid #d9d7cd; background:#fff; font-size:12px; font-weight:600; cursor:pointer; }
+  .cycle-tab.active { background:#1d9e75; color:#fff; border-color:#1d9e75; }
 </style>
 </head>
 <body class="ch-accent ch-3">
@@ -39,6 +45,17 @@
     </div>
     <p style="font-size:13px; color:#4a4943; line-height:1.7;"><strong>Homeostasis</strong> = the body's ability to keep its internal environment <strong>constant</strong> (steady), no matter what's happening outside.</p>
     <p style="font-size:12px; color:#6b6a63; line-height:1.7; margin-top:8px;">你身体里的温度、水分、糖分，一直被自动调节——不用你去想，它自己会处理。</p>
+
+    <p style="font-size:13px; color:#4a4943; line-height:1.7; margin-top:14px;">Homeostasis works through a <strong>corrective mechanism</strong> (also called <strong>negative feedback</strong>): the body detects a change away from normal, then acts to correct it back.<br><span style="font-size:12px; color:#6b6a63;">身体透过<strong>修正机制</strong>(负反馈)运作：侦测到偏离正常值的变化，然后做出反应把它修正回来。</span></p>
+
+    <div class="org-flow" style="margin-top:10px;">
+      <div class="org-node">Stimulus<br>刺激</div><span class="org-arrow">→</span>
+      <div class="org-node">Receptor<br>感受器</div><span class="org-arrow">→</span>
+      <div class="org-node">Coordinator (brain)<br>协调中心(脑)</div><span class="org-arrow">→</span>
+      <div class="org-node">Effector<br>效应器</div><span class="org-arrow">→</span>
+      <div class="org-node">Response — back to normal<br>反应——恢复正常</div>
+    </div>
+    <p style="font-size:11px; color:#8a8983; margin-top:8px;">Every example in this chapter (temperature, water) follows this same pathway. 这一章的每个例子(体温、水分)都遵循这条相同的路径。</p>
   </div>
 
   <div class="section">
@@ -47,11 +64,11 @@
     <div class="example-grid">
       <div class="example-item">
         <div class="title">🥵 Too hot</div>
-        <div class="desc">Sweat glands produce more sweat → evaporation cools the skin. Blood vessels near skin widen (vasodilation) → more heat lost.</div>
+        <div class="desc">Sweat glands produce more sweat → evaporation cools the skin. Blood vessels near the skin <strong>widen (vasodilation)</strong> → more heat lost. Skin hair <strong>lies flat</strong> → less insulation, more heat escapes.</div>
       </div>
       <div class="example-item">
         <div class="title">🥶 Too cold</div>
-        <div class="desc">Shivering (muscles contract rapidly) generates heat. Blood vessels near skin narrow (vasoconstriction) → less heat lost.</div>
+        <div class="desc"><strong>Shivering</strong> (muscles contract rapidly) generates heat. Blood vessels near the skin <strong>narrow (vasoconstriction)</strong> → less heat lost. Skin hair <strong>stands up</strong> (erector muscles contract) → traps a layer of air for insulation.</div>
       </div>
     </div>
     <p style="font-size:12px; color:#8a8983; margin-top:10px;">生活化例子：夏天你会流汗降温；冬天冷到发抖，其实是肌肉在制造热量。</p>
@@ -70,27 +87,23 @@
   <div class="section">
     <h2>3. Water Regulation</h2>
     <div class="eng">水分调节</div>
-    <div class="example-grid">
-      <div class="example-item">
-        <div class="title">💧 Too little water</div>
-        <div class="desc">Feel thirsty → drink water. Kidneys produce less, more concentrated urine to save water.</div>
-      </div>
-      <div class="example-item">
-        <div class="title">💧 Too much water</div>
-        <div class="desc">Kidneys produce more, diluted urine to remove the excess.</div>
-      </div>
-    </div>
-    <p style="font-size:12px; color:#8a8983; margin-top:10px;">生活化例子：喝很多水后，你会更常想上厕所——这就是身体在排掉多余的水分。</p>
+    <p style="font-size:13px; color:#4a4943; line-height:1.7;">Water content is corrected the same way as temperature: <strong>detect → respond → correct back to normal</strong>.<br><span style="font-size:12px; color:#6b6a63;">水分调节跟体温调节用的是同一套流程：<strong>侦测→反应→修正回正常值</strong>。</span></p>
 
-    <p style="font-size:12px; color:#6b6a63; margin-top:14px;">Match each situation to the body's correct response. 把每个情况和身体正确的反应配对。</p>
+    <div class="cycle-tabs" style="margin-top:14px;">
+      <button type="button" class="cycle-tab active" id="cycleTabMuch" onclick="showWaterCycle('much')">💧 Drank too much 喝太多水</button>
+      <button type="button" class="cycle-tab" id="cycleTabLittle" onclick="showWaterCycle('little')">🏃 Too little water 水分不足</button>
+    </div>
+    <div id="water-cycle-anim"></div>
+
+    <p style="font-size:12px; color:#6b6a63; margin-top:16px;">Quick recall: match each situation to the body's response. 快速回顾：把情况和身体反应配对。</p>
     <div id="water-game"></div>
   </div>
 
   <div class="section">
     <h2>4. Homeostasis in Plants — Transpiration</h2>
     <div class="eng">植物的体内平衡——蒸腾作用</div>
-    <p style="font-size:13px; color:#4a4943; line-height:1.7;"><strong>Transpiration</strong> = loss of water vapour from a plant, mainly through tiny pores on leaves called <strong>stomata</strong>.</p>
-    <p style="font-size:12px; color:#6b6a63; margin-top:8px;">植物也有自己一套"调节系统"——透过控制气孔的开关，来平衡水分和气体交换。</p>
+    <p style="font-size:13px; color:#4a4943; line-height:1.7;"><strong>Transpiration</strong> = loss of <strong>water vapour</strong> from a plant, mainly through tiny pores on leaves called <strong>stomata</strong>, controlled by <strong>guard cells</strong>.</p>
+    <p style="font-size:12px; color:#6b6a63; margin-top:8px;">植物也有自己一套"调节系统"——透过控制<strong>气孔</strong>的开关，来平衡水分和气体交换。</p>
 
     <div style="font-size:12px; font-weight:600; margin:14px 0 6px;">🎮 Try it: toggle the conditions and watch the stoma respond. 试试看：切换环境条件，观察气孔的反应。</div>
     <div class="sim-box">
@@ -130,12 +143,12 @@ function triggerTemp(type) {
 
   if (type === 'hot') {
     status.innerHTML = '🥵 Body temperature: 38.5°C (too hot!) 体温：38.5°C（过热！）';
-    correct = 'Blood vessels widen + sweat more (vasodilation) 血管舒张 + 大量出汗';
-    wrong = 'Muscles shiver to produce heat 肌肉发抖产生热量';
+    correct = 'Blood vessels widen + sweat more + hair lies flat (vasodilation) 血管舒张 + 大量出汗 + 汗毛平贴';
+    wrong = 'Muscles shiver + hair stands up to produce heat 肌肉发抖 + 汗毛竖立以产生热量';
   } else {
     status.innerHTML = '🥶 Body temperature: 35.2°C (too cold!) 体温：35.2°C（过冷！）';
-    correct = 'Blood vessels narrow + shiver (vasoconstriction) 血管收缩 + 肌肉发抖';
-    wrong = 'Sweat glands produce more sweat 大量出汗';
+    correct = 'Blood vessels narrow + shiver + hair stands up (vasoconstriction) 血管收缩 + 肌肉发抖 + 汗毛竖立';
+    wrong = 'Sweat glands produce more sweat + hair lies flat 大量出汗 + 汗毛平贴';
   }
 
   shuffleArr([correct, wrong]).forEach(text => {
@@ -171,6 +184,69 @@ function setStoma(isOpen) {
     label.innerHTML = 'Stoma: CLOSED 🌙 — less water lost, less CO₂ taken in. 气孔：关闭——水分流失减少，但CO₂摄入也减少。';
   }
 }
+
+// ---- Section 3: water content cycle (simple bar-gauge, low visual risk) ----
+function waterGaugeSvg(level, emoji) {
+  const barH = 100, barW = 40, barX = 20, barY = 10;
+  const fillH = Math.max(4, (level / 100) * barH);
+  const fillY = barY + (barH - fillH);
+  return `
+    <svg width="90" height="150" viewBox="0 0 90 150" role="img"><title>Water level gauge</title>
+      <rect x="${barX}" y="${barY}" width="${barW}" height="${barH}" rx="6" fill="#eef4fa" stroke="#3d3d3a" stroke-width="1.5"/>
+      <rect x="${barX}" y="${fillY}" width="${barW}" height="${fillH}" rx="6" fill="#2a6fd4" opacity="0.65"/>
+      <line x1="14" y1="${barY + barH / 2}" x2="${barX + barW + 6}" y2="${barY + barH / 2}" stroke="#d43b2e" stroke-width="1" stroke-dasharray="2,2"/>
+      <text x="${barX + barW + 10}" y="${barY + barH / 2 + 4}" font-size="9" fill="#d43b2e">normal 正常</text>
+      <text x="45" y="140" font-size="20" text-anchor="middle">${emoji}</text>
+    </svg>
+  `;
+}
+
+function buildCycleAnimation(containerId, steps) {
+  const container = document.getElementById(containerId);
+  let step = 0;
+  function render() {
+    const s = steps[step];
+    container.innerHTML = `
+      <div class="sim-box">
+        <div style="font-size:11px; color:#8a8983; margin-bottom:6px;">Step ${step + 1} / ${steps.length}</div>
+        ${waterGaugeSvg(s.level, s.emoji)}
+        <div style="font-size:12px; color:#4a4943; margin-top:8px; line-height:1.6; text-align:left;">${s.caption}</div>
+        <div style="margin-top:12px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+          <button type="button" class="ctrl-btn" style="background:#8a8983;" id="cyclePrev-${containerId}" ${step === 0 ? 'disabled' : ''}>◀ Prev</button>
+          <button type="button" class="ctrl-btn" id="cycleNext-${containerId}">${step === steps.length - 1 ? '🔄 Restart 重新开始' : 'Next ▶'}</button>
+        </div>
+      </div>
+    `;
+    document.getElementById(`cyclePrev-${containerId}`).addEventListener('click', () => { if (step > 0) { step--; render(); } });
+    document.getElementById(`cycleNext-${containerId}`).addEventListener('click', () => {
+      step = (step === steps.length - 1) ? 0 : step + 1;
+      render();
+    });
+  }
+  render();
+}
+
+const cycleTooMuch = [
+  { level: 50, emoji: '🥤', caption: "You drink a lot of water. 你喝了很多水。" },
+  { level: 85, emoji: '📈', caption: "<strong>Stimulus:</strong> water content in the blood rises above normal. <strong>刺激</strong>：血液中的水分含量上升，超过正常值。" },
+  { level: 85, emoji: '🧠', caption: "<strong>Receptor + Coordinator:</strong> the brain (hypothalamus) detects the water content is too high. <strong>感受器+协调中心</strong>：大脑(下丘脑)侦测到水分过高。" },
+  { level: 60, emoji: '🚽', caption: "<strong>Effector:</strong> kidneys respond by producing more, dilute urine to remove the extra water. <strong>效应器</strong>：肾脏产生更多、较稀的尿液以排出多余水分。" },
+  { level: 50, emoji: '⚖️', caption: "<strong>Response:</strong> water content returns to normal — a corrective mechanism (negative feedback) at work. <strong>反应</strong>：水分恢复正常——这就是修正机制(负反馈)在发挥作用。" }
+];
+const cycleTooLittle = [
+  { level: 50, emoji: '🏃💦', caption: "You sweat a lot, or don't drink enough water. 你大量出汗，或没有喝足够的水。" },
+  { level: 20, emoji: '📉', caption: "<strong>Stimulus:</strong> water content in the blood drops below normal. <strong>刺激</strong>：血液中的水分含量下降，低于正常值。" },
+  { level: 20, emoji: '🧠', caption: "<strong>Receptor + Coordinator:</strong> the brain detects the drop and triggers the feeling of thirst. <strong>感受器+协调中心</strong>：大脑侦测到水分不足，引发口渴的感觉。" },
+  { level: 35, emoji: '🥤', caption: "<strong>Effector:</strong> you drink water, and kidneys produce less, more concentrated urine to conserve water. <strong>效应器</strong>：你喝水，同时肾脏产生更少、更浓缩的尿液以保留水分。" },
+  { level: 50, emoji: '⚖️', caption: "<strong>Response:</strong> water content returns to normal — another corrective mechanism keeping the body balanced. <strong>反应</strong>：水分恢复正常——这也是修正机制维持身体平衡的例子。" }
+];
+
+function showWaterCycle(which) {
+  document.getElementById('cycleTabMuch').classList.toggle('active', which === 'much');
+  document.getElementById('cycleTabLittle').classList.toggle('active', which === 'little');
+  buildCycleAnimation('water-cycle-anim', which === 'much' ? cycleTooMuch : cycleTooLittle);
+}
+showWaterCycle('much');
 
 // ---- Games.match data ----
 const waterSituations = [
