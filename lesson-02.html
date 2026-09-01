@@ -1,486 +1,166 @@
-<!DOCTYPE html>
-<html lang="zh">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chapter 2: Cell as the Basic Unit of Life</title>
-<link rel="stylesheet" href="style.css">
-<script src="games.js" defer></script>
-<style>
-  .section { background:#fff; border-radius:14px; padding:18px 20px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.06); }
-  .section h2 { font-size:16px; font-weight:600; margin:0 0 4px; }
-  .section .eng { font-size:12px; color:#9a998f; margin-bottom:12px; }
-  .weight-tag { display:inline-block; font-size:11px; padding:2px 8px; border-radius:6px; background:#f0efe9; color:#8a8983; margin-left:6px; }
-  .warn-note { font-size:11px; font-weight:700; color:#993c1d; background:#fdf0e8; padding:6px 10px; border-radius:6px; margin:0 0 10px; }
-  .compare-wrap { display:flex; gap:10px; }
-  .compare-col { flex:1; background:#faf9f6; border-radius:10px; padding:10px; }
-  .compare-col h3 { font-size:13px; margin:0 0 8px; text-align:center; }
-  .spec-grid { display:grid; grid-template-columns: 1fr 1fr; gap:8px; }
-  .spec-item { background:#faf9f6; border-radius:8px; padding:8px 10px; }
-  .spec-item .name { font-size:12px; font-weight:600; }
-  .spec-item .fn { font-size:11px; color:#8a8983; margin-top:2px; }
-  .org-flow { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:4px; }
-  .org-node { background:#faf9f6; border-radius:8px; padding:8px 10px; font-size:11px; text-align:center; flex:1; min-width:60px; }
-  .org-arrow { color:#b5b3aa; font-size:14px; }
-  .quiz-box { background:#faf9f6; border-radius:10px; padding:12px 14px; margin-top:14px; }
-  .quiz-box .qtitle { font-size:13px; font-weight:600; margin-bottom:8px; }
-  .qopt { padding:10px; text-align:left; border:0.5px solid #d9d7cd; border-radius:8px; background:#fff; cursor:pointer; font-size:13px; display:block; width:100%; margin-bottom:6px; }
-  .qfb { font-size:13px; margin-top:8px; display:none; font-weight:600; }
-
-  .cell-zoom-wrap { cursor: zoom-in; }
-  .zoom-hint { font-size:10px; color:#8a8983; text-align:center; margin-top:2px; }
-  .zoom-modal { display:none; position:fixed; inset:0; background:rgba(20,20,18,0.82); z-index:999; align-items:center; justify-content:center; padding:24px; }
-  .zoom-modal.open { display:flex; }
-  .zoom-modal-inner { background:#fff; border-radius:16px; padding:20px; max-width:94vw; max-height:88vh; overflow:auto; position:relative; }
-  .zoom-close { position:absolute; top:6px; right:10px; background:none; border:none; font-size:22px; color:#8a8983; cursor:pointer; line-height:1; }
-
-  .starch-sim { text-align:center; background:#faf9f6; border-radius:12px; padding:16px; }
-  #leafShape { transition: fill 0.8s ease, stroke 0.8s ease; }
-  .ctrl-btn { background:#1d9e75; color:#fff; border:none; padding:9px 12px; border-radius:8px; font-size:12px; font-weight:600; cursor:pointer; }
-</style>
-</head>
-<body class="ch-accent ch-2">
-<div class="ch-bar"></div>
-<div class="wrap">
-  <a href="index.html" class="back-link">‹ 返回列表</a>
-  <h1 class="page-title">Chapter 2: Cell as the Basic Unit of Life</h1>
-  <div class="page-subtitle">临时抱佛脚版</div>
-
-  <div class="section">
-    <h2>1. Unicellular vs Multicellular 单细胞 vs 多细胞</h2>
-    <div class="compare-wrap">
-      <div class="compare-col">
-        <h3>Unicellular 单细胞生物</h3>
-        <p style="font-size:12px; color:#4a4943; margin:0;">Made of <strong>only 1 cell</strong>. That one cell does everything — feeding, moving, reproducing.<br><br>e.g. Amoeba, Paramecium, yeast</p>
-      </div>
-      <div class="compare-col">
-        <h3>Multicellular 多细胞生物</h3>
-        <p style="font-size:12px; color:#4a4943; margin:0;">Made of <strong>many cells</strong>. Different cells specialise in different jobs.<br><br>e.g. Human, cat, hibiscus</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>2. Animal Cell vs Plant Cell — Structure</h2>
-    <p class="warn-note">⚠ 图片仅供参考，考试作画请以课本为准</p>
-    <div class="compare-wrap">
-      <div class="compare-col">
-        <h3>Animal Cell</h3>
-        <div class="cell-zoom-wrap" onclick="openZoom('animalCellSvg')">
-          <svg id="animalCellSvg" width="100%" viewBox="0 0 290 200" role="img"><title>Animal cell labeled diagram</title>
-            <path d="M50 45 C28 60 20 90 32 115 C45 142 78 155 113 150 C148 145 178 120 181 90 C184 60 161 32 125 26 C93 21 65 32 50 45 Z" fill="#fdf3e3" stroke="#3d3d3a" stroke-width="1.4"/>
-
-            <circle cx="95" cy="90" r="24" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1.2"/>
-            <circle cx="90" cy="85" r="7" fill="#a67cb5"/>
-
-            <path d="M140 50 C150 43 160 48 159 60 C158 72 146 77 137 69 C131 63 131 55 140 50 Z" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M141 54 L154 58 M140 60 L152 63" stroke="#c9782e" stroke-width="0.9" fill="none"/>
-
-            <path d="M135 118 C145 111 155 116 154 126 C153 136 143 140 135 133 C130 128 130 122 135 118 Z" fill="#f2c78a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M136 121 L148 124" stroke="#c9782e" stroke-width="0.9" fill="none"/>
-
-            <circle cx="52" cy="110" r="6" fill="#a7d3e0" stroke="#3d3d3a" stroke-width="0.8"/>
-            <circle cx="65" cy="130" r="5" fill="#a7d3e0" stroke="#3d3d3a" stroke-width="0.8"/>
-
-            <line x1="95" y1="68" x2="200" y2="32" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="35" font-size="10" fill="#6b6a63">Nucleus</text>
-
-            <line x1="150" y1="55" x2="200" y2="62" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="65" font-size="10" fill="#6b6a63">Mitochondria</text>
-
-            <line x1="60" y1="115" x2="200" y2="92" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="95" font-size="10" fill="#6b6a63">Vacuole</text>
-
-            <line x1="35" y1="55" x2="200" y2="122" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="125" font-size="10" fill="#6b6a63">Cell membrane</text>
-
-            <line x1="100" y1="140" x2="200" y2="152" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="155" font-size="10" fill="#6b6a63">Cytoplasm</text>
-          </svg>
-        </div>
-        <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
-        <div style="font-size:10px; color:#8a8983; text-align:center; margin-top:4px;">No cell wall · irregular shape</div>
-      </div>
-      <div class="compare-col">
-        <h3>Plant Cell</h3>
-        <div class="cell-zoom-wrap" onclick="openZoom('plantCellSvg')">
-          <svg id="plantCellSvg" width="100%" viewBox="0 0 290 200" role="img"><title>Plant cell labeled diagram</title>
-            <rect x="28" y="18" width="150" height="150" rx="8" fill="#e9f5e3" stroke="#3d3d3a" stroke-width="2.4"/>
-            <rect x="34" y="24" width="138" height="138" rx="6" fill="none" stroke="#3d3d3a" stroke-width="0.8"/>
-
-            <rect x="52" y="40" width="104" height="108" rx="10" fill="#cfe4f5" stroke="#5a9bc4" stroke-width="1.2"/>
-
-            <circle cx="46" cy="36" r="13" fill="#d9c2e0" stroke="#3d3d3a" stroke-width="1"/>
-            <circle cx="43" cy="33" r="4" fill="#a67cb5"/>
-
-            <ellipse cx="168" cy="52" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M160 49 L176 49 M160 52 L176 52 M160 55 L176 55" stroke="#4a7c1f" stroke-width="0.7"/>
-
-            <ellipse cx="168" cy="112" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M160 109 L176 109 M160 112 L176 112 M160 115 L176 115" stroke="#4a7c1f" stroke-width="0.7"/>
-
-            <ellipse cx="44" cy="124" rx="10" ry="7" fill="#8bc34a" stroke="#3d3d3a" stroke-width="0.9"/>
-            <path d="M36 121 L52 121 M36 124 L52 124 M36 127 L52 127" stroke="#4a7c1f" stroke-width="0.7"/>
-
-            <line x1="34" y1="24" x2="200" y2="32" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="35" font-size="10" fill="#6b6a63">Cell wall</text>
-
-            <line x1="46" y1="36" x2="200" y2="62" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="65" font-size="10" fill="#6b6a63">Nucleus</text>
-
-            <line x1="168" y1="52" x2="200" y2="92" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="95" font-size="10" fill="#6b6a63">Chloroplast</text>
-
-            <line x1="104" y1="90" x2="200" y2="122" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="125" font-size="10" fill="#6b6a63">Vacuole</text>
-
-            <line x1="44" y1="124" x2="200" y2="152" stroke="#8a8983" stroke-width="0.6"/>
-            <text x="205" y="155" font-size="10" fill="#6b6a63">Cytoplasm</text>
-          </svg>
-        </div>
-        <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
-        <div style="font-size:10px; color:#8a8983; text-align:center; margin-top:4px;">Has cell wall · fixed shape</div>
-      </div>
-    </div>
-
-    <div style="margin-top:14px;">
-      <p style="font-size:12px; color:#6b6a63; margin:0 0 8px;">Match each organelle to its function. 把每个细胞器和它的功能配对。</p>
-      <div id="organelle-game"></div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>3. Animal Cell vs Plant Cell — Comparison</h2>
-    <table style="width:100%; border-collapse:collapse; font-size:12px;">
-      <tr style="color:#8a8983;"><th style="text-align:left; padding:4px;"></th><th style="text-align:center; padding:4px;">Animal</th><th style="text-align:center; padding:4px;">Plant</th></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Cell wall</td><td style="text-align:center;">✗</td><td style="text-align:center;">✓</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Chloroplast</td><td style="text-align:center;">✗</td><td style="text-align:center;">✓</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Large vacuole</td><td style="text-align:center;">✗</td><td style="text-align:center;">✓</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Shape</td><td style="text-align:center;">not fixed</td><td style="text-align:center;">fixed</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Nucleus, cytoplasm, cell membrane</td><td style="text-align:center;" colspan="2">✓ both have</td></tr>
-    </table>
-  </div>
-
-  <div class="section">
-    <h2>4. Specialised Cells 特化细胞</h2>
-    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">Different shape → different job. Match each cell to what it does. 形状不同 → 功能不同，把细胞和它的功能配对。</p>
-    <div style="font-size:12px; font-weight:600; margin-bottom:8px; color:#7f77dd;">🐾 Animal cells</div>
-    <div id="animal-game"></div>
-    <div style="font-size:12px; font-weight:600; margin:16px 0 8px; color:#1d9e75;">🌿 Plant cells</div>
-    <div id="plant-game"></div>
-
-    <div style="margin-top:16px;">
-      <div style="font-size:12px; font-weight:600; margin-bottom:8px; color:#4a4943;">Cross-section of a leaf 叶片横切面</div>
-      <div class="cell-zoom-wrap" onclick="openZoom('leafCrossSvg')">
-        <div id="leaf-cross-section"></div>
-      </div>
-      <div class="zoom-hint">🔍 Tap to zoom 点击放大</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>5. Cell Organisation</h2>
-    <div class="org-flow">
-      <div class="org-node">Cell</div><span class="org-arrow">→</span>
-      <div class="org-node">Tissue</div><span class="org-arrow">→</span>
-      <div class="org-node">Organ</div><span class="org-arrow">→</span>
-      <div class="org-node">System</div><span class="org-arrow">→</span>
-      <div class="org-node">Organism</div>
-    </div>
-    <p style="font-size:11px; color:#8a8983; margin-top:8px;">Cells also divide to form new cells and replace damaged ones — that's why cuts heal.</p>
-
-    <div style="font-size:12px; font-weight:600; margin:14px 0 6px;">Human systems 人体系统</div>
-    <table class="org-tbl" style="width:100%; border-collapse:collapse; font-size:12px;">
-      <tr style="color:#8a8983;">
-        <th style="text-align:left; padding:6px 4px;">System</th>
-        <th style="text-align:left; padding:6px 4px;">Main organs 主要器官</th>
-        <th style="text-align:left; padding:6px 4px;">Function 功能</th>
-      </tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Digestive 消化系统</td><td style="padding:6px 4px; color:#6b6a63;">Mouth, stomach, intestines, liver</td><td style="padding:6px 4px; color:#6b6a63;">Breaks down food</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Respiratory 呼吸系统</td><td style="padding:6px 4px; color:#6b6a63;">Nose, trachea, lungs</td><td style="padding:6px 4px; color:#6b6a63;">Gas exchange (O₂/CO₂)</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Circulatory 循环系统</td><td style="padding:6px 4px; color:#6b6a63;">Heart, blood vessels, blood</td><td style="padding:6px 4px; color:#6b6a63;">Transports blood</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Nervous 神经系统</td><td style="padding:6px 4px; color:#6b6a63;">Brain, spinal cord, nerves</td><td style="padding:6px 4px; color:#6b6a63;">Controls & coordinates body</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Excretory 排泄系统</td><td style="padding:6px 4px; color:#6b6a63;">Kidneys, bladder, skin</td><td style="padding:6px 4px; color:#6b6a63;">Removes waste</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Skeletal 骨骼系统</td><td style="padding:6px 4px; color:#6b6a63;">Skull, ribs, spine, limb bones</td><td style="padding:6px 4px; color:#6b6a63;">Supports & protects body</td></tr>
-    </table>
-
-    <p style="font-size:12px; color:#6b6a63; margin:16px 0 8px;">Match each system to its function. 把每个系统和它的功能配对。</p>
-    <div id="body-function-game"></div>
-
-    <div class="quiz-box">
-      <div class="qtitle">🎯 Quiz: Which comes right after "Tissue" in cell organisation?</div>
-      <div id="q-org"></div>
-      <p id="fb-org" class="qfb"></p>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>6. Cellular Respiration vs Photosynthesis</h2>
-    <table style="width:100%; border-collapse:collapse; font-size:12px;">
-      <tr style="color:#8a8983;"><th style="text-align:left; padding:4px;"></th><th style="text-align:center; padding:4px;">Respiration</th><th style="text-align:center; padding:4px;">Photosynthesis</th></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Happens in</td><td style="text-align:center;">Mitochondria</td><td style="text-align:center;">Chloroplast</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Uses</td><td style="text-align:center;">Glucose + O₂</td><td style="text-align:center;">CO₂ + water + light</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">Produces</td><td style="text-align:center;">CO₂ + water + energy</td><td style="text-align:center;">Glucose + O₂</td></tr>
-      <tr style="border-top:1px solid #eeece5;"><td style="padding:6px 4px;">When</td><td style="text-align:center;">All the time</td><td style="text-align:center;">Only with light</td></tr>
-    </table>
-    <p style="font-size:11px; color:#8a8983; margin-top:8px;">They complement each other: photosynthesis makes glucose + O₂, respiration uses glucose + O₂.</p>
-
-    <div style="font-size:12px; font-weight:600; margin:14px 0 6px;">Process 流程</div>
-    <div class="org-flow">
-      <div class="org-node">Glucose + O₂</div><span class="org-arrow">→</span>
-      <div class="org-node" style="background:#e9f5e3;">Respiration</div><span class="org-arrow">→</span>
-      <div class="org-node">CO₂ + H₂O + Energy</div>
-    </div>
-    <div class="org-flow" style="margin-top:8px;">
-      <div class="org-node">CO₂ + H₂O + Light</div><span class="org-arrow">→</span>
-      <div class="org-node" style="background:#e9f5e3;">Photosynthesis</div><span class="org-arrow">→</span>
-      <div class="org-node">Glucose + O₂</div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>7. Test for Starch 淀粉测试</h2>
-    <p class="warn-note">⚠ 图片仅供参考，考试作画请以课本为准</p>
-    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">Will the leaf change colour after adding iodine solution? Click to test! 滴加碘液后，叶片会变色吗？点击测试看看：</p>
-    <div class="starch-sim">
-      <svg id="leafSvg" width="140" height="160" viewBox="0 0 120 140" role="img"><title>Leaf for iodine test</title>
-        <path id="leafShape" d="M60 6 C98 6 112 58 60 128 C8 58 22 6 60 6 Z" fill="#4f9d3a" stroke="#2e5e22" stroke-width="2"/>
-        <line x1="60" y1="60" x2="60" y2="130" stroke="#5b3a1e" stroke-width="3"/>
-        <path d="M60 14 L60 118" stroke="#2e5e22" stroke-width="1.2" opacity="0.55" fill="none"/>
-        <path d="M60 28 L42 44 M60 28 L78 44 M60 48 L38 64 M60 48 L82 64 M60 68 L40 84 M60 68 L80 84 M60 88 L46 100 M60 88 L74 100" stroke="#2e5e22" stroke-width="1" opacity="0.5" fill="none"/>
-      </svg>
-      <div id="starchLabel" style="font-size:12px; font-weight:600; margin-top:10px; color:#4a4943;">Not tested yet 尚未测试</div>
-      <div style="margin-top:12px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
-        <button class="ctrl-btn" onclick="testStarch(true)">🧪 Test 'light' leaf 测试「有光照」叶片</button>
-        <button class="ctrl-btn" style="background:#d85a30;" onclick="testStarch(false)">🧪 Test 'no light' leaf 测试「无光照」叶片</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>8. Photosynthesis Experiments — Guess First!</h2>
-    <p style="font-size:12px; color:#6b6a63; margin:0 0 10px;">Before you look at the answer, guess: will the leaf test positive or negative for starch?</p>
-    <div id="photo-exp"></div>
-  </div>
-
-</div>
-
-<div class="zoom-modal" id="zoomModal" onclick="closeZoom(event)">
-  <div class="zoom-modal-inner" onclick="event.stopPropagation()">
-    <button class="zoom-close" onclick="closeZoom(event)">✕</button>
-    <div id="zoomModalInner"></div>
-    <p class="warn-note" style="margin-top:12px;">⚠ 图片仅供参考，考试作画请以课本为准</p>
-  </div>
-</div>
-
-<script>
-// ---- Click-to-zoom for cell diagrams ----
-function openZoom(svgId) {
-  const svg = document.getElementById(svgId);
-  const modalInner = document.getElementById('zoomModalInner');
-  modalInner.innerHTML = svg.outerHTML;
-  const bigSvg = modalInner.querySelector('svg');
-  bigSvg.style.width = '100%';
-  bigSvg.style.height = 'auto';
-  document.getElementById('zoomModal').classList.add('open');
-}
-function closeZoom(e) {
-  document.getElementById('zoomModal').classList.remove('open');
-}
-
-// ---- Starch (iodine) test simulator, using a proper leaf shape ----
-function testStarch(hasLight) {
-  const leaf = document.getElementById('leafShape');
-  const label = document.getElementById('starchLabel');
-  label.textContent = 'Adding iodine... 滴加碘液中...';
-  leaf.setAttribute('fill', '#4f9d3a');
-  leaf.setAttribute('stroke', '#2e5e22');
-  setTimeout(() => {
-    if (hasLight) {
-      leaf.setAttribute('fill', '#2d2a4a');
-      leaf.setAttribute('stroke', '#17162a');
-      label.innerHTML = "🔵 Turns <strong>blue-black</strong> — starch present, this leaf photosynthesised.<br>变成<strong>蓝黑色</strong> — 含有淀粉，说明该叶片进行了光合作用。";
-    } else {
-      leaf.setAttribute('fill', '#c98a4b');
-      leaf.setAttribute('stroke', '#7a5227');
-      label.innerHTML = "🟠 Stays <strong>orange-brown</strong> — no starch, this leaf did not photosynthesise.<br>保持<strong>橙棕色</strong> — 没有淀粉，说明该叶片没有进行光合作用。";
-    }
-  }, 600);
-}
-
-// ---- Leaf cross-section diagram (built with JS loops to keep the markup manageable) ----
-function buildLeafCrossSection(containerId) {
-  const container = document.getElementById(containerId);
-  const palisadeCount = 7;
-  const startX = 20, totalW = 200, cellW = totalW / palisadeCount;
-  let palisadeSvg = '';
-  for (let i = 0; i < palisadeCount; i++) {
-    const x = startX + i * cellW;
-    palisadeSvg += `<rect x="${x + 1}" y="34" width="${cellW - 2}" height="50" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="0.6"/>`;
-    for (let d = 0; d < 3; d++) {
-      const cy = 44 + d * 13;
-      palisadeSvg += `<circle cx="${x + cellW / 2}" cy="${cy}" r="3" fill="#4a9c3a"/>`;
-    }
-  }
-  const spongyPositions = [[32,100],[58,108],[85,98],[112,112],[139,100],[166,108],[193,98],[47,132],[78,136],[108,128],[139,134],[170,128],[195,132]];
-  let spongySvg = '';
-  spongyPositions.forEach(([cx, cy]) => {
-    spongySvg += `<ellipse cx="${cx}" cy="${cy}" rx="14" ry="11" fill="#dbeedb" stroke="#3d3d3a" stroke-width="0.6"/>`;
-    spongySvg += `<circle cx="${cx - 4}" cy="${cy - 2}" r="2.2" fill="#4a9c3a"/><circle cx="${cx + 4}" cy="${cy + 3}" r="2.2" fill="#4a9c3a"/>`;
-  });
-
-  container.innerHTML = `
-    <svg id="leafCrossSvg" width="100%" viewBox="0 0 340 210" role="img"><title>Leaf cross section</title>
-      <line x1="20" y1="18" x2="220" y2="18" stroke="#8bc78a" stroke-width="2"/>
-      <text x="230" y="21" font-size="10" fill="#6b6a63">Cuticle</text>
-
-      <rect x="20" y="20" width="200" height="14" fill="#eef7ea" stroke="#3d3d3a" stroke-width="1"/>
-      <text x="230" y="30" font-size="10" fill="#6b6a63">Upper epidermis</text>
-
-      ${palisadeSvg}
-      <text x="230" y="58" font-size="10" fill="#6b6a63">Palisade</text>
-      <text x="230" y="70" font-size="10" fill="#6b6a63">mesophyll</text>
-
-      ${spongySvg}
-      <text x="230" y="113" font-size="10" fill="#6b6a63">Spongy</text>
-      <text x="230" y="125" font-size="10" fill="#6b6a63">mesophyll</text>
-
-      <rect x="20" y="150" width="90" height="14" fill="#eef7ea" stroke="#3d3d3a" stroke-width="1"/>
-      <rect x="130" y="150" width="90" height="14" fill="#eef7ea" stroke="#3d3d3a" stroke-width="1"/>
-      <ellipse cx="114" cy="157" rx="9" ry="7" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1"/>
-      <ellipse cx="126" cy="157" rx="9" ry="7" fill="#c8e6c9" stroke="#3d3d3a" stroke-width="1"/>
-      <ellipse cx="120" cy="157" rx="3" ry="2.5" fill="#fff"/>
-      <text x="230" y="160" font-size="10" fill="#6b6a63">Lower epidermis</text>
-      <text x="120" y="180" font-size="9" text-anchor="middle" fill="#6b6a63">guard cells &amp; stoma</text>
-
-      <text x="120" y="196" font-size="13" text-anchor="middle" fill="#2a6fd4">💧⬇</text>
-      <text x="120" y="207" font-size="9" text-anchor="middle" fill="#2a6fd4">water vapour escapes 水蒸气散失</text>
-    </svg>
-  `;
-}
-buildLeafCrossSection('leaf-cross-section');
-
-// ---- Photosynthesis experiments - guess first game ----
-const exps = [
-  { q: 'One leaf covered with foil (no light) vs one leaf exposed to light. Both destarched first.', factor: 'Light', result: "Covered leaf: <strong>no starch</strong> (stays <strong>orange-brown</strong> with <strong>iodine</strong>). Exposed leaf: <strong>starch present</strong> (turns <strong>blue-black</strong>).", conclusion: '<strong>Light</strong> is needed for photosynthesis.' },
-  { q: 'Use a variegated leaf (green + white patches), test with iodine.', factor: 'Chlorophyll', result: "Only the <strong>green parts</strong> turn <strong>blue-black</strong> with <strong>iodine</strong>. White parts stay <strong>orange-brown</strong>.", conclusion: '<strong>Chlorophyll</strong> is needed for photosynthesis.' },
-  { q: 'One plant in a jar with soda lime (absorbs CO₂) vs one plant in normal air.', factor: 'CO₂', result: "Plant without CO₂: <strong>no starch</strong> (<strong>orange-brown</strong> with <strong>iodine</strong>). Plant in normal air: <strong>starch present</strong> (<strong>blue-black</strong>).", conclusion: '<strong>CO₂</strong> is needed for photosynthesis.' },
-  { q: 'One plant well-watered vs one plant deprived of water for several days.', factor: 'Water', result: "Watered plant: <strong>starch present</strong> (<strong>blue-black</strong> with <strong>iodine</strong>). Unwatered plant: <strong>little/no starch</strong>.", conclusion: '<strong>Water</strong> is needed for photosynthesis.' }
-];
-const expContainer = document.getElementById('photo-exp');
-exps.forEach((e, i) => {
-  const card = document.createElement('div');
-  card.style.cssText = 'background:#faf9f6; border-radius:12px; padding:12px 14px; margin-bottom:10px;';
-  card.innerHTML = `
-    <div style="font-size:11px; color:#8a8983; margin-bottom:6px;">Experiment ${i+1} — testing: <strong>${e.factor}</strong></div>
-    <div style="font-size:13px; color:#3d3d3a; margin-bottom:10px;">${e.q}</div>
-    <div style="display:flex; gap:8px; margin-bottom:8px;">
-      <button class="guess-btn" data-guess="yes" style="flex:1; padding:8px; border:0.5px solid #d9d7cd; border-radius:8px; background:#fff; font-size:12px; cursor:pointer;">Needed ✓</button>
-      <button class="guess-btn" data-guess="no" style="flex:1; padding:8px; border:0.5px solid #d9d7cd; border-radius:8px; background:#fff; font-size:12px; cursor:pointer;">Not needed ✗</button>
-    </div>
-    <div class="exp-answer" style="display:none; font-size:12px; color:#4a4943; line-height:1.6; background:#fff; border-radius:8px; padding:10px;">
-      <strong>Result:</strong> ${e.result}<br><strong>Conclusion:</strong> ${e.conclusion}
-    </div>
-  `;
-  const buttons = card.querySelectorAll('.guess-btn');
-  const answer = card.querySelector('.exp-answer');
-  buttons.forEach(b => {
-    b.addEventListener('click', () => {
-      answer.style.display = 'block';
-      buttons.forEach(btn => btn.style.opacity = '0.5');
-      if (b.dataset.guess === 'yes') { b.style.opacity = '1'; b.style.borderColor = '#1d9e75'; }
-    });
-  });
-  expContainer.appendChild(card);
-});
-
-function buildQuiz(containerId, feedbackId, options, correctIndex, correctMsg, wrongMsg) {
-  const container = document.getElementById(containerId);
-  options.forEach((opt, i) => {
-    const btn = document.createElement('button');
-    btn.className = 'qopt';
-    btn.textContent = opt;
-    btn.addEventListener('click', () => {
-      const fb = document.getElementById(feedbackId);
-      fb.style.display = 'block';
-      container.querySelectorAll('.qopt').forEach(b => { b.style.opacity = '0.5'; b.style.borderColor = '#d9d7cd'; });
-      if (i === correctIndex) {
-        btn.style.opacity = '1'; btn.style.borderColor = '#1d9e75';
-        fb.style.color = '#0f6e56'; fb.innerHTML = '✓ ' + correctMsg;
-      } else {
-        btn.style.opacity = '1'; btn.style.borderColor = '#d85a30';
-        fb.style.color = '#993c1d'; fb.innerHTML = '✗ ' + wrongMsg;
-      }
-    });
-    container.appendChild(btn);
-  });
-}
-buildQuiz('q-org', 'fb-org', ['Cell', 'Organ', 'System'], 1, 'Correct! Cell → Tissue → Organ → System → Organism', 'Order is: Cell → Tissue → Organ → System → Organism');
-
-// ---- Data for the games.js Games.match() mini-games ----
-const organelles = [
-  { name: 'Cell membrane 细胞膜', fn: 'Controls substances entering/leaving the cell 控制物质进出细胞' },
-  { name: 'Nucleus 细胞核', fn: 'Controls cell activities; contains genetic material 控制细胞活动，含有遗传物质' },
-  { name: 'Cytoplasm 细胞质', fn: 'Site of chemical reactions 化学反应发生的场所' },
-  { name: 'Mitochondria 线粒体', fn: 'Releases energy through respiration 通过呼吸作用释放能量' },
-  { name: 'Cell wall 细胞壁 (plant only 仅植物)', fn: 'Supports the cell and keeps its shape fixed 支持细胞并维持固定形状' },
-  { name: 'Chloroplast 叶绿体 (plant only 仅植物)', fn: 'Site of photosynthesis 光合作用发生的场所' },
-  { name: 'Vacuole 液泡 (large in plant 植物中较大)', fn: 'Stores water and cell sap 储存水分和细胞液' }
-];
-const animalCells = [
-  { name: 'Nerve cell 神经细胞', fn: 'Carries electrical impulses around the body 在体内传递神经冲动' },
-  { name: 'Red blood cell 红血球', fn: 'Biconcave disc shape, no nucleus, contains haemoglobin to carry oxygen 双凹圆盘状，没有细胞核，含血红蛋白以运输氧气' },
-  { name: 'White blood cell 白血球', fn: 'Changes shape to engulf and destroy germs 能改变形状以吞噬并消灭病菌' },
-  { name: 'Muscle cell 肌肉细胞', fn: 'Contracts and relaxes to produce movement 收缩与放松以产生运动' },
-  { name: 'Epithelium cell 上皮细胞', fn: 'Lines and protects organs; some secrete mucus 覆盖并保护器官，部分能分泌黏液' },
-  { name: 'Sperm / Ovum 精子/卵子', fn: 'Carries genetic material for reproduction 携带遗传物质用于生殖' }
-];
-const plantCells = [
-  { name: 'Guard cell 保卫细胞', fn: 'Controls the opening and closing of the stoma 控制气孔的开合' },
-  { name: 'Palisade cell 栅栏细胞', fn: 'Packed with chloroplasts for photosynthesis 含大量叶绿体，负责光合作用' },
-  { name: 'Epidermis cell 表皮细胞', fn: 'Reduces water loss and protects the leaf 减少水分流失并保护叶片' },
-  { name: 'Root hair cell 根毛细胞', fn: 'Absorbs water and mineral salts from soil 从土壤中吸收水分和矿物盐' }
-];
-const bodySystemFunctions = [
-  { prompt: 'What is the function of the digestive system?', answer: 'Breaks down food into nutrients the body can absorb 将食物分解为身体可吸收的养分' },
-  { prompt: 'What is the function of the respiratory system?', answer: 'Exchanges gases — takes in O₂, removes CO₂ 进行气体交换——吸入O₂，排出CO₂' },
-  { prompt: 'What is the function of the circulatory system?', answer: 'Transports blood, oxygen and nutrients around the body 在体内运输血液、氧气和养分' },
-  { prompt: 'What is the function of the nervous system?', answer: "Controls and coordinates the body's actions 控制和协调身体的各种活动" },
-  { prompt: 'What is the function of the excretory system?', answer: 'Removes waste products from the body 排出体内的废物' },
-  { prompt: 'What is the function of the skeletal system?', answer: "Supports and protects the body's organs 支撑并保护体内器官" }
-];
-
-window.addEventListener('DOMContentLoaded', () => {
-  function init() {
-    if (!window.Games) { setTimeout(init, 30); return; }
-    Games.attachProgress();
-
-    Games.match(document.getElementById('organelle-game'), {
-      title: 'Organelle Match 细胞器配对',
-      items: organelles.map(o => ({ prompt: `What is the function of the ${o.name}?`, answer: o.fn })),
-      takeaway: "Every organelle has its own job, but together they keep the cell alive. 每个细胞器都有各自的功能，但它们共同合作维持细胞的生命。"
-    });
-
-    Games.match(document.getElementById('animal-game'), {
-      title: 'Animal Cells Match 动物细胞配对',
-      items: animalCells.map(c => ({ prompt: `What is the function of the ${c.name}?`, answer: c.fn })),
-      takeaway: "Different animal cells are shaped for different jobs — that's specialisation. 不同的动物细胞形状不同，是为了执行不同的功能，这就是特化。"
-    });
-
-    Games.match(document.getElementById('plant-game'), {
-      title: 'Plant Cells Match 植物细胞配对',
-      items: plantCells.map(c => ({ prompt: `What is the function of the ${c.name}?`, answer: c.fn })),
-      takeaway: "Plant cells are also specialised for jobs like photosynthesis, support and absorption. 植物细胞也依功能特化，例如光合作用、支持和吸收。"
-    });
-
-    Games.match(document.getElementById('body-function-game'), {
-      title: 'System Function 系统的功能',
-      items: bodySystemFunctions,
-      takeaway: 'All systems work together to keep the whole body alive and balanced. 所有系统共同合作，维持整个身体的生命和平衡。'
-    });
-  }
-  init();
-});
-</script>
-</body>
-</html>
+<?xml version="1.0" standalone="yes"?>
+<DATAPACKET Version="2.0">
+  <METADATA>
+    <FIELDS>
+      <FIELD attrname="DOCKEY" fieldtype="i4"/>
+      <FIELD attrname="DOCNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="DOCNOEX" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="DOCDATE" fieldtype="date"/>
+      <FIELD attrname="POSTDATE" fieldtype="date"/>
+      <FIELD attrname="TAXDATE" fieldtype="date"/>
+      <FIELD attrname="EIV_UTC" fieldtype="SQLdateTime" SUBTYPE="Formatted"/>
+      <FIELD attrname="CODE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="COMPANYNAME" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="200"/>
+      <FIELD attrname="ADDRESS1" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="120"/>
+      <FIELD attrname="ADDRESS2" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="120"/>
+      <FIELD attrname="ADDRESS3" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="120"/>
+      <FIELD attrname="ADDRESS4" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="120"/>
+      <FIELD attrname="POSTCODE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="CITY" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="100"/>
+      <FIELD attrname="STATE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="100"/>
+      <FIELD attrname="COUNTRY" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="4"/>
+      <FIELD attrname="PHONE1" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+      <FIELD attrname="MOBILE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+      <FIELD attrname="FAX1" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+      <FIELD attrname="ATTENTION" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="140"/>
+      <FIELD attrname="AREA" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="AGENT" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="PROJECT" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+      <FIELD attrname="TERMS" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="CURRENCYCODE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="12"/>
+      <FIELD attrname="CURRENCYRATE" fieldtype="fixedFMT" DECIMALS="8" WIDTH="18"/>
+      <FIELD attrname="SHIPPER" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="60"/>
+      <FIELD attrname="DESCRIPTION" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="600"/>
+      <FIELD attrname="CANCELLED" fieldtype="boolean"/>
+      <FIELD attrname="DOCAMT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+      <FIELD attrname="LOCALDOCAMT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+      <FIELD attrname="LANDINGCOST1" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+      <FIELD attrname="LANDINGCOST2" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+      <FIELD attrname="LOCALTOTALWITHCOST" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+      <FIELD attrname="D_AMOUNT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+      <FIELD attrname="P_DOCNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="P_PAYMENTMETHOD" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="P_CHEQUENUMBER" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="50"/>
+      <FIELD attrname="P_PAYMENTPROJECT" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+      <FIELD attrname="P_BANKCHARGE" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+      <FIELD attrname="P_BANKCHARGEACCOUNT" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="P_AMOUNT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+      <FIELD attrname="VALIDITY" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="600"/>
+      <FIELD attrname="DELIVERYTERM" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="600"/>
+      <FIELD attrname="CC" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="600"/>
+      <FIELD attrname="DOCREF1" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="DOCREF2" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="DOCREF3" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="DOCREF4" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="BRANCHNAME" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="200"/>
+      <FIELD attrname="DADDRESS1" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="120"/>
+      <FIELD attrname="DADDRESS2" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="120"/>
+      <FIELD attrname="DADDRESS3" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="120"/>
+      <FIELD attrname="DADDRESS4" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="120"/>
+      <FIELD attrname="DPOSTCODE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="DCITY" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="100"/>
+      <FIELD attrname="DSTATE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="100"/>
+      <FIELD attrname="DCOUNTRY" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="4"/>
+      <FIELD attrname="DATTENTION" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="140"/>
+      <FIELD attrname="DPHONE1" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+      <FIELD attrname="DMOBILE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+      <FIELD attrname="DFAX1" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+      <FIELD attrname="TAXEXEMPTNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="100"/>
+      <FIELD attrname="SALESTAXNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="50"/>
+      <FIELD attrname="SERVICETAXNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="50"/>
+      <FIELD attrname="TIN" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="28"/>
+      <FIELD attrname="IDTYPE" fieldtype="i2"/>
+      <FIELD attrname="IDNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+      <FIELD attrname="TOURISMNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="34"/>
+      <FIELD attrname="SIC" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+      <FIELD attrname="INCOTERMS" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="6"/>
+      <FIELD attrname="SUBMISSIONTYPE" fieldtype="i4"/>
+      <FIELD attrname="IRBM_STATUS" fieldtype="i4"/>
+      <FIELD attrname="IRBM_INTERNALID" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="IRBM_UUID" fieldtype="string" SUBTYPE="FixedChar" WIDTH="26"/>
+      <FIELD attrname="IRBM_LONGID" fieldtype="string" SUBTYPE="FixedChar" WIDTH="50"/>
+      <FIELD attrname="ATTACHMENTS" fieldtype="bin.hex" SUBTYPE="Binary" WIDTH="8"/>
+      <FIELD attrname="NOTE" fieldtype="bin.hex" SUBTYPE="Binary" WIDTH="8"/>
+      <FIELD attrname="TRANSFERABLE" fieldtype="boolean"/>
+      <FIELD attrname="UPDATECOUNT" fieldtype="i4"/>
+      <FIELD attrname="PRINTCOUNT" fieldtype="i4"/>
+      <FIELD attrname="LASTMODIFIED" fieldtype="i8"/>
+      <FIELD attrname="DOCNOSETKEY" fieldtype="i8"/>
+      <FIELD attrname="NEXTDOCNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="80"/>
+      <FIELD attrname="CHANGED" fieldtype="boolean"/>
+      <FIELD attrname="sdsDocDetail" fieldtype="nested">
+        <FIELDS>
+          <FIELD attrname="DTLKEY" fieldtype="i4" required="true"/>
+          <FIELD attrname="DOCKEY" fieldtype="i4" required="true"/>
+          <FIELD attrname="SEQ" fieldtype="i4"/>
+          <FIELD attrname="STYLEID" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="10"/>
+          <FIELD attrname="NUMBER" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="10"/>
+          <FIELD attrname="ITEMCODE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="60"/>
+          <FIELD attrname="LOCATION" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+          <FIELD attrname="BATCH" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="60"/>
+          <FIELD attrname="PROJECT" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+          <FIELD attrname="DESCRIPTION" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+          <FIELD attrname="DESCRIPTION2" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+          <FIELD attrname="DESCRIPTION3" fieldtype="bin.hex" SUBTYPE="Binary" WIDTH="8"/>
+          <FIELD attrname="PERMITNO" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+          <FIELD attrname="QTY" fieldtype="fixedFMT" DECIMALS="4" WIDTH="18"/>
+          <FIELD attrname="UOM" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+          <FIELD attrname="RATE" fieldtype="fixedFMT" DECIMALS="4" WIDTH="18"/>
+          <FIELD attrname="SQTY" fieldtype="fixedFMT" DECIMALS="4" WIDTH="18"/>
+          <FIELD attrname="SUOMQTY" fieldtype="fixedFMT" DECIMALS="4" WIDTH="18"/>
+          <FIELD attrname="UNITPRICE" fieldtype="fixedFMT" DECIMALS="8" WIDTH="18"/>
+          <FIELD attrname="DELIVERYDATE" fieldtype="date"/>
+          <FIELD attrname="DISC" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+          <FIELD attrname="TAX" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+          <FIELD attrname="TARIFF" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+          <FIELD attrname="TAXEXEMPTIONREASON" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="600"/>
+          <FIELD attrname="IRBM_CLASSIFICATION" fieldtype="string" SUBTYPE="FixedChar" WIDTH="3"/>
+          <FIELD attrname="TAXRATE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+          <FIELD attrname="TAXAMT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="LOCALTAXAMT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="TAXINCLUSIVE" fieldtype="boolean"/>
+          <FIELD attrname="AMOUNT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="LOCALAMOUNT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="TAXABLEAMT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="IM_CURRENCYCODE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="12"/>
+          <FIELD attrname="IM_CURRENCYRATE" fieldtype="fixedFMT" DECIMALS="8" WIDTH="18"/>
+          <FIELD attrname="IM_PURCHASEAMT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="LANDINGCOST1" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="LANDINGCOST2" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="ACCOUNT" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+          <FIELD attrname="WHTAX" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+          <FIELD attrname="WHTAXRATE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="40"/>
+          <FIELD attrname="WHLOCALTAXAMT" fieldtype="fixedFMT" DECIMALS="2" WIDTH="18"/>
+          <FIELD attrname="WHTAXACCOUNTDR" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+          <FIELD attrname="WHTAXACCOUNTCR" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="20"/>
+          <FIELD attrname="PRINTABLE" fieldtype="boolean"/>
+          <FIELD attrname="FROMDOCTYPE" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="4"/>
+          <FIELD attrname="FROMDOCKEY" fieldtype="i4"/>
+          <FIELD attrname="FROMDTLKEY" fieldtype="i4"/>
+          <FIELD attrname="TRANSFERABLE" fieldtype="boolean"/>
+          <FIELD attrname="REMARK1" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+          <FIELD attrname="REMARK2" fieldtype="string.uni" SUBTYPE="FixedChar" WIDTH="400"/>
+          <FIELD attrname="CHANGED" fieldtype="boolean" required="true"/>
+          <FIELD attrname="CompanyItemCode" fieldtype="string.uni" WIDTH="60"/>
+          <FIELD attrname="sdsSerialNumber" fieldtype="nested">
+            <FIELDS>
+              <FIELD attrname="SERIALNUMBER" fieldtype="string.uni" required="true" SUBTYPE="FixedChar" WIDTH="100"/>
+            </FIELDS>
+            <PARAMS/>
+          </FIELD>
+        </FIELDS>
+        <PARAMS/>
+      </FIELD>
+    </FIELDS>
+    <PARAMS/>
+  </METADATA>
+  <ROWDATA>
+    <ROW DOCKEY="6856" DOCNO="CP-2607/005" DOCDATE="20260702" POSTDATE="20260702" TAXDATE="20260702" EIV_UTC="20260715T03:05:06000" CODE="400-C0004" COMPANYNAME="NGOO CHONG SENG" POSTCODE="32000" CITY="Sitiawan" STATE="Perak" COUNTRY="MY" PHONE1="6056911073" AREA="----" AGENT="----" PROJECT="----" TERMS="CASH" CURRENCYCODE="----" CURRENCYRATE="1.00000000" SHIPPER="----" DESCRIPTION="Cash Purchase" CANCELLED="FALSE" DOCAMT="1200.00" LOCALDOCAMT="1200.00" LANDINGCOST1="0.00" LANDINGCOST2="0.00" LOCALTOTALWITHCOST="1200.00" D_AMOUNT="0.00" P_DOCNO="PV-2607061" P_PAYMENTMETHOD="320-000" P_PAYMENTPROJECT="----" P_BANKCHARGE="0.00" P_AMOUNT="1200.00" BRANCHNAME="BILLING" DADDRESS1="LOT12307, NO. 1, GREEN VILLA,JALAN HAJI MOHD ALI," DADDRESS2="32000 SITIAWAN, PERAK (9327-P)" DADDRESS3="" DADDRESS4="" DPOSTCODE="32000" DCITY="Sitiawan" DSTATE="Perak" DCOUNTRY="MY" DPHONE1="056911073" DFAX1="056911073" TIN="EI00000000010" IDTYPE="2" IDNO="930329085881" SIC="00000" SUBMISSIONTYPE="17" IRBM_STATUS="2" IRBM_UUID="XKFEA55FZJ5C0C2RD8QRVHXK10" IRBM_LONGID="DKA7C187X63ZMAN9D8QRVHXK10qAFRYl1784084716" TRANSFERABLE="TRUE" PRINTCOUNT="0" LASTMODIFIED="1784084713" DOCNOSETKEY="0" CHANGED="FALSE">
+      <sdsDocDetail>
+        <ROWsdsDocDetail DTLKEY="6857" DOCKEY="6856" SEQ="1000" LOCATION="----" BATCH="" PROJECT="----" DESCRIPTION="RENTAL FOR MAY&amp;JUN26" QTY="2.0000" UOM="MTH" RATE="1.0000" SQTY="2.0000" SUOMQTY="0.0000" UNITPRICE="600.00000000" DELIVERYDATE="20250916" DISC="" TAX="" IRBM_CLASSIFICATION="036" TAXAMT="0.00" LOCALTAXAMT="0.00" TAXINCLUSIVE="FALSE" AMOUNT="1200.00" LOCALAMOUNT="1200.00" TAXABLEAMT="1200.00" LANDINGCOST1="0.00" LANDINGCOST2="0.00" ACCOUNT="610-000" WHLOCALTAXAMT="0.00" PRINTABLE="TRUE" TRANSFERABLE="TRUE" CHANGED="FALSE">
+          <sdsSerialNumber/>
+        </ROWsdsDocDetail>
+      </sdsDocDetail>
+    </ROW>
+  </ROWDATA>
+</DATAPACKET>
